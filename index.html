@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Óptima IA oferece soluções avançadas de automação e inteligência artificial para otimizar e escalar seu negócio. Conheça nossos agentes de IA e chatbots inteligentes." />
+    <meta name="keywords" content="Inteligência Artificial, Automação, IA, Chatbots, Otimização de Processos, Óptima IA" />
+    <title>Óptima IA | Automação & IA</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="icon" href="https://i.postimg.cc/130GgWzn/f63e2185-1e47-48c9-84f9-e3373f847e29.png" type="image/x-icon" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="bg-themed text-themed">
+    <header class="bg-blur-themed backdrop-blur-md fixed top-0 left-0 right-0 z-50 border-b border-themed-strong">
+      <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <a href="#" class="text-2xl font-bold flex items-center text-themed">
+          <img src="https://i.postimg.cc/130GgWzn/f63e2185-1e47-48c9-84f9-e3373f847e29.png" alt="Logo da Óptima IA" class="w-6 h-6 mr-2" />
+          <span class="text-brand">Óptima</span><span class="ml-2">IA</span>
+        </a>
+        </a>
+        <nav class="hidden lg:flex items-center space-x-6">
+          <a href="#services" class="text-themed-secondary hover:text-brand-hover transition-colors duration-300">Serviços</a>
+          <a href="#ai-agents" class="text-themed-secondary hover:text-brand-hover transition-colors duration-300">Agentes de IA</a>
+          <a href="#automations" class="text-themed-secondary hover:text-brand-hover transition-colors duration-300">Automações</a>
+          <a href="#methodology" class="text-themed-secondary hover:text-brand-hover transition-colors duration-300">Metodologia</a>
+          <a href="#testimonials" class="text-themed-secondary hover:text-brand-hover transition-colors duration-300">Depoimentos</a>
+          <a href="#faq" class="text-themed-secondary hover:text-brand-hover transition-colors duration-300">FAQ</a>
+          <a href="#contact" class="bg-orange-600 text-white px-4 py-2 rounded-lg hover:bg-orange-500 transition-colors duration-300 shadow-lg hover:shadow-orange-500/30 transform hover:-translate-y-0.5">Fale Conosco</a>
+        </nav>
+        <button class="lg:hidden text-themed-secondary" id="mobile-menu-button" aria-label="Abrir menu">
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+      <div id="mobile-menu" class="hidden lg:hidden bg-blur-themed backdrop-blur-md px-6 pb-4">
+        <a href="#services" class="block py-2 text-themed-secondary hover:text-brand-hover">Serviços</a>
+        <a href="#ai-agents" class="block py-2 text-themed-secondary hover:text-brand-hover">Agentes de IA</a>
+        <a href="#automations" class="block py-2 text-themed-secondary hover:text-brand-hover">Automações</a>
+        <a href="#methodology" class="block py-2 text-themed-secondary hover:text-brand-hover">Metodologia</a>
+        <a href="#testimonials" class="block py-2 text-themed-secondary hover:text-brand-hover">Depoimentos</a>
+        <a href="#faq" class="block py-2 text-themed-secondary hover:text-brand-hover">FAQ</a>
+        <a href="#contact" class="block mt-2 bg-orange-600 text-white text-center px-4 py-2 rounded-lg hover:bg-orange-500">Fale Conosco</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="pt-36 pb-24 section-background">
+        <div class="floating-particles-container"><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div></div>
+        <div class="container mx-auto px-6 text-center relative z-10">
+          <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-4 animate-on-scroll">
+            Automatize seu Negócio com <br class="hidden md:block" />
+            <span class="text-gradient">Inteligência Artificial</span>
+          </h1>
+          <p class="text-lg md:text-xl text-themed-secondary max-w-3xl mx-auto mb-8 h-14 animate-on-scroll" style="transition-delay: 150ms">
+            <span id="typed-subtitle"></span>
+          </p>
+          <a href="#contact" class="bg-orange-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-orange-500 transition-all duration-300 inline-block shadow-lg hover:shadow-orange-500/40 transform hover:-translate-y-1 animate-on-scroll" style="transition-delay: 300ms">
+            Quero otimizar minha empresa
+          </a>
+        </div>
+      </section>
+
+      <section id="services" class="py-20 section-background">
+        <div class="container mx-auto px-6 relative z-10">
+          <div class="text-center mb-12 animate-on-scroll"><h2 class="text-3xl md:text-4xl font-bold text-themed">Nossas Soluções de IA</h2><p class="text-lg text-themed-secondary mt-2 max-w-2xl mx-auto">Oferecemos soluções personalizadas para automatizar e escalar suas operações.</p></div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-card-themed backdrop-blur-sm p-8 rounded-xl border border-themed-strong shadow-lg hover:shadow-orange-500/10 transition-shadow duration-300 transform hover:-translate-y-1 animate-on-scroll">
+              <div class="bg-orange-900/50 text-orange-400 rounded-full w-12 h-12 flex items-center justify-center mb-4"><i data-lucide="bot"></i></div>
+              <h3 class="text-xl font-bold text-themed mb-2">Chatbots Inteligentes</h3><p class="text-themed-secondary">Automação de atendimento, vendas e suporte com assistentes virtuais que entendem e respondem em linguagem natural.</p>
+            </div>
+            <div class="bg-card-themed backdrop-blur-sm p-8 rounded-xl border border-themed-strong shadow-lg hover:shadow-orange-500/10 transition-shadow duration-300 transform hover:-translate-y-1 animate-on-scroll" style="transition-delay: 150ms">
+              <div class="bg-orange-900/50 text-orange-400 rounded-full w-12 h-12 flex items-center justify-center mb-4"><i data-lucide="bar-chart-big"></i></div>
+              <h3 class="text-xl font-bold text-themed mb-2">Automação de Processos</h3><p class="text-themed-secondary">Otimize tarefas repetitivas, desde a gestão de documentos até a coordenação de agendas e propostas comerciais.</p>
+            </div>
+            <div class="bg-card-themed backdrop-blur-sm p-8 rounded-xl border border-themed-strong shadow-lg hover:shadow-orange-500/10 transition-shadow duration-300 transform hover:-translate-y-1 animate-on-scroll" style="transition-delay: 300ms">
+              <div class="bg-orange-900/50 text-orange-400 rounded-full w-12 h-12 flex items-center justify-center mb-4"><i data-lucide="lightbulb"></i></div>
+              <h3 class="text-xl font-bold text-themed mb-2">Consultoria Estratégica</h3><p class="text-themed-secondary">Analisamos seu negócio para identificar as melhores oportunidades de automação e traçar um plano de implementação eficaz.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="ai-agents" class="py-20 section-background">
+        <div class="container mx-auto px-6 relative z-10">
+          <div class="text-center mb-12 animate-on-scroll"><h2 class="text-3xl md:text-4xl font-bold text-themed">Conheça Nossos <span class="text-gradient">Agentes de IA</span></h2><p class="text-lg text-themed-secondary mt-2 max-w-2xl mx-auto">Especialistas virtuais prontos para integrar e potencializar sua equipe.</p></div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="bg-card-themed backdrop-blur-sm rounded-xl border border-themed-strong shadow-lg hover:shadow-orange-500/10 transition-all duration-300 transform hover:-translate-y-1 animate-on-scroll overflow-hidden">
+              <img src="https://i.postimg.cc/FFgjypQ0/robot-gem.png" alt="Agente de IA gerenciando atendimento ao cliente." class="w-full h-48 object-cover">
+              <div class="p-6"><h3 class="text-xl font-bold text-themed mb-2">Agente de Atendimento</h3><p class="text-themed-secondary">Resolve dúvidas, abre chamados e oferece suporte 24/7 aos seus clientes.</p></div>
+            </div>
+            <div class="bg-card-themed backdrop-blur-sm rounded-xl border border-themed-strong shadow-lg hover:shadow-orange-500/10 transition-all duration-300 transform hover:-translate-y-1 animate-on-scroll overflow-hidden" style="transition-delay: 150ms">
+              <img src="https://i.postimg.cc/Y03Ytrxd/robot-lea.png" alt="Agente de IA analisando um funil de vendas." class="w-full h-48 object-cover">
+              <div class="p-6"><h3 class="text-xl font-bold text-themed mb-2">Agente de Vendas (SDR)</h3><p class="text-themed-secondary">Qualifica leads, agenda reuniões e nutre prospects automaticamente.</p></div>
+            </div>
+            <div class="bg-card-themed backdrop-blur-sm rounded-xl border border-themed-strong shadow-lg hover:shadow-orange-500/10 transition-all duration-300 transform hover:-translate-y-1 animate-on-scroll overflow-hidden" style="transition-delay: 300ms">
+              <img src="https://i.postimg.cc/YSG6QwpS/robot-age.png" alt="Agente de IA gerenciando currículos e entrevistas de RH." class="w-full h-48 object-cover">
+              <div class="p-6"><h3 class="text-xl font-bold text-themed mb-2">Agente de RH</h3><p class="text-themed-secondary">Faz a triagem de currículos, agenda entrevistas e responde dúvidas de candidatos.</p></div>
+            </div>
+            <div class="bg-card-themed backdrop-blur-sm rounded-xl border border-themed-strong shadow-lg hover:shadow-orange-500/10 transition-all duration-300 transform hover:-translate-y-1 animate-on-scroll overflow-hidden" style="transition-delay: 450ms">
+              <img src="https://i.postimg.cc/prNqmLzx/robot-con.png" alt="Agente de IA analisando gráficos financeiros." class="w-full h-48 object-cover">
+              <div class="p-6"><h3 class="text-xl font-bold text-themed mb-2">Agente Financeiro</h3><p class="text-themed-secondary">Auxilia na gestão de contas a pagar/receber e na geração de relatórios.</p></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="automations" class="py-20 section-background">
+        <div class="container mx-auto px-6 relative z-10">
+          <div class="text-center mb-12 animate-on-scroll"><h2 class="text-3xl md:text-4xl font-bold text-themed">Tipos de Automações que Criamos</h2><p class="text-lg text-themed-secondary mt-2 max-w-2xl mx-auto">Desde tarefas simples até fluxos de trabalho complexos, nós otimizamos tudo.</p></div>
+          <div class="space-y-12">
+            <div class="flex flex-col md:flex-row items-center gap-8 animate-on-scroll">
+              <div class="w-full md:w-1/2"><h3 class="text-2xl font-bold text-brand-hover mb-3">Automação de Marketing</h3><p class="text-themed-secondary">Nutrição automática de leads via e-mail, segmentação de público, postagem em redes sociais e análise de performance de campanhas. Libere sua equipe de marketing para focar na estratégia.</p></div>
+              <div class="w-full md:w-1/2"><img src="https://i.postimg.cc/Jzr85n34/Facebook.png" alt="Painel de controle para automação de marketing." class="rounded-lg shadow-xl w-full h-full object-cover"></div>
+            </div>
+            <div class="flex flex-col md:flex-row-reverse items-center gap-8 animate-on-scroll">
+              <div class="w-full md:w-1/2"><h3 class="text-2xl font-bold text-brand-hover mb-3">Automação de Operações</h3><p class="text-themed-secondary">Geração automática de relatórios diários, entrada de dados em sistemas (ERP, CRM), gestão de inventário e otimização de rotas logísticas. Eficiência e precisão para o core do seu negócio.</p></div>
+              <div class="w-full md:w-1/2"><img src="https://i.postimg.cc/rFc2qmPC/robot-mark1-Editado.png" alt="Painel de controle para automação de operações." class="rounded-lg shadow-xl w-full border-2 border-themed-strong"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <section id="methodology" class="py-20 section-background">
+        <div class="container mx-auto px-6 relative z-10">
+          <div class="text-center mb-16 animate-on-scroll"><h2 class="text-3xl md:text-4xl font-bold text-themed">Nossa Metodologia de Trabalho</h2><p class="text-lg text-themed-secondary mt-2 max-w-2xl mx-auto">Um processo claro e transparente para garantir o sucesso do seu projeto.</p></div>
+          <div class="relative">
+            <div class="hidden md:block absolute top-8 left-0 w-full h-0.5 border-themed-strong"></div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-16 text-center">
+              <div class="relative animate-on-scroll"><div class="mx-auto w-16 h-16 bg-card-themed backdrop-blur-sm border-2 border-orange-500 text-orange-400 rounded-full flex items-center justify-center text-2xl font-bold mb-4">1</div><h3 class="text-xl font-bold text-themed mb-2">Planejamento</h3><p class="text-themed-secondary">Analisamos suas necessidades, definimos objetivos claros e criamos uma estratégia de automação sob medida.</p></div>
+              <div class="relative animate-on-scroll" style="transition-delay: 150ms"><div class="mx-auto w-16 h-16 bg-card-themed backdrop-blur-sm border-2 border-orange-500 text-orange-400 rounded-full flex items-center justify-center text-2xl font-bold mb-4">2</div><h3 class="text-xl font-bold text-themed mb-2">Implementação</h3><p class="text-themed-secondary">Desenvolvemos e integramos as soluções de IA, garantindo uma transição suave e sem interrupções.</p></div>
+              <div class="relative animate-on-scroll" style="transition-delay: 300ms"><div class="mx-auto w-16 h-16 bg-card-themed backdrop-blur-sm border-2 border-orange-500 text-orange-400 rounded-full flex items-center justify-center text-2xl font-bold mb-4">3</div><h3 class="text-xl font-bold text-themed mb-2">Otimização</h3><p class="text-themed-secondary">Acompanhamos os resultados e realizamos melhorias contínuas para maximizar a eficiência e o seu ROI.</p></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="testimonials" class="py-20 section-background">
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-12 animate-on-scroll"><h2 class="text-3xl md:text-4xl font-bold text-themed">O que Nossos Clientes Dizem</h2><p class="text-lg text-themed-secondary mt-2 max-w-2xl mx-auto">A satisfação de quem já confia em nosso trabalho.</p></div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-card-themed backdrop-blur-sm p-8 rounded-xl border border-themed-strong animate-on-scroll">
+                    <p class="text-themed-secondary italic mb-4">"A Óptima IA transformou nosso atendimento. O chatbot resolve 80% das solicitações sem intervenção humana. Incrível!"</p>
+                    <div class="flex items-center mt-auto">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" class="w-12 h-12 rounded-full mr-4 border-2 border-orange-500/50" alt="Foto da cliente Joana Silva">
+                        <div><p class="font-bold text-themed">Joana Silva</p><p class="text-sm text-gray-500">CEO, InovaTech</p></div>
+                    </div>
+                </div>
+                <div class="bg-card-themed backdrop-blur-sm p-8 rounded-xl border border-themed-strong animate-on-scroll" style="transition-delay: 150ms;">
+                    <p class="text-themed-secondary italic mb-4">"O processo de automação de propostas economizou dezenas de horas do nosso time comercial. Recomendo fortemente."</p>
+                    <div class="flex items-center mt-auto">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-12 h-12 rounded-full mr-4 border-2 border-orange-500/50" alt="Foto do cliente Marcos Andrade">
+                        <div><p class="font-bold text-themed">Marcos Andrade</p><p class="text-sm text-gray-500">Diretor de Vendas, Vende+</p></div>
+                    </div>
+                </div>
+                <div class="bg-card-themed backdrop-blur-sm p-8 rounded-xl border border-themed-strong animate-on-scroll" style="transition-delay: 300ms;">
+                    <p class="text-themed-secondary italic mb-4">"A consultoria foi um divisor de águas. Identificamos gargalos que nem sabíamos que existiam. O ROI foi imediato."</p>
+                    <div class="flex items-center mt-auto">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" class="w-12 h-12 rounded-full mr-4 border-2 border-orange-500/50" alt="Foto da cliente Carla Souza">
+                        <div><p class="font-bold text-themed">Carla Souza</p><p class="text-sm text-gray-500">Gerente de Operações, LogFácil</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </section>
+
+      <section id="faq" class="py-20 section-background">
+          <div class="container mx-auto px-6 max-w-3xl relative z-10">
+              <div class="bg-card-themed backdrop-blur-sm border border-themed-strong rounded-2xl p-8 md:p-12 animate-on-scroll">
+                  <div class="text-center mb-8"><h2 class="text-3xl md:text-4xl font-bold text-themed">Perguntas Frequentes</h2><p class="text-lg text-themed-secondary mt-2">Tudo o que você precisa saber.</p></div>
+                  <div class="space-y-4">
+                      <div class="faq-item"><button class="faq-question w-full flex justify-between items-center text-left p-4 bg-gray-800/50 rounded-lg border border-themed-strong hover:border-orange-500 transition-colors"><span class="text-lg font-semibold text-themed">Meu negócio é pequeno. A IA é para mim?</span><div class="faq-icon-container relative w-6 h-6 flex items-center justify-center"><svg class="icon-plus w-6 h-6 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg><svg class="icon-minus w-6 h-6 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4"></path></svg></div></button><div class="faq-answer px-4 pb-4 text-themed-secondary"><p>Com certeza! A automação com IA é altamente escalável e pode beneficiar empresas de todos os portes, otimizando tarefas, reduzindo custos operacionais e liberando sua equipe para focar em atividades estratégicas.</p></div></div>
+                      <div class="faq-item"><button class="faq-question w-full flex justify-between items-center text-left p-4 bg-gray-800/50 rounded-lg border border-themed-strong hover:border-orange-500 transition-colors"><span class="text-lg font-semibold text-themed">Quanto tempo leva para implementar uma solução?</span><div class="faq-icon-container relative w-6 h-6 flex items-center justify-center"><svg class="icon-plus w-6 h-6 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg><svg class="icon-minus w-6 h-6 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4"></path></svg></div></button><div class="faq-answer px-4 pb-4 text-themed-secondary"><p>O tempo de implementação varia com a complexidade. Um chatbot simples pode levar poucas semanas, enquanto uma automação de processos mais complexa pode levar alguns meses. Nosso diagnóstico inicial sempre inclui uma estimativa de prazo detalhada.</p></div></div>
+                      <div class="faq-item"><button class="faq-question w-full flex justify-between items-center text-left p-4 bg-gray-800/50 rounded-lg border border-themed-strong hover:border-orange-500 transition-colors"><span class="text-lg font-semibold text-themed">Preciso de conhecimento técnico para usar as ferramentas?</span><div class="faq-icon-container relative w-6 h-6 flex items-center justify-center"><svg class="icon-plus w-6 h-6 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg><svg class="icon-minus w-6 h-6 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4"></path></svg></div></button><div class="faq-answer px-4 pb-4 text-themed-secondary"><p>Não. Nós cuidamos de toda a parte técnica. Entregamos a solução pronta para uso e oferecemos todo o treinamento necessário para que sua equipe possa gerenciar as ferramentas de forma simples e intuitiva.</p></div></div>
+                  </div>
+              </div>
+          </div>
+      </section>
+
+      <section id="contact" class="py-20 section-background">
+          <div class="container mx-auto px-6 relative z-10">
+              <div class="bg-card-themed backdrop-blur-sm rounded-xl shadow-2xl p-8 md:p-12 lg:p-16 border border-themed-strong animate-on-scroll">
+                  <div class="text-center mb-8"><h2 class="text-3xl md:text-4xl font-bold text-themed">Vamos conversar?</h2><p class="text-lg text-themed-secondary mt-2">Preencha o formulário e vamos descobrir como a IA pode transformar seu negócio.</p></div>
+                  <form id="contact-form" class="max-w-xl mx-auto">
+                      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                          <div><label for="contact-name" class="sr-only">Seu nome</label><input id="contact-name" type="text" placeholder="Seu nome" class="w-full p-3 rounded-lg bg-gray-800 border border-themed-strong text-themed focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all"></div>
+                          <div><label for="contact-email" class="sr-only">Seu e-mail</label><input id="contact-email" type="email" placeholder="Seu e-mail" class="w-full p-3 rounded-lg bg-gray-800 border border-themed-strong text-themed focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all"></div>
+                      </div>
+                      <div><label for="contact-message" class="sr-only">Sua mensagem</label><textarea id="contact-message" placeholder="Sua mensagem" rows="5" class="w-full p-3 rounded-lg bg-gray-800 border border-themed-strong text-themed focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all mb-6"></textarea></div>
+                      <div class="text-center"><button type="submit" class="bg-orange-600 text-white px-8 py-3 rounded-lg font-semibold text-lg hover:bg-orange-500 transition-all duration-300 shadow-lg hover:shadow-orange-500/40 transform hover:-translate-y-1">Enviar Mensagem</button></div>
+                  </form>
+              </div>
+          </div>
+      </section>
+    </main>
+
+    <footer class="bg-black text-white border-t border-themed-strong">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-center items-center justify-center">
+                <div class="flex flex-col items-center">
+                    <div class="flex items-center mb-2">
+                        <img src="https://i.postimg.cc/130GgWzn/f63e2185-1e47-48c9-84f9-e3373f847e29.png" alt="Ícone da Óptima IA" class="w-10 h-10 mr-2">
+                        <h3 class="text-xl font-bold"><span class="text-brand">Óptima</span> IA</h3>
+                    </div>
+                    <p class="text-themed-secondary">Automatizando o futuro dos negócios.</p>
+                </div>
+                <div class="flex flex-col items-center"><h4 class="font-semibold mb-3 text-themed">Contato</h4><p class="text-themed-secondary">contato@optimati.com.br</p><p class="text-themed-secondary">(61) 99687-2864</p></div>
+                <div class="flex flex-col items-center"><h4 class="font-semibold mb-3 text-themed">Siga-nos</h4><div class="flex space-x-4 justify-center"><a href="#" class="text-themed-secondary hover:text-brand-hover transition-colors"><i data-lucide="linkedin"></i></a><a href="#" class="text-themed-secondary hover:text-brand-hover transition-colors"><i data-lucide="instagram"></i></a><a href="#" class="text-themed-secondary hover:text-brand-hover transition-colors"><i data-lucide="twitter"></i></a></div></div>
+            </div>
+            <div class="border-t border-themed-strong mt-8 pt-6 text-center text-gray-500"><p>&copy; 2025 Óptima IA. Todos os direitos reservados.</p></div>
+        </div>
+    </footer>
+    
+    <button id="theme-toggle" class="floating-btn" aria-label="Alternar para modo claro">
+        <i data-lucide="sun"></i>
+    </button>
+    <button id="back-to-top-btn" class="floating-btn bg-orange-600 text-white hover:bg-orange-500">
+        <i data-lucide="arrow-up"></i>
+    </button>
+    
+    <script src="scripts.js" defer></script>
+  </body>
+</html>
