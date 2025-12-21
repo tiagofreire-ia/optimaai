@@ -1316,3 +1316,119 @@ body.light-mode .testimonial-quote-icon {
     transform: translateY(-4px);
   }
 }
+
+/* ==========================================================================
+   12. Botão WhatsApp Flutuante
+   ========================================================================== */
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow:
+    0 4px 12px rgba(37, 211, 102, 0.4),
+    0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+  animation: whatsapp-pulse 2s ease-in-out infinite;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1) translateY(-2px);
+  box-shadow:
+    0 8px 24px rgba(37, 211, 102, 0.5),
+    0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.whatsapp-float:active {
+  transform: scale(0.95);
+}
+
+/* Tooltip */
+.whatsapp-tooltip {
+  position: absolute;
+  right: 75px;
+  background: rgba(0, 0, 0, 0.85);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(10px);
+  transition: all 0.3s ease;
+  pointer-events: none;
+  font-weight: 500;
+}
+
+.whatsapp-tooltip::after {
+  content: '';
+  position: absolute;
+  right: -6px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 6px solid rgba(0, 0, 0, 0.85);
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+}
+
+.whatsapp-float:hover .whatsapp-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+}
+
+/* Animação de Pulso */
+@keyframes whatsapp-pulse {
+
+  0%,
+  100% {
+    box-shadow:
+      0 4px 12px rgba(37, 211, 102, 0.4),
+      0 2px 4px rgba(0, 0, 0, 0.1),
+      0 0 0 0 rgba(37, 211, 102, 0.7);
+  }
+
+  50% {
+    box-shadow:
+      0 4px 12px rgba(37, 211, 102, 0.4),
+      0 2px 4px rgba(0, 0, 0, 0.1),
+      0 0 0 15px rgba(37, 211, 102, 0);
+  }
+}
+
+/* Light Mode */
+body.light-mode .whatsapp-tooltip {
+  background: rgba(0, 0, 0, 0.9);
+}
+
+body.light-mode .whatsapp-tooltip::after {
+  border-left-color: rgba(0, 0, 0, 0.9);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .whatsapp-float {
+    width: 56px;
+    height: 56px;
+    bottom: 20px;
+    right: 20px;
+  }
+
+  .whatsapp-tooltip {
+    display: none;
+    /* Esconder tooltip no mobile */
+  }
+}
