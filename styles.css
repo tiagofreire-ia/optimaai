@@ -205,6 +205,11 @@ body.light-mode footer {
   background-color: #f3f4f6;
 }
 
+/* Ícones dos cards de serviços no light mode */
+body.light-mode .bg-orange-900\/50 {
+  background-color: rgba(255, 237, 213, 0.9) !important;
+}
+
 .section-background {
   position: relative;
   overflow: hidden;
@@ -1003,4 +1008,256 @@ body.light-mode .particle {
 .cookie-btn-accept:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(249, 115, 22, 0.4);
+}
+
+/* ==========================================================================
+   10. Cards de Diferenciais - Efeitos Glassmorphism + Icon Glow
+   ========================================================================== */
+
+/* Base do Card - Layout horizontal mantido */
+.diff-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.25rem;
+  border-radius: 0.75rem;
+
+  /* Glassmorphism */
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+
+  /* Transições suaves */
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Hover Lift - sobe 8px */
+.diff-card:hover {
+  transform: translateY(-8px);
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.15),
+    0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Container do Ícone */
+.diff-card-icon {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+/* Hover no ícone - leve flutuação */
+.diff-card:hover .diff-card-icon {
+  transform: scale(1.1);
+}
+
+/* Glow Effect - elemento de brilho */
+.diff-icon-glow {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  opacity: 0;
+  filter: blur(12px);
+  transition: opacity 0.3s ease;
+}
+
+/* Ativar glow no hover */
+.diff-card:hover .diff-icon-glow {
+  opacity: 0.5;
+  animation: diff-glow-pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes diff-glow-pulse {
+
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.7;
+    transform: scale(1.15);
+  }
+}
+
+/* ===== CORES POR CARD ===== */
+
+/* Verde */
+.diff-card-green .diff-card-icon {
+  background: rgba(34, 197, 94, 0.15);
+  color: #22c55e;
+}
+
+.diff-card-green .diff-icon-glow {
+  background: #22c55e;
+}
+
+.diff-card-green:hover {
+  border-color: rgba(34, 197, 94, 0.3);
+}
+
+/* Azul */
+.diff-card-blue .diff-card-icon {
+  background: rgba(59, 130, 246, 0.15);
+  color: #3b82f6;
+}
+
+.diff-card-blue .diff-icon-glow {
+  background: #3b82f6;
+}
+
+.diff-card-blue:hover {
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+/* Roxo */
+.diff-card-purple .diff-card-icon {
+  background: rgba(168, 85, 247, 0.15);
+  color: #a855f7;
+}
+
+.diff-card-purple .diff-icon-glow {
+  background: #a855f7;
+}
+
+.diff-card-purple:hover {
+  border-color: rgba(168, 85, 247, 0.3);
+}
+
+/* Laranja */
+.diff-card-orange .diff-card-icon {
+  background: rgba(249, 115, 22, 0.15);
+  color: #f97316;
+}
+
+.diff-card-orange .diff-icon-glow {
+  background: #f97316;
+}
+
+.diff-card-orange:hover {
+  border-color: rgba(249, 115, 22, 0.3);
+}
+
+/* ===== LIGHT MODE ===== */
+body.light-mode .diff-card {
+  background: rgba(255, 255, 255, 0.6);
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+body.light-mode .diff-card:hover {
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.08),
+    0 8px 16px rgba(0, 0, 0, 0.05);
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 768px) {
+  .diff-card {
+    padding: 1rem;
+  }
+
+  .diff-card-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  /* Reduzir lift no mobile para evitar problemas de touch */
+  .diff-card:hover {
+    transform: translateY(-4px);
+  }
+}
+
+/* ==========================================================================
+   11. Cards de Depoimentos - Badges e Aspas Decorativas
+   ========================================================================== */
+
+/* Card Base */
+.testimonial-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 2rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.testimonial-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.15),
+    0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Badge de Resultado */
+.testimonial-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.375rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border: 1px solid;
+  width: fit-content;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover .testimonial-badge {
+  transform: scale(1.05);
+}
+
+/* Ícone de Aspas */
+.testimonial-quote-icon {
+  color: rgba(249, 115, 22, 0.15);
+  margin-bottom: 0.75rem;
+  transition: color 0.3s ease;
+}
+
+.testimonial-card:hover .testimonial-quote-icon {
+  color: rgba(249, 115, 22, 0.3);
+}
+
+/* Light Mode */
+body.light-mode .testimonial-card {
+  background: rgba(255, 255, 255, 0.6);
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+body.light-mode .testimonial-card:hover {
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.08),
+    0 8px 16px rgba(0, 0, 0, 0.05);
+}
+
+body.light-mode .testimonial-quote-icon {
+  color: rgba(249, 115, 22, 0.25);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .testimonial-card {
+    padding: 1.5rem;
+  }
+
+  .testimonial-card:hover {
+    transform: translateY(-4px);
+  }
 }

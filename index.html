@@ -43,6 +43,8 @@
       </a>
 
       <nav class="hidden lg:flex items-center space-x-6">
+        <a href="#about" class="text-themed-secondary hover:text-brand-hover transition-colors duration-300">Quem
+          Somos</a>
         <a href="#services"
           class="text-themed-secondary hover:text-brand-hover transition-colors duration-300">Serviços</a>
         <a href="#solutions"
@@ -64,6 +66,7 @@
     </div>
     <!-- Menu Mobile Dropdown -->
     <div id="mobile-menu" class="mobile-dropdown lg:hidden">
+      <a href="#about" class="mobile-dropdown-link">Quem Somos</a>
       <a href="#services" class="mobile-dropdown-link">Serviços</a>
       <a href="#solutions" class="mobile-dropdown-link">Soluções</a>
       <a href="#automations" class="mobile-dropdown-link">Automações</a>
@@ -122,6 +125,105 @@
             <div class="stat-number"><span class="counter" data-target="3">0</span>x</div>
             <div class="stat-label">ROI Médio</div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção Quem Somos -->
+    <section id="about" class="py-20 section-background">
+      <div class="container mx-auto px-6 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+          <!-- Lado Esquerdo - Texto -->
+          <div class="animate-on-scroll">
+            <span class="text-orange-400 font-semibold text-sm uppercase tracking-wider mb-2 block">Sobre Nós</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-themed mb-6">
+              Somos a <span class="text-gradient">Óptima Digital</span>
+            </h2>
+            <p class="text-themed-secondary text-lg mb-6 leading-relaxed">
+              Nascemos com um propósito claro: <strong class="text-themed">acelerar o crescimento de empresas</strong>
+              através do marketing digital e automação inteligente. Combinamos estratégia, criatividade e tecnologia
+              para entregar resultados que realmente importam.
+            </p>
+            <p class="text-themed-secondary mb-8 leading-relaxed">
+              Nossa equipe é formada por especialistas apaixonados por dados, design e performance. Acreditamos que cada
+              negócio é único e merece uma abordagem personalizada para alcançar seu máximo potencial no digital.
+            </p>
+
+            <!-- Mini Stats inline -->
+            <div class="flex flex-wrap gap-8 mb-8">
+              <div>
+                <div class="text-3xl font-bold text-brand">2+</div>
+                <div class="text-sm text-themed-secondary">Anos de Experiência</div>
+              </div>
+              <div>
+                <div class="text-3xl font-bold text-brand">100%</div>
+                <div class="text-sm text-themed-secondary">Foco em Resultados</div>
+              </div>
+              <div>
+                <div class="text-3xl font-bold text-brand">24/7</div>
+                <div class="text-sm text-themed-secondary">Suporte Dedicado</div>
+              </div>
+            </div>
+
+            <a href="#contact"
+              class="inline-flex items-center gap-2 text-orange-400 hover:text-orange-300 font-semibold transition-colors group">
+              Fale com nossa equipe
+              <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+            </a>
+          </div>
+
+          <!-- Lado Direito - Valores -->
+          <div class="animate-on-scroll" style="transition-delay: 200ms">
+            <div class="bg-card-themed backdrop-blur-sm rounded-2xl border border-themed-strong p-8">
+              <h3 class="text-xl font-bold text-themed mb-6 text-center">Nossos Valores</h3>
+
+              <div class="space-y-6">
+                <!-- Valor 1 -->
+                <div
+                  class="flex items-start gap-4 p-4 rounded-xl bg-gray-800/30 hover:bg-gray-800/50 transition-all duration-300 group">
+                  <div
+                    class="w-12 h-12 bg-orange-500/15 text-orange-400 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                    <i data-lucide="target" class="w-6 h-6"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-semibold text-themed mb-1">Foco em Resultados</h4>
+                    <p class="text-sm text-themed-secondary">Cada ação que tomamos é orientada por dados e métricas
+                      reais. Seu sucesso é nossa prioridade.</p>
+                  </div>
+                </div>
+
+                <!-- Valor 2 -->
+                <div
+                  class="flex items-start gap-4 p-4 rounded-xl bg-gray-800/30 hover:bg-gray-800/50 transition-all duration-300 group">
+                  <div
+                    class="w-12 h-12 bg-blue-500/15 text-blue-400 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                    <i data-lucide="handshake" class="w-6 h-6"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-semibold text-themed mb-1">Transparência Total</h4>
+                    <p class="text-sm text-themed-secondary">Relatórios claros, comunicação aberta e honestidade em cada
+                      etapa do processo.</p>
+                  </div>
+                </div>
+
+                <!-- Valor 3 -->
+                <div
+                  class="flex items-start gap-4 p-4 rounded-xl bg-gray-800/30 hover:bg-gray-800/50 transition-all duration-300 group">
+                  <div
+                    class="w-12 h-12 bg-purple-500/15 text-purple-400 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                    <i data-lucide="sparkles" class="w-6 h-6"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-semibold text-themed mb-1">Inovação Constante</h4>
+                    <p class="text-sm text-themed-secondary">Estamos sempre atualizados com as últimas tendências e
+                      tecnologias do mercado.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
@@ -282,37 +384,168 @@
         <div class="text-center mb-16 animate-on-scroll">
           <h2 class="text-3xl md:text-4xl font-bold text-themed">Nossa <span class="text-gradient">Metodologia</span> de
             Trabalho</h2>
-          <p class="text-lg text-themed-secondary mt-2 max-w-2xl mx-auto">Um processo claro e transparente para garantir
-            o sucesso do seu projeto.</p>
+          <p class="text-lg text-themed-secondary mt-2 max-w-2xl mx-auto">Um processo estruturado em 5 etapas para
+            garantir
+            resultados reais e mensuráveis para o seu negócio.</p>
         </div>
-        <div class="relative">
-          <div class="hidden md:block absolute top-8 left-0 w-full h-0.5 border-themed-strong"></div>
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-16 text-center">
-            <div class="relative animate-on-scroll">
+
+        <!-- Timeline visual -->
+        <div class="relative mb-16">
+          <!-- Linha conectora da timeline -->
+          <div
+            class="hidden lg:block absolute top-12 left-[10%] right-[10%] h-1 bg-gradient-to-r from-orange-500/20 via-orange-500 to-orange-500/20 rounded-full">
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 text-center">
+            <!-- Etapa 1: Diagnóstico -->
+            <div class="relative animate-on-scroll methodology-step group">
               <div
-                class="mx-auto w-16 h-16 bg-card-themed backdrop-blur-sm border-2 border-orange-500 text-orange-400 rounded-full flex items-center justify-center text-2xl font-bold mb-4">
-                1</div>
-              <h3 class="text-xl font-bold text-themed mb-2">Planejamento</h3>
-              <p class="text-themed-secondary">Analisamos suas necessidades, definimos objetivos claros e criamos uma
-                estratégia de automação sob medida.</p>
+                class="mx-auto w-20 h-20 bg-card-themed backdrop-blur-sm border-2 border-orange-500 text-orange-400 rounded-full flex items-center justify-center mb-4 group-hover:bg-orange-500 group-hover:text-white transition-all duration-300 shadow-lg group-hover:shadow-orange-500/40 relative z-10">
+                <i data-lucide="clipboard-list" class="w-8 h-8"></i>
+              </div>
+              <div
+                class="bg-card-themed backdrop-blur-sm p-6 rounded-xl border border-themed-strong group-hover:border-orange-500/50 transition-all duration-300 min-h-[200px]">
+                <span class="text-orange-400 text-sm font-semibold">Etapa 1</span>
+                <h3 class="text-xl font-bold text-themed mb-2 mt-1">Diagnóstico</h3>
+                <p class="text-themed-secondary text-sm mb-3">Análise profunda do seu negócio, concorrência e
+                  posicionamento atual no mercado digital.</p>
+                <span class="text-xs text-orange-400/70 font-medium">⏱️ ~1 semana</span>
+              </div>
             </div>
-            <div class="relative animate-on-scroll" style="transition-delay: 150ms">
+
+            <!-- Etapa 2: Estratégia -->
+            <div class="relative animate-on-scroll methodology-step group" style="transition-delay: 100ms">
               <div
-                class="mx-auto w-16 h-16 bg-card-themed backdrop-blur-sm border-2 border-orange-500 text-orange-400 rounded-full flex items-center justify-center text-2xl font-bold mb-4">
-                2</div>
-              <h3 class="text-xl font-bold text-themed mb-2">Implementação</h3>
-              <p class="text-themed-secondary">Desenvolvemos e integramos as soluções de IA, garantindo uma transição
-                suave e sem interrupções.</p>
+                class="mx-auto w-20 h-20 bg-card-themed backdrop-blur-sm border-2 border-orange-500 text-orange-400 rounded-full flex items-center justify-center mb-4 group-hover:bg-orange-500 group-hover:text-white transition-all duration-300 shadow-lg group-hover:shadow-orange-500/40 relative z-10">
+                <i data-lucide="target" class="w-8 h-8"></i>
+              </div>
+              <div
+                class="bg-card-themed backdrop-blur-sm p-6 rounded-xl border border-themed-strong group-hover:border-orange-500/50 transition-all duration-300 min-h-[200px]">
+                <span class="text-orange-400 text-sm font-semibold">Etapa 2</span>
+                <h3 class="text-xl font-bold text-themed mb-2 mt-1">Estratégia</h3>
+                <p class="text-themed-secondary text-sm mb-3">Definição de metas SMART, público-alvo ideal e canais
+                  prioritários para o seu crescimento.</p>
+                <span class="text-xs text-orange-400/70 font-medium">⏱️ 1-2 semanas</span>
+              </div>
             </div>
-            <div class="relative animate-on-scroll" style="transition-delay: 300ms">
+
+            <!-- Etapa 3: Execução -->
+            <div class="relative animate-on-scroll methodology-step group" style="transition-delay: 200ms">
               <div
-                class="mx-auto w-16 h-16 bg-card-themed backdrop-blur-sm border-2 border-orange-500 text-orange-400 rounded-full flex items-center justify-center text-2xl font-bold mb-4">
-                3</div>
-              <h3 class="text-xl font-bold text-themed mb-2">Otimização</h3>
-              <p class="text-themed-secondary">Acompanhamos os resultados e realizamos melhorias contínuas para
-                maximizar a eficiência e o seu ROI.</p>
+                class="mx-auto w-20 h-20 bg-card-themed backdrop-blur-sm border-2 border-orange-500 text-orange-400 rounded-full flex items-center justify-center mb-4 group-hover:bg-orange-500 group-hover:text-white transition-all duration-300 shadow-lg group-hover:shadow-orange-500/40 relative z-10">
+                <i data-lucide="zap" class="w-8 h-8"></i>
+              </div>
+              <div
+                class="bg-card-themed backdrop-blur-sm p-6 rounded-xl border border-themed-strong group-hover:border-orange-500/50 transition-all duration-300 min-h-[200px]">
+                <span class="text-orange-400 text-sm font-semibold">Etapa 3</span>
+                <h3 class="text-xl font-bold text-themed mb-2 mt-1">Execução</h3>
+                <p class="text-themed-secondary text-sm mb-3">Implementação das campanhas, automações, conteúdos e
+                  integrações planejadas.</p>
+                <span class="text-xs text-orange-400/70 font-medium">⏱️ Contínuo</span>
+              </div>
+            </div>
+
+            <!-- Etapa 4: Monitoramento -->
+            <div class="relative animate-on-scroll methodology-step group" style="transition-delay: 300ms">
+              <div
+                class="mx-auto w-20 h-20 bg-card-themed backdrop-blur-sm border-2 border-orange-500 text-orange-400 rounded-full flex items-center justify-center mb-4 group-hover:bg-orange-500 group-hover:text-white transition-all duration-300 shadow-lg group-hover:shadow-orange-500/40 relative z-10">
+                <i data-lucide="trending-up" class="w-8 h-8"></i>
+              </div>
+              <div
+                class="bg-card-themed backdrop-blur-sm p-6 rounded-xl border border-themed-strong group-hover:border-orange-500/50 transition-all duration-300 min-h-[200px]">
+                <span class="text-orange-400 text-sm font-semibold">Etapa 4</span>
+                <h3 class="text-xl font-bold text-themed mb-2 mt-1">Monitoramento</h3>
+                <p class="text-themed-secondary text-sm mb-3">Acompanhamento em tempo real com dashboards e KPIs
+                  personalizados para seu negócio.</p>
+                <span class="text-xs text-orange-400/70 font-medium">⏱️ Tempo real</span>
+              </div>
+            </div>
+
+            <!-- Etapa 5: Otimização -->
+            <div class="relative animate-on-scroll methodology-step group" style="transition-delay: 400ms">
+              <div
+                class="mx-auto w-20 h-20 bg-card-themed backdrop-blur-sm border-2 border-orange-500 text-orange-400 rounded-full flex items-center justify-center mb-4 group-hover:bg-orange-500 group-hover:text-white transition-all duration-300 shadow-lg group-hover:shadow-orange-500/40 relative z-10">
+                <i data-lucide="settings" class="w-8 h-8"></i>
+              </div>
+              <div
+                class="bg-card-themed backdrop-blur-sm p-6 rounded-xl border border-themed-strong group-hover:border-orange-500/50 transition-all duration-300 min-h-[200px]">
+                <span class="text-orange-400 text-sm font-semibold">Etapa 5</span>
+                <h3 class="text-xl font-bold text-themed mb-2 mt-1">Otimização</h3>
+                <p class="text-themed-secondary text-sm mb-3">Testes A/B, ajustes contínuos e relatórios de performance
+                  para maximizar seu ROI.</p>
+                <span class="text-xs text-orange-400/70 font-medium">⏱️ 30-90 dias</span>
+              </div>
             </div>
           </div>
+        </div>
+
+        <!-- Diferenciais da metodologia -->
+        <div class="animate-on-scroll" style="transition-delay: 500ms">
+          <div class="bg-card-themed backdrop-blur-sm rounded-2xl border border-themed-strong p-8 md:p-10">
+            <h3 class="text-2xl font-bold text-themed text-center mb-8">Nossos <span
+                class="text-gradient">Diferenciais</span></h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+              <!-- Card 1: Relatórios Semanais -->
+              <div class="diff-card diff-card-green group">
+                <div class="diff-card-icon">
+                  <div class="diff-icon-glow"></div>
+                  <i data-lucide="file-text" class="w-5 h-5 relative z-10"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-themed mb-1">Relatórios Semanais</h4>
+                  <p class="text-sm text-themed-secondary">Transparência total com relatórios detalhados toda semana.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Card 2: Reuniões Quinzenais -->
+              <div class="diff-card diff-card-blue group">
+                <div class="diff-card-icon">
+                  <div class="diff-icon-glow"></div>
+                  <i data-lucide="users" class="w-5 h-5 relative z-10"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-themed mb-1">Reuniões Quinzenais</h4>
+                  <p class="text-sm text-themed-secondary">Alinhamento constante para garantir que estamos no caminho
+                    certo.</p>
+                </div>
+              </div>
+
+              <!-- Card 3: Dashboard em Tempo Real -->
+              <div class="diff-card diff-card-purple group">
+                <div class="diff-card-icon">
+                  <div class="diff-icon-glow"></div>
+                  <i data-lucide="bar-chart-3" class="w-5 h-5 relative z-10"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-themed mb-1">Dashboard em Tempo Real</h4>
+                  <p class="text-sm text-themed-secondary">Acesse seus dados de performance a qualquer momento.</p>
+                </div>
+              </div>
+
+              <!-- Card 4: Gestor Dedicado -->
+              <div class="diff-card diff-card-orange group">
+                <div class="diff-card-icon">
+                  <div class="diff-icon-glow"></div>
+                  <i data-lucide="headphones" class="w-5 h-5 relative z-10"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-themed mb-1">Gestor Dedicado</h4>
+                  <p class="text-sm text-themed-secondary">Um profissional exclusivo cuidando do seu projeto.</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA da metodologia -->
+        <div class="text-center mt-12 animate-on-scroll" style="transition-delay: 600ms">
+          <a href="#contact"
+            class="bg-orange-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-orange-500 transition-all duration-300 inline-block shadow-lg hover:shadow-orange-500/40 transform hover:-translate-y-1">
+            Quero conhecer a metodologia na prática
+          </a>
         </div>
       </div>
     </section>
@@ -320,56 +553,108 @@
     <section id="testimonials" class="py-20 section-background">
       <div class="container mx-auto px-6 relative z-10">
         <div class="text-center mb-12 animate-on-scroll">
-          <h2 class="text-3xl md:text-4xl font-bold text-themed">O que Nossos <span
-              class="text-gradient">Clientes</span> Dizem</h2>
-          <p class="text-lg text-themed-secondary mt-2 max-w-2xl mx-auto">A satisfação de quem já confia em nosso
-            trabalho.</p>
+          <h2 class="text-3xl md:text-4xl font-bold text-themed">Resultados que <span class="text-gradient">Falam</span>
+            por Nós</h2>
+          <p class="text-lg text-themed-secondary mt-2 max-w-2xl mx-auto">Veja o que nossos clientes conquistaram com
+            nossas estratégias.</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div
-            class="bg-card-themed backdrop-blur-sm p-8 rounded-xl border border-themed-strong shadow-lg hover:shadow-orange-500/10 transition-all duration-300 transform hover:-translate-y-1 animate-on-scroll card-glow card-shine">
-            <p class="text-themed-secondary italic mb-4">"A Óptima Digital triplicou nossos leads em apenas 3 meses. A
-              gestão de tráfego pago deles é incrível!"</p>
-            <div class="flex items-center mt-auto">
+
+          <!-- Depoimento 1 -->
+          <div class="testimonial-card animate-on-scroll group card-glow card-shine card-light-effect">
+            <!-- Badge de Resultado -->
+            <div class="testimonial-badge bg-green-500/20 text-green-400 border-green-500/30">
+              <i data-lucide="trending-up" class="w-4 h-4"></i>
+              <span>+300% Leads</span>
+            </div>
+
+            <!-- Aspas decorativas -->
+            <div class="testimonial-quote-icon">
+              <i data-lucide="quote" class="w-8 h-8"></i>
+            </div>
+
+            <!-- Citação -->
+            <p class="text-themed-secondary mb-6 leading-relaxed">
+              "A Óptima Digital triplicou nossos leads em apenas <strong class="text-themed">3 meses</strong>. A gestão
+              de tráfego pago deles é incrível!"
+            </p>
+
+            <!-- Autor -->
+            <div class="flex items-center mt-auto pt-4 border-t border-themed-strong">
               <img src="https://randomuser.me/api/portraits/women/68.jpg"
-                class="w-12 h-12 rounded-full mr-4 border-2 border-orange-500/50" alt="Foto da cliente Joana Silva"
-                loading="lazy">
+                class="w-12 h-12 rounded-full mr-4 border-2 border-green-500/50 group-hover:border-green-400 transition-colors"
+                alt="Foto da cliente Joana Silva" loading="lazy">
               <div>
                 <p class="font-bold text-themed">Joana Silva</p>
-                <p class="text-sm text-gray-500">CEO, InovaTech</p>
+                <p class="text-sm text-themed-secondary">CEO, InovaTech</p>
               </div>
             </div>
           </div>
-          <div
-            class="bg-card-themed backdrop-blur-sm p-8 rounded-xl border border-themed-strong shadow-lg hover:shadow-orange-500/10 transition-all duration-300 transform hover:-translate-y-1 animate-on-scroll card-glow card-shine"
+
+          <!-- Depoimento 2 -->
+          <div class="testimonial-card animate-on-scroll group card-glow card-shine card-light-effect"
             style="transition-delay: 150ms;">
-            <p class="text-themed-secondary italic mb-4">"Nossa presença nas redes sociais explodiu. Engajamento subiu
-              400% e as vendas acompanharam o crescimento."</p>
-            <div class="flex items-center mt-auto">
+            <!-- Badge de Resultado -->
+            <div class="testimonial-badge bg-blue-500/20 text-blue-400 border-blue-500/30">
+              <i data-lucide="bar-chart-3" class="w-4 h-4"></i>
+              <span>+400% Engajamento</span>
+            </div>
+
+            <!-- Aspas decorativas -->
+            <div class="testimonial-quote-icon">
+              <i data-lucide="quote" class="w-8 h-8"></i>
+            </div>
+
+            <!-- Citação -->
+            <p class="text-themed-secondary mb-6 leading-relaxed">
+              "Nossa presença nas redes sociais explodiu. Engajamento subiu <strong class="text-themed">400%</strong> e
+              as vendas acompanharam o crescimento."
+            </p>
+
+            <!-- Autor -->
+            <div class="flex items-center mt-auto pt-4 border-t border-themed-strong">
               <img src="https://randomuser.me/api/portraits/men/32.jpg"
-                class="w-12 h-12 rounded-full mr-4 border-2 border-orange-500/50" alt="Foto do cliente Marcos Andrade"
-                loading="lazy">
+                class="w-12 h-12 rounded-full mr-4 border-2 border-blue-500/50 group-hover:border-blue-400 transition-colors"
+                alt="Foto do cliente Marcos Andrade" loading="lazy">
               <div>
                 <p class="font-bold text-themed">Marcos Andrade</p>
-                <p class="text-sm text-gray-500">Diretor de Vendas, Vende+</p>
+                <p class="text-sm text-themed-secondary">Diretor de Vendas, Vende+</p>
               </div>
             </div>
           </div>
-          <div
-            class="bg-card-themed backdrop-blur-sm p-8 rounded-xl border border-themed-strong shadow-lg hover:shadow-orange-500/10 transition-all duration-300 transform hover:-translate-y-1 animate-on-scroll card-glow card-shine"
+
+          <!-- Depoimento 3 -->
+          <div class="testimonial-card animate-on-scroll group card-glow card-shine card-light-effect"
             style="transition-delay: 300ms;">
-            <p class="text-themed-secondary italic mb-4">"O ROI das campanhas é impressionante. Cada real investido
-              retorna multiplicado. Equipe muito competente!"</p>
-            <div class="flex items-center mt-auto">
+            <!-- Badge de Resultado -->
+            <div class="testimonial-badge bg-orange-500/20 text-orange-400 border-orange-500/30">
+              <i data-lucide="wallet" class="w-4 h-4"></i>
+              <span>3.5x ROI</span>
+            </div>
+
+            <!-- Aspas decorativas -->
+            <div class="testimonial-quote-icon">
+              <i data-lucide="quote" class="w-8 h-8"></i>
+            </div>
+
+            <!-- Citação -->
+            <p class="text-themed-secondary mb-6 leading-relaxed">
+              "O ROI das campanhas é impressionante. Cada real investido retorna <strong
+                class="text-themed">multiplicado por 3.5x</strong>. Equipe muito competente!"
+            </p>
+
+            <!-- Autor -->
+            <div class="flex items-center mt-auto pt-4 border-t border-themed-strong">
               <img src="https://randomuser.me/api/portraits/women/44.jpg"
-                class="w-12 h-12 rounded-full mr-4 border-2 border-orange-500/50" alt="Foto da cliente Carla Souza"
-                loading="lazy">
+                class="w-12 h-12 rounded-full mr-4 border-2 border-orange-500/50 group-hover:border-orange-400 transition-colors"
+                alt="Foto da cliente Carla Souza" loading="lazy">
               <div>
                 <p class="font-bold text-themed">Carla Souza</p>
-                <p class="text-sm text-gray-500">Gerente de Operações, LogFácil</p>
+                <p class="text-sm text-themed-secondary">Gerente de Operações, LogFácil</p>
               </div>
             </div>
           </div>
+
         </div>
       </div>
     </section>
