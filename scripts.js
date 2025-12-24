@@ -1,525 +1,69 @@
-document.addEventListener("DOMContentLoaded", function () {
-    // --- SAFE EVENT LISTENER HELPER ---
-    const safeAddListener = (element, event, callback) => {
-        if (element) {
-            element.addEventListener(event, (e) => {
-                try {
-                    callback(e);
-                } catch (error) {
-                    console.error(`[Óptima] Error in ${event} handler:`, error);
-                }
-            });
-        }
-    };
-
-    // --- INICIALIZAÇÃO ---
-    try {
-        if (window.lucide && typeof window.lucide.createIcons === 'function') {
-            lucide.createIcons();
-        }
-    } catch (e) {
-        console.warn('[Óptima] Lucide icons not available:', e);
-    }
-
-    // --- LÓGICA DO TEMA CLARO/ESCURO ---
-    const themeToggle = document.getElementById("theme-toggle"); // Floating button
-    const themeToggleHeader = document.getElementById("theme-toggle-header"); // Header button
-    const body = document.body;
-
-    const updateThemeIcons = (isLight) => {
-        const iconName = isLight ? 'moon' : 'sun';
-        const ariaLabel = isLight ? "Alternar para modo escuro" : "Alternar para modo claro";
-
-        // Update floating toggle
-        if (themeToggle) {
-            themeToggle.innerHTML = `<i data-lucide="${iconName}"></i>`;
-            themeToggle.setAttribute("aria-label", ariaLabel);
-        }
-
-        // Update header toggle
-        if (themeToggleHeader) {
-            themeToggleHeader.innerHTML = `<i data-lucide="${iconName}" class="w-4 h-4"></i>`;
-            themeToggleHeader.setAttribute("aria-label", ariaLabel);
-        }
-
-        try {
-            if (window.lucide) lucide.createIcons();
-        } catch (e) { /* silent */ }
-    };
-
-    const applyTheme = (theme) => {
-        const isLight = theme === "light-mode";
-        body.classList.toggle("light-mode", isLight);
-        document.documentElement.classList.toggle("light-mode", isLight);
-        updateThemeIcons(isLight);
-    };
-
-    const toggleTheme = () => {
-        const newTheme = body.classList.contains("light-mode") ? "dark-mode" : "light-mode";
-        localStorage.setItem("theme", newTheme);
-        applyTheme(newTheme);
-    };
-
-    // Add click listeners to both toggles
-    safeAddListener(themeToggle, "click", toggleTheme);
-    safeAddListener(themeToggleHeader, "click", toggleTheme);
-
-    const savedTheme = localStorage.getItem("theme") || "dark-mode"; // Padrão é escuro
-    applyTheme(savedTheme);
-
-
-    // --- LÓGICA DO MENU MOBILE ---
-    const mobileMenuButton = document.getElementById("mobile-menu-button");
-    const mobileMenu = document.getElementById("mobile-menu");
-
-    const closeMobileMenu = () => {
-        if (mobileMenu) mobileMenu.classList.remove("open");
-    };
-
-    const toggleMobileMenu = () => {
-        if (mobileMenu) mobileMenu.classList.toggle("open");
-    };
-
-    // Toggle menu on button click
-    safeAddListener(mobileMenuButton, "click", (e) => {
-        e.stopPropagation();
-        toggleMobileMenu();
-    });
-
-    // Close menu when clicking links
-    document.querySelectorAll('#mobile-menu a').forEach(link => {
-        safeAddListener(link, 'click', closeMobileMenu);
-    });
-
-    // Close menu when clicking outside
-    safeAddListener(document, 'click', (e) => {
-        if (mobileMenu && mobileMenu.classList.contains('open')) {
-            if (!mobileMenu.contains(e.target) && !mobileMenuButton.contains(e.target)) {
-                closeMobileMenu();
-            }
-        }
-    });
-
-    // Close menu on Escape key
-    safeAddListener(document, 'keydown', (e) => {
-        if (e.key === 'Escape') {
-            closeMobileMenu();
-        }
-    });
-
-
-    // --- TYPEWRITER EFFECT (Efeito Máquina de Escrever) ---
-    const typewriterElement = document.getElementById('typewriter');
-    if (typewriterElement) {
-        const phrases = [
-            "Estratégias personalizadas para aumentar suas vendas.",
-            "Gestão de redes sociais e tráfego pago com resultados.",
-            "Transformamos cliques em clientes fiéis."
-        ];
-
-        let phraseIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-
-        const typeSpeed = 50;      // Velocidade de digitação (ms)
-        const deleteSpeed = 30;    // Velocidade de apagar (ms)
-        const pauseEnd = 2000;     // Pausa no final da frase (ms)
-        const pauseStart = 500;    // Pausa antes de começar nova frase (ms)
-
-        function typeWriter() {
-            const currentPhrase = phrases[phraseIndex];
-
-            if (isDeleting) {
-                // Apagando caracteres
-                typewriterElement.textContent = currentPhrase.substring(0, charIndex - 1);
-                charIndex--;
-
-                if (charIndex === 0) {
-                    isDeleting = false;
-                    phraseIndex = (phraseIndex + 1) % phrases.length;
-                    setTimeout(typeWriter, pauseStart);
-                    return;
-                }
-            } else {
-                // Digitando caracteres
-                typewriterElement.textContent = currentPhrase.substring(0, charIndex + 1);
-                charIndex++;
-
-                if (charIndex === currentPhrase.length) {
-                    isDeleting = true;
-                    setTimeout(typeWriter, pauseEnd);
-                    return;
-                }
-            }
-
-            setTimeout(typeWriter, isDeleting ? deleteSpeed : typeSpeed);
-        }
-
-        // Inicia o efeito typewriter
-        typeWriter();
-    }
-
-    // --- GA4 EVENT TRACKING ---
-    // Track CTA button clicks
-    document.querySelectorAll('a[href="#contact"]').forEach(btn => {
-        btn.addEventListener('click', () => {
-            if (typeof trackEvent === 'function') {
-                trackEvent('cta_click', {
-                    event_category: 'engagement',
-                    event_label: btn.textContent.trim()
-                });
-            }
-        });
-    });
-
-    // --- LÓGICA DAS ANIMAÇÕES AO ROLAR ---
-    const scrollObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("is-visible");
-                scrollObserver.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.1 });
-    document.querySelectorAll(".animate-on-scroll").forEach(el => scrollObserver.observe(el));
-
-
-    // --- LÓGICA DO ACORDEÃO DO FAQ ---
-    document.querySelectorAll(".faq-question").forEach((button) => {
-        button.addEventListener("click", () => {
-            const faqItem = button.closest(".faq-item");
-            const wasOpen = faqItem.classList.contains('open');
-            document.querySelectorAll(".faq-item.open").forEach(openItem => openItem.classList.remove("open"));
-            if (!wasOpen) faqItem.classList.add("open");
-        });
-    });
-
-    // --- LÓGICA DO BOTÃO "VOLTAR AO TOPO" ---
-    const backToTopBtn = document.getElementById("back-to-top-btn");
-    if (backToTopBtn) {
-        window.addEventListener("scroll", () => {
-            backToTopBtn.classList.toggle("show", window.scrollY > 300);
-        });
-        backToTopBtn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
-    }
-
-    // --- EFEITO PARALLAX NO HERO ---
-    const heroSection = document.querySelector('.section-background');
-    if (heroSection) {
-        window.addEventListener('scroll', () => {
-            const scrolled = window.scrollY;
-            heroSection.style.backgroundPositionY = `${scrolled * 0.5}px`;
-        });
-    }
-
-    // --- COUNTER ANIMATION ENHANCED (Números que sobem com efeitos) ---
-    const counters = document.querySelectorAll('.counter');
-
-    // Easing function - easeOutExpo for smooth deceleration
-    const easeOutExpo = (t) => t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
-
-    // Format number with thousand separators
-    const formatNumber = (num) => {
-        return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-    };
-
-    const counterObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const target = entry.target;
-                const finalValue = parseInt(target.getAttribute('data-target'));
-                const suffix = target.getAttribute('data-suffix') || '';
-                const duration = 2500; // Slightly longer for more dramatic effect
-                const startTime = performance.now();
-
-                const animate = (currentTime) => {
-                    const elapsed = currentTime - startTime;
-                    const progress = Math.min(elapsed / duration, 1);
-                    const easedProgress = easeOutExpo(progress);
-                    const currentValue = Math.floor(finalValue * easedProgress);
-
-                    target.textContent = formatNumber(currentValue) + suffix;
-
-                    if (progress < 1) {
-                        requestAnimationFrame(animate);
-                    } else {
-                        target.textContent = formatNumber(finalValue) + suffix;
-                        // Add pulse effect when complete
-                        target.classList.add('counter-complete');
-                        setTimeout(() => target.classList.remove('counter-complete'), 300);
-                    }
-                };
-                requestAnimationFrame(animate);
-                counterObserver.unobserve(target);
-            }
-        });
-    }, { threshold: 0.5 });
-    counters.forEach(counter => counterObserver.observe(counter));
-
-    // --- STAGGER ANIMATION (Cards aparecem em sequência) ---
-    const staggerObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry, index) => {
-            if (entry.isIntersecting) {
-                setTimeout(() => {
-                    entry.target.classList.add('is-visible');
-                }, index * 100);
-                staggerObserver.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.1, rootMargin: '-50px' });
-    document.querySelectorAll('.stagger-item').forEach(el => staggerObserver.observe(el));
-
-    // --- TEXT REVEAL ANIMATION ---
-    const textRevealObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('revealed');
-                textRevealObserver.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.3 });
-
-    document.querySelectorAll('.text-reveal, .text-slide, .text-reveal-letter').forEach(el => {
-        textRevealObserver.observe(el);
-    });
-
-    // --- COOKIE CONSENT MANAGER ---
-    const cookieBanner = document.getElementById('cookie-banner');
-    const cookieModal = document.getElementById('cookie-modal');
-    const cookieAccept = document.getElementById('cookie-accept');
-    const cookieReject = document.getElementById('cookie-reject');
-    const cookieCustomize = document.getElementById('cookie-customize');
-    const cookieModalClose = document.getElementById('cookie-modal-close');
-    const cookieSavePreferences = document.getElementById('cookie-save-preferences');
-
-    // Cookie preference checkboxes
-    const cookieAnalytics = document.getElementById('cookie-analytics');
-    const cookieMarketing = document.getElementById('cookie-marketing');
-    const cookieFunctional = document.getElementById('cookie-functional');
-
-    // Cookie consent object structure
-    const defaultConsent = {
-        essential: true, // Always true, can't be disabled
-        analytics: false,
-        marketing: false,
-        functional: false,
-        timestamp: null
-    };
-
-    // Get saved consent or use defaults
-    const getSavedConsent = () => {
-        const saved = localStorage.getItem('cookiePreferences');
-        if (saved) {
-            try {
-                return JSON.parse(saved);
-            } catch (e) {
-                return null;
-            }
-        }
-        return null;
-    };
-
-    // Save consent preferences
-    const saveConsent = (preferences) => {
-        preferences.timestamp = new Date().toISOString();
-        localStorage.setItem('cookiePreferences', JSON.stringify(preferences));
-        localStorage.setItem('cookieConsent', 'customized');
-
-        // Apply consent (enable/disable tracking scripts)
-        applyConsent(preferences);
-
-        // Dispatch custom event for other scripts to listen
-        window.dispatchEvent(new CustomEvent('cookieConsentUpdated', { detail: preferences }));
-    };
-
-    // Apply consent settings (enable/disable services)
-    const applyConsent = (preferences) => {
-        // Google Analytics
-        if (preferences.analytics) {
-            window['ga-disable-G-XXXXXXXXXX'] = false; // Replace with your GA ID
-            console.log('[Cookie Consent] Analytics enabled');
-        } else {
-            window['ga-disable-G-XXXXXXXXXX'] = true;
-            console.log('[Cookie Consent] Analytics disabled');
-        }
-
-        // Marketing pixels (Meta, Google Ads)
-        if (preferences.marketing) {
-            window.cookieConsentMarketing = true;
-            console.log('[Cookie Consent] Marketing enabled');
-        } else {
-            window.cookieConsentMarketing = false;
-            console.log('[Cookie Consent] Marketing disabled');
-        }
-
-        // Functional cookies
-        if (preferences.functional) {
-            window.cookieConsentFunctional = true;
-            console.log('[Cookie Consent] Functional enabled');
-        } else {
-            window.cookieConsentFunctional = false;
-            console.log('[Cookie Consent] Functional disabled');
-        }
-    };
-
-    // Load saved preferences into modal checkboxes
-    const loadPreferencesToModal = () => {
-        const saved = getSavedConsent();
-        if (saved) {
-            cookieAnalytics.checked = saved.analytics;
-            cookieMarketing.checked = saved.marketing;
-            cookieFunctional.checked = saved.functional;
-        } else {
-            // Default all to unchecked
-            cookieAnalytics.checked = false;
-            cookieMarketing.checked = false;
-            cookieFunctional.checked = false;
-        }
-    };
-
-    // Show/hide banner
-    const showBanner = () => cookieBanner.classList.add('show');
-    const hideBanner = () => cookieBanner.classList.remove('show');
-
-    // Show/hide modal
-    const showModal = () => {
-        loadPreferencesToModal();
-        cookieModal.classList.add('show');
-        document.body.style.overflow = 'hidden';
-    };
-    const hideModal = () => {
-        cookieModal.classList.remove('show');
-        document.body.style.overflow = '';
-    };
-
-    // Check if consent exists
-    const savedConsent = getSavedConsent();
-    if (!savedConsent) {
-        // Show banner after 1.5 seconds
-        setTimeout(showBanner, 1500);
-    } else {
-        // Apply saved preferences
-        applyConsent(savedConsent);
-    }
-
-    // Accept All
-    cookieAccept.addEventListener('click', () => {
-        const allAccepted = {
-            essential: true,
-            analytics: true,
-            marketing: true,
-            functional: true
-        };
-        saveConsent(allAccepted);
-        hideBanner();
-        hideModal();
-    });
-
-    // Reject All (only essential)
-    cookieReject.addEventListener('click', () => {
-        const rejected = { ...defaultConsent };
-        saveConsent(rejected);
-        hideBanner();
-        hideModal();
-    });
-
-    // Open customize modal
-    cookieCustomize.addEventListener('click', () => {
-        hideBanner();
-        showModal();
-    });
-
-    // Close modal
-    cookieModalClose.addEventListener('click', hideModal);
-
-    // Close modal on backdrop click
-    cookieModal.addEventListener('click', (e) => {
-        if (e.target === cookieModal) {
-            hideModal();
-            // Re-show banner if no consent saved
-            if (!getSavedConsent()) {
-                showBanner();
-            }
-        }
-    });
-
-    // Save preferences
-    cookieSavePreferences.addEventListener('click', () => {
-        const preferences = {
-            essential: true,
-            analytics: cookieAnalytics.checked,
-            marketing: cookieMarketing.checked,
-            functional: cookieFunctional.checked
-        };
-        saveConsent(preferences);
-        hideModal();
-    });
-
-    // Expose consent checker globally for other scripts
-    window.checkCookieConsent = (type) => {
-        const consent = getSavedConsent();
-        if (!consent) return false;
-        return consent[type] || false;
-    };
-
-
-    // --- FORM SUBMISSION HANDLER ---
-    const contactForm = document.getElementById('contact-form');
-    const submitBtn = document.getElementById('submit-btn');
-    const btnText = document.getElementById('btn-text');
-    const btnLoading = document.getElementById('btn-loading');
-    const formToast = document.getElementById('form-toast');
-    const toastMessage = document.getElementById('toast-message');
-
-    const showToast = (message, type = 'success') => {
-        toastMessage.textContent = message;
-        formToast.className = `fixed bottom-24 left-1/2 transform -translate-x-1/2 px-6 py-3 rounded-lg shadow-lg z-50 transition-all duration-300 ${type === 'success' ? 'bg-green-600 text-white' : 'bg-red-600 text-white'
-            }`;
-        formToast.classList.remove('opacity-0', 'translate-y-4', 'pointer-events-none');
-
-        setTimeout(() => {
-            formToast.classList.add('opacity-0', 'translate-y-4', 'pointer-events-none');
-        }, 5000);
-    };
-
-    contactForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-
-        // Show loading state
-        submitBtn.disabled = true;
-        btnText.classList.add('hidden');
-        btnLoading.classList.remove('hidden');
-
-        const formData = new FormData(contactForm);
-
-        try {
-            const response = await fetch('https://api.web3forms.com/submit', {
-                method: 'POST',
-                body: formData
-            });
-
-            const data = await response.json();
-
-            if (data.success) {
-                showToast('✅ Mensagem enviada! Responderemos em breve.', 'success');
-                contactForm.reset();
-                // Track form conversion in GA4
-                if (typeof trackEvent === 'function') {
-                    trackEvent('form_submission', {
-                        event_category: 'conversion',
-                        event_label: 'contact_form'
-                    });
-                }
-            } else {
-                showToast('❌ Erro ao enviar. Tente novamente.', 'error');
-            }
-        } catch (error) {
-            showToast('❌ Erro de conexão. Verifique sua internet.', 'error');
-        }
-
-        // Reset button state
-        submitBtn.disabled = false;
-        btnText.classList.remove('hidden');
-        btnLoading.classList.add('hidden');
-    });
+document.addEventListener("DOMContentLoaded", () => {
+    const $ = s => document.getElementById(s), $$ = s => document.querySelectorAll(s), on = (e, ev, fn) => e && e.addEventListener(ev, fn), toggle = (e, c, f) => e && e.classList.toggle(c, f);
+
+    // Lucide init
+    try { window.lucide?.createIcons() } catch { }
+
+    // Theme
+    const body = document.body, html = document.documentElement, tt = $("theme-toggle"), tth = $("theme-toggle-header");
+    const setTheme = t => { const l = t === "light-mode"; toggle(body, "light-mode", l); toggle(html, "light-mode", l);[tt, tth].forEach(b => { if (b) { b.innerHTML = `<i data-lucide="${l ? "moon" : "sun"}"${b === tth ? ' class="w-4 h-4"' : ''}></i>`; b.setAttribute("aria-label", l ? "Modo escuro" : "Modo claro") } }); try { lucide.createIcons() } catch { } };
+    const flipTheme = () => { const t = body.classList.contains("light-mode") ? "dark-mode" : "light-mode"; localStorage.setItem("theme", t); setTheme(t) };
+    on(tt, "click", flipTheme); on(tth, "click", flipTheme); setTheme(localStorage.getItem("theme") || "dark-mode");
+
+    // Mobile Menu
+    const mb = $("mobile-menu-button"), mm = $("mobile-menu"), closeMenu = () => mm?.classList.remove("open");
+    on(mb, "click", e => { e.stopPropagation(); mm?.classList.toggle("open") });
+    $$('#mobile-menu a').forEach(a => on(a, "click", closeMenu));
+    on(document, "click", e => mm?.classList.contains("open") && !mm.contains(e.target) && !mb.contains(e.target) && closeMenu());
+    on(document, "keydown", e => e.key === "Escape" && closeMenu());
+
+    // Typewriter
+    const tw = $("typewriter");
+    if (tw) { const p = ["Estratégias personalizadas para aumentar suas vendas.", "Gestão de redes sociais e tráfego pago com resultados.", "Transformamos cliques em clientes fiéis."]; let i = 0, c = 0, d = 0; (function t() { const s = p[i]; d ? (tw.textContent = s.slice(0, --c), c === 0 && (d = 0, i = (i + 1) % p.length, setTimeout(t, 500))) : (tw.textContent = s.slice(0, ++c), c === s.length ? (d = 1, setTimeout(t, 2e3)) : setTimeout(t, 50)); if (c > 0 && c < s.length) setTimeout(t, d ? 30 : 50) })() }
+
+    // GA4
+    $$('a[href="#contact"]').forEach(b => on(b, "click", () => typeof trackEvent === "function" && trackEvent("cta_click", { event_category: "engagement", event_label: b.textContent.trim() })));
+
+    // Observers
+    const obs = (sel, cls, opt) => { const o = new IntersectionObserver(e => e.forEach(x => { if (x.isIntersecting) { x.target.classList.add(cls); o.unobserve(x.target) } }), opt); $$(sel).forEach(e => o.observe(e)) };
+    obs(".animate-on-scroll", "is-visible", { threshold: .1 });
+    obs(".stagger-item", "is-visible", { threshold: .1, rootMargin: "-50px" });
+    obs(".text-reveal,.text-slide,.text-reveal-letter", "revealed", { threshold: .3 });
+
+    // Counters
+    const ease = t => t === 1 ? 1 : 1 - Math.pow(2, -10 * t), fmt = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    const cobs = new IntersectionObserver(e => e.forEach(x => { if (x.isIntersecting) { const t = +x.target.dataset.target, s = x.target.dataset.suffix || "", st = performance.now(); (function a(n) { const p = Math.min((n - st) / 2500, 1); x.target.textContent = fmt(Math.floor(t * ease(p))) + s; p < 1 ? requestAnimationFrame(a) : (x.target.textContent = fmt(t) + s, x.target.classList.add("counter-complete"), setTimeout(() => x.target.classList.remove("counter-complete"), 300)) })(st); cobs.unobserve(x.target) } }), { threshold: .5 });
+    $$(".counter").forEach(e => cobs.observe(e));
+
+    // FAQ
+    $$(".faq-question").forEach(b => on(b, "click", () => { const f = b.closest(".faq-item"), o = f.classList.contains("open"); $$(".faq-item.open").forEach(x => x.classList.remove("open")); o || f.classList.add("open") }));
+
+    // Back to Top
+    const btt = $("back-to-top-btn");
+    btt && (on(window, "scroll", () => toggle(btt, "show", scrollY > 300)), on(btt, "click", () => scrollTo({ top: 0, behavior: "smooth" })));
+
+    // Parallax
+    const hero = document.querySelector(".section-background");
+    hero && on(window, "scroll", () => hero.style.backgroundPositionY = scrollY * .5 + "px");
+
+    // Cookie Consent
+    const cb = $("cookie-banner"), cm = $("cookie-modal"), ca = $("cookie-accept"), cr = $("cookie-reject"), cc = $("cookie-customize"), cmc = $("cookie-modal-close"), csp = $("cookie-save-preferences");
+    const ck = { a: $("cookie-analytics"), m: $("cookie-marketing"), f: $("cookie-functional") };
+    const getC = () => { try { return JSON.parse(localStorage.getItem("cookiePreferences")) } catch { return null } };
+    const setC = p => { p.timestamp = new Date().toISOString(); localStorage.setItem("cookiePreferences", JSON.stringify(p)); localStorage.setItem("cookieConsent", "customized"); window["ga-disable-G-XXXXXXXXXX"] = !p.analytics; window.cookieConsentMarketing = p.marketing; window.cookieConsentFunctional = p.functional };
+    const showB = () => cb?.classList.add("show"), hideB = () => cb?.classList.remove("show");
+    const showM = () => { const s = getC(); if (ck.a) ck.a.checked = s?.analytics || 0; if (ck.m) ck.m.checked = s?.marketing || 0; if (ck.f) ck.f.checked = s?.functional || 0; cm?.classList.add("show"); body.style.overflow = "hidden" };
+    const hideM = () => { cm?.classList.remove("show"); body.style.overflow = "" };
+    const sc = getC(); sc ? setC(sc) : setTimeout(showB, 1500);
+    on(ca, "click", () => { setC({ essential: 1, analytics: 1, marketing: 1, functional: 1 }); hideB(); hideM() });
+    on(cr, "click", () => { setC({ essential: 1, analytics: 0, marketing: 0, functional: 0 }); hideB(); hideM() });
+    on(cc, "click", () => { hideB(); showM() }); on(cmc, "click", hideM);
+    on(cm, "click", e => e.target === cm && (hideM(), getC() || showB()));
+    on(csp, "click", () => { setC({ essential: 1, analytics: ck.a?.checked || 0, marketing: ck.m?.checked || 0, functional: ck.f?.checked || 0 }); hideM() });
+    window.checkCookieConsent = t => getC()?.[t] || !1;
+
+    // Form
+    const cf = $("contact-form"), sb = $("submit-btn"), bt = $("btn-text"), bl = $("btn-loading"), ft = $("form-toast"), tm = $("toast-message");
+    const toast = (m, t) => { tm.textContent = m; ft.className = `fixed bottom-24 left-1/2 transform -translate-x-1/2 px-6 py-3 rounded-lg shadow-lg z-50 transition-all duration-300 ${t === "success" ? "bg-green-600" : "bg-red-600"} text-white`; ft.classList.remove("opacity-0", "translate-y-4", "pointer-events-none"); setTimeout(() => ft.classList.add("opacity-0", "translate-y-4", "pointer-events-none"), 5e3) };
+    on(cf, "submit", async e => { e.preventDefault(); sb.disabled = 1; bt.classList.add("hidden"); bl.classList.remove("hidden"); try { const r = await fetch("https://api.web3forms.com/submit", { method: "POST", body: new FormData(cf) }), d = await r.json(); d.success ? (toast("✅ Mensagem enviada!", "success"), cf.reset(), typeof trackEvent === "function" && trackEvent("form_submission", { event_category: "conversion", event_label: "contact_form" })) : toast("❌ Erro ao enviar.", "error") } catch { toast("❌ Erro de conexão.", "error") } sb.disabled = 0; bt.classList.remove("hidden"); bl.classList.add("hidden") });
 });
