@@ -24,6 +24,17 @@
       background-color: #f8fafc;
     }
   </style>
+
+  <!-- Microsoft Clarity - Heatmaps & Session Recordings -->
+  <!-- Get your project ID at: https://clarity.microsoft.com -->
+  <script type="text/javascript">
+    (function (c, l, a, r, i, t, y) {
+      c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+      t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+      y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+    })(window, document, "clarity", "script", "YOUR_CLARITY_PROJECT_ID");
+  </script>
+
   <!-- Primary Meta Tags -->
   <meta name="description"
     content="Ã“ptima Digital Ã© sua agÃªncia de marketing digital completa. GestÃ£o de redes sociais, trÃ¡fego pago, SEO, branding e automaÃ§Ã£o com inteligÃªncia artificial para escalar seu negÃ³cio." />
@@ -59,7 +70,12 @@
   <meta name="theme-color" content="#f97316" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Óptima Digital" />
   <meta name="format-detection" content="telephone=no" />
+
+  <!-- PWA Manifest -->
+  <link rel="manifest" href="manifest.json" />
+  <link rel="apple-touch-icon" href="assets/logo.png" />
 
   <!-- Geo Tags -->
   <meta name="geo.region" content="BR" />
@@ -1391,6 +1407,21 @@
   </button>
 
   <script src="scripts.js" defer></script>
+
+  <!-- Service Worker Registration -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js')
+          .then((registration) => {
+            console.log('[PWA] Service Worker registered:', registration.scope);
+          })
+          .catch((error) => {
+            console.log('[PWA] Service Worker registration failed:', error);
+          });
+      });
+    }
+  </script>
 </body>
 
 </html>

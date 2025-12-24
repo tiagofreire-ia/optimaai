@@ -23,6 +23,16 @@
             background-color: #f8fafc;
         }
     </style>
+
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "YOUR_CLARITY_PROJECT_ID");
+    </script>
+
     <meta name="description"
         content="Política de Privacidade da Óptima Digital. Saiba como coletamos, usamos e protegemos seus dados pessoais de acordo com a LGPD." />
     <meta name="keywords" content="Política de Privacidade, LGPD, Proteção de Dados, Óptima Digital" />
@@ -34,6 +44,11 @@
     <meta property="og:description"
         content="Saiba como a Óptima Digital coleta, usa e protege seus dados pessoais de acordo com a LGPD." />
     <meta property="og:image" content="assets/logo.png" />
+
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.json" />
+    <link rel="apple-touch-icon" href="assets/logo.png" />
+    <meta name="theme-color" content="#f97316" />
 
     <link rel="stylesheet" href="styles-tailwind.css" />
 
@@ -461,6 +476,17 @@
     </button>
 
     <script src="scripts.js" defer></script>
+
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js')
+                    .then((r) => console.log('[PWA] SW registered'))
+                    .catch((e) => console.log('[PWA] SW failed:', e));
+            });
+        }
+    </script>
 </body>
 
 </html>
