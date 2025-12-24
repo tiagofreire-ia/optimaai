@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Theme pre-initialization -->
+    <script>
+        (function () {
+            var theme = localStorage.getItem('theme');
+            if (theme === 'light-mode') {
+                document.documentElement.classList.add('light-mode');
+            }
+        })();
+    </script>
+    <style>
+        html {
+            background-color: #0a0a0a;
+        }
+
+        html.light-mode {
+            background-color: #f8fafc;
+        }
+    </style>
+    <meta name="description"
+        content="Termos de Serviço da Óptima Digital. Conheça as condições de uso, direitos e responsabilidades ao contratar nossos serviços de marketing digital." />
+    <meta name="keywords" content="Termos de Serviço, Contrato, Marketing Digital, Óptima Digital, CDC" />
+    <title>Termos de Serviço | Óptima Digital</title>
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Termos de Serviço | Óptima Digital" />
+    <meta property="og:description"
+        content="Conheça as condições de uso, direitos e responsabilidades ao contratar nossos serviços de marketing digital." />
+    <meta property="og:image" content="assets/logo.png" />
+
+    <link rel="stylesheet" href="styles-tailwind.css" />
+
+    <!-- Preload critical font weights -->
+    <link rel="preload" href="https://fonts.gstatic.com/s/inter/v18/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2"
+        as="font" type="font/woff2" crossorigin>
+
+    <!-- Non-blocking font loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"
+        media="print" onload="this.media='all'" />
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+            rel="stylesheet" />
+    </noscript>
+
+    <link rel="icon" href="assets/favicon.png" type="image/png" />
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- Lucide Icons - Selective import -->
+    <script type="module">
+        import { createIcons, Sun, Moon, Menu, ArrowLeft, ArrowUp, FileCheck, BookOpen, Briefcase, UserCheck, ShieldCheck, CreditCard, Calendar, Clock, XCircle, AlertTriangle, RefreshCw, Lightbulb, FileText, Code, Image, AlertCircle, X, Lock, Shield, Database, RotateCcw, Scale, FilePlus, Check, Mail, Building, Phone, Linkedin, Instagram, Twitter } from 'https://esm.run/lucide';
+        window.lucide = { createIcons };
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => createIcons());
+        } else {
+            createIcons();
+        }
+    </script>
+</head>
+
+<body class="bg-themed text-themed">
+    <header class="bg-blur-themed backdrop-blur-md fixed top-0 left-0 right-0 z-50 border-b border-themed-strong">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold flex items-center text-themed">
+                <img src="assets/logo.png" alt="Logo da Óptima Digital" class="w-10 h-10 mr-2 logo-animated" />
+                <span class="text-brand">Óptima</span><span class="ml-2">Digital</span>
+            </a>
+
+            <nav class="hidden lg:flex items-center space-x-5">
+                <a href="index.html#about"
+                    class="text-xs font-medium tracking-wide text-themed-secondary hover:text-brand-hover transition-colors duration-300">Quem
+                    Somos</a>
+                <a href="index.html#services"
+                    class="text-xs font-medium tracking-wide text-themed-secondary hover:text-brand-hover transition-colors duration-300">Serviços</a>
+                <a href="index.html#solutions"
+                    class="text-xs font-medium tracking-wide text-themed-secondary hover:text-brand-hover transition-colors duration-300">Soluções</a>
+                <a href="index.html#automations"
+                    class="text-xs font-medium tracking-wide text-themed-secondary hover:text-brand-hover transition-colors duration-300">Automações</a>
+                <a href="index.html#methodology"
+                    class="text-xs font-medium tracking-wide text-themed-secondary hover:text-brand-hover transition-colors duration-300">Metodologia</a>
+                <a href="index.html#testimonials"
+                    class="text-xs font-medium tracking-wide text-themed-secondary hover:text-brand-hover transition-colors duration-300">Depoimentos</a>
+                <a href="index.html#faq"
+                    class="text-xs font-medium tracking-wide text-themed-secondary hover:text-brand-hover transition-colors duration-300">FAQ</a>
+
+                <!-- Theme Toggle no Header -->
+                <button id="theme-toggle-header"
+                    class="p-2 rounded-lg text-themed-secondary hover:text-brand-hover hover:bg-gray-100/10 transition-all duration-300"
+                    aria-label="Alternar tema">
+                    <i data-lucide="sun" class="w-4 h-4"></i>
+                </button>
+
+                <a href="index.html#contact"
+                    class="bg-orange-600 text-white px-4 py-2 rounded-lg text-xs font-semibold tracking-wide hover:bg-orange-500 transition-colors duration-300 shadow-lg hover:shadow-orange-500/30 transform hover:-translate-y-0.5">Fale
+                    Conosco</a>
+            </nav>
+            <button class="lg:hidden text-themed-secondary" id="mobile-menu-button" aria-label="Abrir menu">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+        <!-- Menu Mobile Dropdown -->
+        <div id="mobile-menu" class="mobile-dropdown lg:hidden">
+            <a href="index.html#about" class="mobile-dropdown-link">Quem Somos</a>
+            <a href="index.html#services" class="mobile-dropdown-link">Serviços</a>
+            <a href="index.html#solutions" class="mobile-dropdown-link">Soluções</a>
+            <a href="index.html#automations" class="mobile-dropdown-link">Automações</a>
+            <a href="index.html#methodology" class="mobile-dropdown-link">Metodologia</a>
+            <a href="index.html#testimonials" class="mobile-dropdown-link">Depoimentos</a>
+            <a href="index.html#faq" class="mobile-dropdown-link">FAQ</a>
+            <a href="index.html#contact" class="mobile-dropdown-cta">Fale Conosco</a>
+        </div>
+    </header>
+
+
+    <main>
+        <section class="pt-36 pb-12 section-background">
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="text-center mb-12 animate-on-scroll">
+                    <h1 class="text-4xl md:text-5xl font-extrabold text-white leading-tight mb-4">
+                        Termos de <span class="text-gradient">Serviço</span>
+                    </h1>
+                    <p class="text-lg text-themed-secondary max-w-2xl mx-auto">
+                        Última atualização: Dezembro de 2025
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-12 section-background">
+            <div class="container mx-auto px-6 max-w-4xl relative z-10">
+                <div
+                    class="bg-card-themed backdrop-blur-sm border border-themed-strong rounded-2xl p-8 md:p-12 animate-on-scroll">
+
+                    <div class="prose prose-invert max-w-none space-y-8">
+
+                        <!-- 1. Aceitação dos Termos -->
+                        <div>
+                            <h2 class="text-2xl font-bold text-themed mb-4 flex items-center">
+                                <i data-lucide="file-check" class="w-6 h-6 text-orange-400 mr-3"></i>
+                                1. Aceitação dos Termos
+                            </h2>
+                            <p class="text-themed-secondary leading-relaxed">
+                                Ao acessar e utilizar os serviços da <strong class="text-themed">Óptima
+                                    Digital</strong>, você declara ter lido, compreendido e concordado integralmente com
+                                estes Termos de Serviço. Caso não concorde com qualquer disposição, solicitamos que não
+                                utilize nossos serviços.
+                            </p>
+                            <p class="text-themed-secondary leading-relaxed mt-3">
+                                Estes termos são regidos pela legislação brasileira, incluindo o <strong
+                                    class="text-orange-400">Código de Defesa do Consumidor (Lei nº 8.078/1990)</strong>,
+                                o <strong class="text-orange-400">Marco Civil da Internet (Lei nº 12.965/2014)</strong>
+                                e a <strong class="text-orange-400">Lei Geral de Proteção de Dados (Lei nº
+                                    13.709/2018)</strong>.
+                            </p>
+                        </div>
+
+                        <!-- 2. Definições -->
+                        <div>
+                            <h2 class="text-2xl font-bold text-themed mb-4 flex items-center">
+                                <i data-lucide="book-open" class="w-6 h-6 text-orange-400 mr-3"></i>
+                                2. Definições
+                            </h2>
+                            <ul class="space-y-2 text-themed-secondary list-disc list-inside ml-4">
+                                <li><strong class="text-themed">"Contratante":</strong> pessoa física ou jurídica
+                                    que contrata os serviços da Óptima Digital.</li>
+                                <li><strong class="text-themed">"Contratada":</strong> Óptima Digital, prestadora
+                                    dos serviços de marketing digital.</li>
+                                <li><strong class="text-themed">"Serviços":</strong> conjunto de atividades de
+                                    marketing digital, automação, gestão de tráfego, design, produção de conteúdo e
+                                    demais serviços descritos em proposta comercial.</li>
+                                <li><strong class="text-themed">"Proposta Comercial":</strong> documento
+                                    específico que detalha escopo, valores, prazos e condições do serviço
+                                    contratado.</li>
+                            </ul>
+                        </div>
+
+                        <!-- 3. Serviços Oferecidos -->
+                        <div>
+                            <h2 class="text-2xl font-bold text-themed mb-4 flex items-center">
+                                <i data-lucide="briefcase" class="w-6 h-6 text-orange-400 mr-3"></i>
+                                3. Serviços Oferecidos
+                            </h2>
+                            <p class="text-themed-secondary leading-relaxed mb-4">
+                                A Óptima Digital oferece os seguintes serviços de marketing digital:
+                            </p>
+                            <ul class="space-y-2 text-themed-secondary list-disc list-inside ml-4">
+                                <li>Gestão de redes sociais e produção de conteúdo</li>
+                                <li>Gestão de tráfego pago (Google Ads, Meta Ads, LinkedIn Ads)</li>
+                                <li>Automação de marketing e implementação de chatbots</li>
+                                <li>Desenvolvimento de sites, landing pages e e-commerce</li>
+                                <li>Branding e identidade visual</li>
+                                <li>Consultoria e análise de dados de marketing</li>
+                            </ul>
+                            <p class="text-themed-secondary leading-relaxed mt-4">
+                                O escopo específico de cada contratação será detalhado na Proposta Comercial, que faz
+                                parte integrante destes Termos.
+                            </p>
+                        </div>
+
+                        <!-- 4. Obrigações do Contratante -->
+                        <div>
+                            <h2 class="text-2xl font-bold text-themed mb-4 flex items-center">
+                                <i data-lucide="user-check" class="w-6 h-6 text-orange-400 mr-3"></i>
+                                4. Obrigações do Contratante
+                            </h2>
+                            <p class="text-themed-secondary leading-relaxed mb-4">
+                                O Contratante compromete-se a:
+                            </p>
+                            <ul class="space-y-2 text-themed-secondary list-disc list-inside ml-4">
+                                <li>Fornecer informações verdadeiras, completas e atualizadas sobre seu negócio;</li>
+                                <li>Disponibilizar acessos necessários (redes sociais, plataformas de anúncios,
+                                    hospedagem);</li>
+                                <li>Aprovar materiais e estratégias dentro dos prazos estabelecidos;</li>
+                                <li>Efetuar os pagamentos nas datas acordadas;</li>
+                                <li>Respeitar a propriedade intelectual e direitos autorais de terceiros;</li>
+                                <li>Não solicitar práticas ilegais, antiéticas ou que violem políticas das plataformas.
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- 5. Obrigações da Contratada -->
+                        <div>
+                            <h2 class="text-2xl font-bold text-themed mb-4 flex items-center">
+                                <i data-lucide="shield-check" class="w-6 h-6 text-orange-400 mr-3"></i>
+                                5. Obrigações da Contratada
+                            </h2>
+                            <p class="text-themed-secondary leading-relaxed mb-4">
+                                A Óptima Digital compromete-se a:
+                            </p>
+                            <ul class="space-y-2 text-themed-secondary list-disc list-inside ml-4">
+                                <li>Executar os serviços com diligência, profissionalismo e ética;</li>
+                                <li>Manter sigilo sobre todas as informações do Contratante;</li>
+                                <li>Fornecer relatórios periódicos de desempenho conforme acordado;</li>
+                                <li>Comunicar imediatamente qualquer problema ou impedimento na execução;</li>
+                                <li>Seguir as melhores práticas e diretrizes das plataformas utilizadas.</li>
+                            </ul>
+                        </div>
+
+                        <!-- 6. Pagamentos e Valores -->
+                        <div>
+                            <h2 class="text-2xl font-bold text-themed mb-4 flex items-center">
+                                <i data-lucide="credit-card" class="w-6 h-6 text-orange-400 mr-3"></i>
+                                6. Pagamentos e Valores
+                            </h2>
+                            <ul class="space-y-2 text-themed-secondary list-disc list-inside ml-4">
+                                <li>Os valores e formas de pagamento serão especificados na Proposta Comercial.</li>
+                                <li>O investimento em mídia (verba de anúncios) é separado dos honorários de gestão e
+                                    será pago diretamente às plataformas pelo Contratante, salvo acordo em contrário.
+                                </li>
+                                <li>Atrasos no pagamento superiores a 10 dias poderão resultar em suspensão dos
+                                    serviços.</li>
+                                <li>Valores em atraso estarão sujeitos a multa de 2% e juros de 1% ao mês, conforme
+                                    permitido pela legislação.</li>
+                            </ul>
+                        </div>
+
+                        <!-- 7. Prazo e Rescisão -->
+                        <div>
+                            <h2 class="text-2xl font-bold text-themed mb-4 flex items-center">
+                                <i data-lucide="calendar" class="w-6 h-6 text-orange-400 mr-3"></i>
+                                7. Prazo e Rescisão
+                            </h2>
+                            <ul class="space-y-2 text-themed-secondary list-disc list-inside ml-4">
+                                <li><strong class="text-themed">Prazo:</strong> O prazo de vigência será definido na
+                                    Proposta Comercial, podendo ser renovado por acordo entre as partes.</li>
+                                <li><strong class="text-themed">Rescisão sem justa causa:</strong> Qualquer parte poderá
+                                    rescindir o contrato mediante aviso prévio por escrito de 30 dias.</li>
+                                <li><strong class="text-themed">Rescisão por justa causa:</strong> O descumprimento de
+                                    obrigações contratuais permitirá rescisão imediata, sem prejuízo de perdas e danos.
+                                </li>
+                                <li><strong class="text-themed">Devolução de materiais:</strong> Em caso de rescisão,
+                                    acessos e materiais serão devolvidos ao Contratante em até 10 dias úteis.</li>
+                            </ul>
+                        </div>
+
+                        <!-- 8. Propriedade Intelectual -->
+                        <div>
+                            <h2 class="text-2xl font-bold text-themed mb-4 flex items-center">
+                                <i data-lucide="lightbulb" class="w-6 h-6 text-orange-400 mr-3"></i>
+                                8. Propriedade Intelectual
+                            </h2>
+                            <ul class="space-y-2 text-themed-secondary list-disc list-inside ml-4">
+                                <li>Materiais produzidos especificamente para o Contratante (artes, textos, campanhas)
+                                    serão de propriedade do Contratante após a quitação integral.</li>
+                                <li>Ferramentas, templates, metodologias e know-how desenvolvidos pela Óptima Digital
+                                    permanecem de sua propriedade exclusiva.</li>
+                                <li>A Óptima Digital poderá utilizar o case do Contratante em seu portfólio, salvo
+                                    oposição expressa.</li>
+                            </ul>
+                        </div>
+
+                        <!-- 9. Limitação de Responsabilidade -->
+                        <div>
+                            <h2 class="text-2xl font-bold text-themed mb-4 flex items-center">
+                                <i data-lucide="alert-circle" class="w-6 h-6 text-orange-400 mr-3"></i>
+                                9. Limitação de Responsabilidade
+                            </h2>
+                            <p class="text-themed-secondary leading-relaxed mb-4">
+                                A Óptima Digital <strong class="text-themed">não garante resultados específicos</strong>
+                                (vendas, leads, conversões), pois estes dependem de múltiplos fatores externos como
+                                mercado, concorrência, produto e decisões do Contratante.
+                            </p>
+                            <p class="text-themed-secondary leading-relaxed mb-4">
+                                A Contratada não se responsabiliza por:
+                            </p>
+                            <ul class="space-y-2 text-themed-secondary list-disc list-inside ml-4">
+                                <li>Alterações unilaterais nas políticas das plataformas (Google, Meta, etc.);</li>
+                                <li>Suspensão de contas por violações cometidas pelo Contratante;</li>
+                                <li>Falhas em serviços de terceiros (hospedagem, domínio, plataformas);</li>
+                                <li>Casos fortuitos ou de força maior.</li>
+                            </ul>
+                        </div>
+
+                        <!-- 10. Confidencialidade -->
+                        <div>
+                            <h2 class="text-2xl font-bold text-themed mb-4 flex items-center">
+                                <i data-lucide="lock" class="w-6 h-6 text-orange-400 mr-3"></i>
+                                10. Confidencialidade
+                            </h2>
+                            <p class="text-themed-secondary leading-relaxed">
+                                Ambas as partes comprometem-se a manter sigilo sobre todas as informações confidenciais
+                                obtidas durante a prestação dos serviços, incluindo dados comerciais, estratégias,
+                                métricas e qualquer informação marcada como confidencial. Esta obrigação permanece
+                                válida mesmo após o término do contrato.
+                            </p>
+                        </div>
+
+                        <!-- 11. Proteção de Dados -->
+                        <div>
+                            <h2 class="text-2xl font-bold text-themed mb-4 flex items-center">
+                                <i data-lucide="shield" class="w-6 h-6 text-orange-400 mr-3"></i>
+                                11. Proteção de Dados (LGPD)
+                            </h2>
+                            <p class="text-themed-secondary leading-relaxed mb-4">
+                                O tratamento de dados pessoais será realizado em conformidade com a <strong
+                                    class="text-orange-400">Lei Geral de Proteção de Dados (LGPD - Lei nº
+                                    13.709/2018)</strong>.
+                            </p>
+                            <ul class="space-y-2 text-themed-secondary list-disc list-inside ml-4">
+                                <li>A Óptima Digital atuará como operadora de dados quando tratar dados pessoais de
+                                    clientes do Contratante.</li>
+                                <li>O Contratante é responsável por obter o consentimento adequado para coleta e uso de
+                                    dados de seus clientes.</li>
+                                <li>Para mais detalhes, consulte nossa <a href="politica-de-privacidade.html"
+                                        class="text-orange-400 hover:text-orange-300 underline">Política de
+                                        Privacidade</a>.</li>
+                            </ul>
+                        </div>
+
+                        <!-- 12. Direito de Arrependimento -->
+                        <div>
+                            <h2 class="text-2xl font-bold text-themed mb-4 flex items-center">
+                                <i data-lucide="rotate-ccw" class="w-6 h-6 text-orange-400 mr-3"></i>
+                                12. Direito de Arrependimento (CDC)
+                            </h2>
+                            <p class="text-themed-secondary leading-relaxed">
+                                Conforme o <strong class="text-orange-400">artigo 49 do Código de Defesa do
+                                    Consumidor</strong>, o Contratante pessoa física que contratar serviços fora do
+                                estabelecimento comercial (internet, telefone) poderá desistir do contrato no prazo de
+                                <strong class="text-themed">7 (sete) dias</strong> a contar da assinatura, sem
+                                necessidade de justificativa, com devolução integral dos valores pagos.
+                            </p>
+                            <p class="text-themed-secondary leading-relaxed mt-3">
+                                Este direito não se aplica a serviços já executados ou a contratos firmados
+                                presencialmente.
+                            </p>
+                        </div>
+
+                        <!-- 13. Foro e Legislação -->
+                        <div>
+                            <h2 class="text-2xl font-bold text-themed mb-4 flex items-center">
+                                <i data-lucide="scale" class="w-6 h-6 text-orange-400 mr-3"></i>
+                                13. Foro e Legislação Aplicável
+                            </h2>
+                            <p class="text-themed-secondary leading-relaxed">
+                                Estes Termos de Serviço são regidos exclusivamente pelas leis da República Federativa do
+                                Brasil. Fica eleito o foro da comarca de <strong class="text-themed">Brasília -
+                                    DF</strong> para dirimir quaisquer controvérsias, com renúncia expressa a qualquer
+                                outro, por mais privilegiado que seja.
+                            </p>
+                        </div>
+
+                        <!-- 14. Disposições Gerais -->
+                        <div>
+                            <h2 class="text-2xl font-bold text-themed mb-4 flex items-center">
+                                <i data-lucide="file-plus" class="w-6 h-6 text-orange-400 mr-3"></i>
+                                14. Disposições Gerais
+                            </h2>
+                            <ul class="space-y-2 text-themed-secondary list-disc list-inside ml-4">
+                                <li>A tolerância de uma parte quanto ao descumprimento de qualquer cláusula não implica
+                                    renúncia ao direito de exigir seu cumprimento.</li>
+                                <li>Se qualquer cláusula for considerada inválida, as demais permanecerão em pleno
+                                    vigor.</li>
+                                <li>A Óptima Digital poderá alterar estes Termos a qualquer momento, notificando os
+                                    clientes ativos.</li>
+                            </ul>
+                        </div>
+
+                        <!-- 15. Contato -->
+                        <div>
+                            <h2 class="text-2xl font-bold text-themed mb-4 flex items-center">
+                                <i data-lucide="mail" class="w-6 h-6 text-orange-400 mr-3"></i>
+                                15. Contato
+                            </h2>
+                            <p class="text-themed-secondary leading-relaxed mb-4">
+                                Para dúvidas, solicitações ou exercício de direitos previstos nestes Termos, entre em
+                                contato:
+                            </p>
+                            <div class="bg-gray-800/50 rounded-lg p-6 border border-themed-strong">
+                                <p class="text-themed flex items-center mb-2">
+                                    <i data-lucide="building" class="w-5 h-5 text-orange-400 mr-3"></i>
+                                    <strong>Óptima Digital</strong>
+                                </p>
+                                <p class="text-themed-secondary flex items-center mb-2">
+                                    <i data-lucide="mail" class="w-5 h-5 text-orange-400 mr-3"></i>
+                                    contato@optimati.com.br
+                                </p>
+                                <p class="text-themed-secondary flex items-center">
+                                    <i data-lucide="phone" class="w-5 h-5 text-orange-400 mr-3"></i>
+                                    (61) 99687-2864
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Botão Voltar -->
+                    <div class="text-center mt-12">
+                        <a href="index.html"
+                            class="bg-orange-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-orange-500 transition-all duration-300 inline-flex items-center shadow-lg hover:shadow-orange-500/40 transform hover:-translate-y-1">
+                            <i data-lucide="arrow-left" class="w-5 h-5 mr-2"></i>
+                            Voltar para a Página Inicial
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-black text-white border-t border-themed-strong">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-center items-center justify-center">
+                <div class="flex flex-col items-center">
+                    <div class="flex items-center mb-2">
+                        <img src="assets/logo.png" alt="Ícone da Óptima Digital" class="w-10 h-10 mr-2 logo-animated">
+                        <h3 class="text-xl font-bold"><span class="text-brand">Óptima</span> Digital</h3>
+                    </div>
+                    <p class="text-themed-secondary">Acelerando o crescimento do seu negócio.</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <h4 class="font-semibold mb-3 text-themed">Contato</h4>
+                    <p class="text-themed-secondary">contato@optimati.com.br</p>
+                    <p class="text-themed-secondary">(61) 99687-2864</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <h4 class="font-semibold mb-3 text-themed">Siga-nos</h4>
+                    <div class="flex space-x-4 justify-center"><a href="#"
+                            class="text-themed-secondary hover:text-brand-hover transition-colors"><i
+                                data-lucide="linkedin"></i></a><a href="#"
+                            class="text-themed-secondary hover:text-brand-hover transition-colors"><i
+                                data-lucide="instagram"></i></a><a href="#"
+                            class="text-themed-secondary hover:text-brand-hover transition-colors"><i
+                                data-lucide="twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-themed-strong mt-8 pt-6 text-center text-gray-500">
+                <p>&copy; 2025 Óptima Digital. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Theme toggle movido para o header -->
+    <button id="back-to-top-btn" class="floating-btn bg-orange-600 text-white hover:bg-orange-500">
+        <i data-lucide="arrow-up"></i>
+    </button>
+
+    <script src="scripts.js" defer></script>
+</body>
+
+</html>

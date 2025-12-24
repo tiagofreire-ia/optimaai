@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de OG Images - Óptima Digital</title>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #1a1a1a;
+            color: #fff;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
+
+        h1 {
+            color: #f97316;
+            margin-bottom: 10px;
+        }
+
+        .canvas-container {
+            background: #2a2a2a;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+        }
+
+        canvas {
+            border: 2px solid #444;
+            border-radius: 8px;
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+
+        button {
+            background: linear-gradient(135deg, #f97316, #ff4500);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(249, 115, 22, 0.4);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        .instructions {
+            max-width: 800px;
+            background: #2a2a2a;
+            padding: 30px;
+            border-radius: 12px;
+            line-height: 1.8;
+        }
+
+        .instructions code {
+            background: #1a1a1a;
+            padding: 2px 8px;
+            border-radius: 4px;
+            color: #f97316;
+        }
+
+        .success {
+            color: #22c55e;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>🎨 Gerador de OpenGraph Images</h1>
+    <p style="text-align: center; color: #999; max-width: 600px;">
+        Clique nos botões abaixo para gerar as imagens OG e salve-as na pasta <code>assets/</code>
+    </p>
+
+    <div class="canvas-container">
+        <h3 style="margin-top: 0;">OpenGraph Image (Facebook/LinkedIn)</h3>
+        <canvas id="og-canvas" width="1200" height="630"></canvas>
+        <br>
+        <button onclick="generateOGImage()">📥 Baixar og-image.png</button>
+        <div id="og-status"></div>
+    </div>
+
+    <div class="canvas-container">
+        <h3 style="margin-top: 0;">Twitter Card Image</h3>
+        <canvas id="twitter-canvas" width="1200" height="600"></canvas>
+        <br>
+        <button onclick="generateTwitterCard()">📥 Baixar twitter-card.png</button>
+        <div id="twitter-status"></div>
+    </div>
+
+    <div class="instructions">
+        <h2 style="color: #f97316; margin-top: 0;">📝 Instruções</h2>
+        <ol>
+            <li>Abra este arquivo no navegador (<code>generate-og-images.html</code>)</li>
+            <li>Clique nos botões para baixar as duas imagens</li>
+            <li>Mova os arquivos baixados para a pasta <code>assets/</code>:
+                <ul>
+                    <li><code>og-image.png</code> (1200x630px)</li>
+                    <li><code>twitter-card.png</code> (1200x600px)</li>
+                </ul>
+            </li>
+            <li>As meta tags no <code>index.html</code> já estão configuradas corretamente!</li>
+        </ol>
+
+        <h3 style="color: #f97316;">✅ Verificação</h3>
+        <p>Após salvar as imagens, teste os compartilhamentos em:</p>
+        <ul>
+            <li><strong>Facebook:</strong> <a href="https://developers.facebook.com/tools/debug/" target="_blank"
+                    style="color: #f97316;">Facebook Sharing Debugger</a></li>
+            <li><strong>Twitter:</strong> <a href="https://cards-dev.twitter.com/validator" target="_blank"
+                    style="color: #f97316;">Twitter Card Validator</a></li>
+            <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/post-inspector/" target="_blank"
+                    style="color: #f97316;">LinkedIn Post Inspector</a></li>
+        </ul>
+    </div>
+
+    <script>
+        function generateOGImage() {
+            const canvas = document.getElementById('og-canvas');
+            const ctx = canvas.getContext('2d');
+
+            // Gradient background
+            const gradient = ctx.createLinearGradient(0, 0, 1200, 630);
+            gradient.addColorStop(0, '#0a0a0a');
+            gradient.addColorStop(0.5, '#1a0f1a');
+            gradient.addColorStop(1, '#2d1810');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, 1200, 630);
+
+            // Overlay gradient glow
+            const glowGradient = ctx.createRadialGradient(600, 315, 0, 600, 315, 600);
+            glowGradient.addColorStop(0, 'rgba(249, 115, 22, 0.3)');
+            glowGradient.addColorStop(1, 'rgba(249, 115, 22, 0)');
+            ctx.fillStyle = glowGradient;
+            ctx.fillRect(0, 0, 1200, 630);
+
+            // Main title "Óptima Digital"
+            ctx.fillStyle = '#ffffff';
+            ctx.font = 'bold 96px Arial, sans-serif';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+
+            // Add text with gradient
+            const titleGradient = ctx.createLinearGradient(0, 250, 0, 320);
+            titleGradient.addColorStop(0, '#ffffff');
+            titleGradient.addColorStop(1, '#f97316');
+            ctx.fillStyle = titleGradient;
+
+            ctx.fillText('Óptima Digital', 600, 280);
+
+            // Subtitle
+            ctx.fillStyle = '#9ca3af';
+            ctx.font = '36px Arial, sans-serif';
+            ctx.fillText('Agência de Marketing Digital', 600, 370);
+
+            // Second line of subtitle
+            ctx.font = '32px Arial, sans-serif';
+            ctx.fillText('e Automação com IA', 600, 420);
+
+            // Accent line
+            ctx.strokeStyle = '#f97316';
+            ctx.lineWidth = 4;
+            ctx.beginPath();
+            ctx.moveTo(400, 480);
+            ctx.lineTo(800, 480);
+            ctx.stroke();
+
+            // Badge/Tag
+            ctx.fillStyle = 'rgba(249, 115, 22, 0.2)';
+            ctx.fillRect(450, 510, 300, 50);
+            ctx.fillStyle = '#f97316';
+            ctx.font = 'bold 24px Arial, sans-serif';
+            ctx.fillText('🚀 Resultados Comprovados', 600, 535);
+
+            // Download
+            downloadCanvas(canvas, 'og-image.png', 'og-status');
+        }
+
+        function generateTwitterCard() {
+            const canvas = document.getElementById('twitter-canvas');
+            const ctx = canvas.getContext('2d');
+
+            // Gradient background
+            const gradient = ctx.createLinearGradient(0, 0, 1200, 600);
+            gradient.addColorStop(0, '#0a0a0a');
+            gradient.addColorStop(0.4, '#1a0820');
+            gradient.addColorStop(1, '#2d1008');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, 1200, 600);
+
+            // Radial glow
+            const glowGradient = ctx.createRadialGradient(600, 300, 0, 600, 300, 500);
+            glowGradient.addColorStop(0, 'rgba(249, 115, 22, 0.4)');
+            glowGradient.addColorStop(1, 'rgba(249, 115, 22, 0)');
+            ctx.fillStyle = glowGradient;
+            ctx.fillRect(0, 0, 1200, 600);
+
+            // Main title
+            const titleGradient = ctx.createLinearGradient(0, 220, 0, 300);
+            titleGradient.addColorStop(0, '#ffffff');
+            titleGradient.addColorStop(1, '#f97316');
+            ctx.fillStyle = titleGradient;
+            ctx.font = 'bold 88px Arial, sans-serif';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText('Óptima Digital', 600, 260);
+
+            // Tagline
+            ctx.fillStyle = '#e5e7eb';
+            ctx.font = '34px Arial, sans-serif';
+            ctx.fillText('Acelere seus Resultados', 600, 350);
+
+            ctx.fillStyle = '#9ca3af';
+            ctx.font = '32px Arial, sans-serif';
+            ctx.fillText('com Marketing Digital', 600, 395);
+
+            // Accent decoration
+            ctx.strokeStyle = '#f97316';
+            ctx.lineWidth = 3;
+            ctx.beginPath();
+            ctx.arc(200, 300, 80, 0, Math.PI * 2);
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.arc(1000, 300, 80, 0, Math.PI * 2);
+            ctx.stroke();
+
+            // Bottom badge
+            ctx.fillStyle = 'rgba(249, 115, 22, 0.15)';
+            ctx.fillRect(400, 460, 400, 50);
+            ctx.fillStyle = '#f97316';
+            ctx.font = 'bold 26px Arial, sans-serif';
+            ctx.fillText('📊 Marketing + IA + Automação', 600, 485);
+
+            // Download
+            downloadCanvas(canvas, 'twitter-card.png', 'twitter-status');
+        }
+
+        function downloadCanvas(canvas, filename, statusId) {
+            canvas.toBlob(function (blob) {
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = filename;
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+
+                const statusDiv = document.getElementById(statusId);
+                statusDiv.innerHTML = '<p class="success">✅ Download iniciado! Mova o arquivo para a pasta assets/</p>';
+                setTimeout(() => {
+                    statusDiv.innerHTML = '';
+                }, 5000);
+            });
+        }
+
+        // Auto-render previews on load
+        window.addEventListener('load', () => {
+            const ogCanvas = document.getElementById('og-canvas');
+            const ogCtx = ogCanvas.getContext('2d');
+
+            // Render OG preview
+            const gradient1 = ogCtx.createLinearGradient(0, 0, 1200, 630);
+            gradient1.addColorStop(0, '#0a0a0a');
+            gradient1.addColorStop(0.5, '#1a0f1a');
+            gradient1.addColorStop(1, '#2d1810');
+            ogCtx.fillStyle = gradient1;
+            ogCtx.fillRect(0, 0, 1200, 630);
+
+            const glowGradient1 = ogCtx.createRadialGradient(600, 315, 0, 600, 315, 600);
+            glowGradient1.addColorStop(0, 'rgba(249, 115, 22, 0.3)');
+            glowGradient1.addColorStop(1, 'rgba(249, 115, 22, 0)');
+            ogCtx.fillStyle = glowGradient1;
+            ogCtx.fillRect(0, 0, 1200, 630);
+
+            const titleGradient1 = ogCtx.createLinearGradient(0, 250, 0, 320);
+            titleGradient1.addColorStop(0, '#ffffff');
+            titleGradient1.addColorStop(1, '#f97316');
+            ogCtx.fillStyle = titleGradient1;
+            ogCtx.font = 'bold 96px Arial, sans-serif';
+            ogCtx.textAlign = 'center';
+            ogCtx.textBaseline = 'middle';
+            ogCtx.fillText('Óptima Digital', 600, 280);
+
+            ogCtx.fillStyle = '#9ca3af';
+            ogCtx.font = '36px Arial, sans-serif';
+            ogCtx.fillText('Agência de Marketing Digital', 600, 370);
+            ogCtx.font = '32px Arial, sans-serif';
+            ogCtx.fillText('e Automação com IA', 600, 420);
+
+            ogCtx.strokeStyle = '#f97316';
+            ogCtx.lineWidth = 4;
+            ogCtx.beginPath();
+            ogCtx.moveTo(400, 480);
+            ogCtx.lineTo(800, 480);
+            ogCtx.stroke();
+
+            ogCtx.fillStyle = 'rgba(249, 115, 22, 0.2)';
+            ogCtx.fillRect(450, 510, 300, 50);
+            ogCtx.fillStyle = '#f97316';
+            ogCtx.font = 'bold 24px Arial, sans-serif';
+            ogCtx.fillText('🚀 Resultados Comprovados', 600, 535);
+
+            // Render Twitter preview
+            const twitterCanvas = document.getElementById('twitter-canvas');
+            const twitterCtx = twitterCanvas.getContext('2d');
+
+            const gradient2 = twitterCtx.createLinearGradient(0, 0, 1200, 600);
+            gradient2.addColorStop(0, '#0a0a0a');
+            gradient2.addColorStop(0.4, '#1a0820');
+            gradient2.addColorStop(1, '#2d1008');
+            twitterCtx.fillStyle = gradient2;
+            twitterCtx.fillRect(0, 0, 1200, 600);
+
+            const glowGradient2 = twitterCtx.createRadialGradient(600, 300, 0, 600, 300, 500);
+            glowGradient2.addColorStop(0, 'rgba(249, 115, 22, 0.4)');
+            glowGradient2.addColorStop(1, 'rgba(249, 115, 22, 0)');
+            twitterCtx.fillStyle = glowGradient2;
+            twitterCtx.fillRect(0, 0, 1200, 600);
+
+            const titleGradient2 = twitterCtx.createLinearGradient(0, 220, 0, 300);
+            titleGradient2.addColorStop(0, '#ffffff');
+            titleGradient2.addColorStop(1, '#f97316');
+            twitterCtx.fillStyle = titleGradient2;
+            twitterCtx.font = 'bold 88px Arial, sans-serif';
+            twitterCtx.textAlign = 'center';
+            twitterCtx.textBaseline = 'middle';
+            twitterCtx.fillText('Óptima Digital', 600, 260);
+
+            twitterCtx.fillStyle = '#e5e7eb';
+            twitterCtx.font = '34px Arial, sans-serif';
+            twitterCtx.fillText('Acelere seus Resultados', 600, 350);
+
+            twitterCtx.fillStyle = '#9ca3af';
+            twitterCtx.font = '32px Arial, sans-serif';
+            twitterCtx.fillText('com Marketing Digital', 600, 395);
+
+            twitterCtx.strokeStyle = '#f97316';
+            twitterCtx.lineWidth = 3;
+            twitterCtx.beginPath();
+            twitterCtx.arc(200, 300, 80, 0, Math.PI * 2);
+            twitterCtx.stroke();
+
+            twitterCtx.beginPath();
+            twitterCtx.arc(1000, 300, 80, 0, Math.PI * 2);
+            twitterCtx.stroke();
+
+            twitterCtx.fillStyle = 'rgba(249, 115, 22, 0.15)';
+            twitterCtx.fillRect(400, 460, 400, 50);
+            twitterCtx.fillStyle = '#f97316';
+            twitterCtx.font = 'bold 26px Arial, sans-serif';
+            twitterCtx.fillText('📊 Marketing + IA + Automação', 600, 485);
+        });
+    </script>
+</body>
+
+</html>

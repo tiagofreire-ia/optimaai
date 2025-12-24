@@ -1,39 +1,59 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Theme pre-initialization - prevents flash of wrong theme -->
+  <script>
+    (function () {
+      var theme = localStorage.getItem('theme');
+      if (theme === 'light-mode') {
+        document.documentElement.classList.add('light-mode');
+      }
+    })();
+  </script>
+  <style>
+    /* Critical CSS - prevents flash */
+    html {
+      background-color: #0a0a0a;
+    }
+
+    html.light-mode {
+      background-color: #f8fafc;
+    }
+  </style>
   <!-- Primary Meta Tags -->
   <meta name="description"
-    content="Óptima Digital é sua agência de marketing digital completa. Gestão de redes sociais, tráfego pago, SEO, branding e automação com inteligência artificial para escalar seu negócio." />
+    content="Ã“ptima Digital Ã© sua agÃªncia de marketing digital completa. GestÃ£o de redes sociais, trÃ¡fego pago, SEO, branding e automaÃ§Ã£o com inteligÃªncia artificial para escalar seu negÃ³cio." />
   <meta name="keywords"
-    content="Marketing Digital, Agência de Marketing, Tráfego Pago, Gestão de Redes Sociais, SEO, Branding, Automação, IA, Marketing de Conteúdo, Google Ads, Facebook Ads, Instagram Marketing" />
-  <meta name="author" content="Óptima Digital" />
+    content="Marketing Digital, AgÃªncia de Marketing, TrÃ¡fego Pago, GestÃ£o de Redes Sociais, SEO, Branding, AutomaÃ§Ã£o, IA, Marketing de ConteÃºdo, Google Ads, Facebook Ads, Instagram Marketing" />
+  <meta name="author" content="Ã“ptima Digital" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   <meta name="googlebot" content="index, follow" />
-  <link rel="canonical" href="https://optimadigital.com.br/" />
-  <title>Óptima Digital | Agência de Marketing Digital e Automação com IA</title>
+  <link rel="canonical" href="https://optimati.com.br/" />
+  <title>Ã“ptima Digital | AgÃªncia de Marketing Digital e AutomaÃ§Ã£o com IA</title>
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://optimadigital.com.br/" />
-  <meta property="og:title" content="Óptima Digital | Agência de Marketing Digital" />
+  <meta property="og:url" content="https://optimati.com.br/" />
+  <meta property="og:title" content="Ã“ptima Digital | AgÃªncia de Marketing Digital" />
   <meta property="og:description"
-    content="Transforme seu negócio com marketing digital estratégico. Gestão de redes sociais, tráfego pago, SEO e automação com IA. +300% de resultados comprovados." />
-  <meta property="og:image" content="https://optimadigital.com.br/assets/og-image.png" />
+    content="Transforme seu negÃ³cio com marketing digital estratÃ©gico. GestÃ£o de redes sociais, trÃ¡fego pago, SEO e automaÃ§Ã£o com IA. +300% de resultados comprovados." />
+  <meta property="og:image" content="https://optimati.com.br/assets/og-image.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:locale" content="pt_BR" />
-  <meta property="og:site_name" content="Óptima Digital" />
+  <meta property="og:site_name" content="Ã“ptima Digital" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:url" content="https://optimadigital.com.br/" />
-  <meta name="twitter:title" content="Óptima Digital | Agência de Marketing Digital" />
+  <meta name="twitter:url" content="https://optimati.com.br/" />
+  <meta name="twitter:title" content="Ã“ptima Digital | AgÃªncia de Marketing Digital" />
   <meta name="twitter:description"
-    content="Transforme seu negócio com marketing digital estratégico. +300% de resultados comprovados." />
-  <meta name="twitter:image" content="https://optimadigital.com.br/assets/twitter-card.png" />
+    content="Transforme seu negÃ³cio com marketing digital estratÃ©gico. +300% de resultados comprovados." />
+  <meta name="twitter:image" content="https://optimati.com.br/assets/twitter-card.png" />
 
   <!-- Additional SEO Tags -->
   <meta name="theme-color" content="#f97316" />
@@ -52,16 +72,16 @@
     "@graph": [
       {
         "@type": "Organization",
-        "@id": "https://optimadigital.com.br/#organization",
-        "name": "Óptima Digital",
-        "url": "https://optimadigital.com.br/",
+        "@id": "https://optimati.com.br/#organization",
+        "name": "Ã“ptima Digital",
+        "url": "https://optimati.com.br/",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://optimadigital.com.br/assets/logo.png",
+          "url": "https://optimati.com.br/assets/logo.png",
           "width": 600,
           "height": 60
         },
-        "description": "Agência de marketing digital especializada em gestão de redes sociais, tráfego pago, SEO e automação com inteligência artificial.",
+        "description": "AgÃªncia de marketing digital especializada em gestÃ£o de redes sociais, trÃ¡fego pago, SEO e automaÃ§Ã£o com inteligÃªncia artificial.",
         "sameAs": [
           "https://www.facebook.com/optimadigital",
           "https://www.instagram.com/optimadigital",
@@ -69,7 +89,7 @@
         ],
         "contactPoint": {
           "@type": "ContactPoint",
-          "telephone": "+55-11-9999-9999",
+          "telephone": "+55 61 99687-2864",
           "contactType": "customer service",
           "areaServed": "BR",
           "availableLanguage": "Portuguese"
@@ -77,53 +97,53 @@
       },
       {
         "@type": "ProfessionalService",
-        "@id": "https://optimadigital.com.br/#service",
-        "name": "Óptima Digital - Agência de Marketing Digital",
-        "image": "https://optimadigital.com.br/assets/logo.png",
+        "@id": "https://optimati.com.br/#service",
+        "name": "Ã“ptima Digital - AgÃªncia de Marketing Digital",
+        "image": "https://optimati.com.br/assets/logo.png",
         "address": {
           "@type": "PostalAddress",
           "addressCountry": "BR",
-          "addressRegion": "SP"
+          "addressRegion: DF"
         },
         "priceRange": "$$",
-        "url": "https://optimadigital.com.br/",
-        "telephone": "+55-11-9999-9999",
+        "url": "https://optimati.com.br/",
+        "telephone": "+55 61 99687-2864",
         "areaServed": {
           "@type": "Country",
           "name": "Brasil"
         },
         "serviceType": [
           "Marketing Digital",
-          "Gestão de Redes Sociais",
-          "Tráfego Pago",
+          "GestÃ£o de Redes Sociais",
+          "TrÃ¡fego Pago",
           "SEO",
-          "Automação com IA"
+          "AutomaÃ§Ã£o com IA"
         ]
       },
       {
         "@type": "WebSite",
-        "@id": "https://optimadigital.com.br/#website",
-        "url": "https://optimadigital.com.br/",
-        "name": "Óptima Digital",
-        "description": "Agência de marketing digital completa com foco em resultados",
+        "@id": "https://optimati.com.br/#website",
+        "url": "https://optimati.com.br/",
+        "name": "Ã“ptima Digital",
+        "description": "AgÃªncia de marketing digital completa com foco em resultados",
         "publisher": {
-          "@id": "https://optimadigital.com.br/#organization"
+          "@id": "https://optimati.com.br/#organization"
         },
         "potentialAction": {
           "@type": "SearchAction",
           "target": {
             "@type": "EntryPoint",
-            "urlTemplate": "https://optimadigital.com.br/?s={search_term_string}"
+            "urlTemplate": "https://optimati.com.br/?s={search_term_string}"
           },
           "query-input": "required name=search_term_string"
         }
       },
       {
         "@type": "Service",
-        "@id": "https://optimadigital.com.br/#marketingdigital",
+        "@id": "https://optimati.com.br/#marketingdigital",
         "serviceType": "Marketing Digital",
         "provider": {
-          "@id": "https://optimadigital.com.br/#organization"
+          "@id": "https://optimati.com.br/#organization"
         },
         "areaServed": {
           "@type": "Country",
@@ -131,21 +151,21 @@
         },
         "hasOfferCatalog": {
           "@type": "OfferCatalog",
-          "name": "Serviços de Marketing Digital",
+          "name": "ServiÃ§os de Marketing Digital",
           "itemListElement": [
             {
               "@type": "Offer",
               "itemOffered": {
                 "@type": "Service",
-                "name": "Gestão de Redes Sociais",
-                "description": "Criação de conteúdo estratégico e gestão completa das suas redes sociais"
+                "name": "GestÃ£o de Redes Sociais",
+                "description": "CriaÃ§Ã£o de conteÃºdo estratÃ©gico e gestÃ£o completa das suas redes sociais"
               }
             },
             {
               "@type": "Offer",
               "itemOffered": {
                 "@type": "Service",
-                "name": "Tráfego Pago",
+                "name": "TrÃ¡fego Pago",
                 "description": "Campanhas de Google Ads e Meta Ads com foco em ROI"
               }
             },
@@ -153,8 +173,8 @@
               "@type": "Offer",
               "itemOffered": {
                 "@type": "Service",
-                "name": "SEO e Conteúdo",
-                "description": "Otimização para buscadores e marketing de conteúdo"
+                "name": "SEO e ConteÃºdo",
+                "description": "OtimizaÃ§Ã£o para buscadores e marketing de conteÃºdo"
               }
             }
           ]
@@ -164,41 +184,246 @@
   }
   </script>
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://unpkg.com/lucide@latest"></script>
-  <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+  <!-- Google Analytics 4 - Replace G-XXXXXXXXXX with your actual GA4 Measurement ID -->
+  <!-- To get your ID: Go to Google Analytics > Admin > Data Streams > Web > Measurement ID -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
 
+    // Event tracking helper function
+    window.trackEvent = function (eventName, eventParams) {
+      if (typeof gtag !== 'undefined') {
+        gtag('event', eventName, eventParams);
+      }
+    };
+  </script>
+
+  <link rel="stylesheet" href="styles-tailwind.css" />
+
+  <!-- Preload critical font weights -->
+  <link rel="preload" href="https://fonts.gstatic.com/s/inter/v18/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2" as="font"
+    type="font/woff2" crossorigin>
+
+  <!-- Non-blocking font loading -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"
+    media="print" onload="this.media='all'" />
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet" />
+  </noscript>
+
   <link rel="icon" href="assets/favicon.png" type="image/png" />
   <link rel="stylesheet" href="styles.css" />
+
+  <!-- Lucide Icons - Selective import for better performance -->
+  <script type="module">
+    import {
+      createIcons,
+      Sun, Moon, Menu, ArrowRight, ArrowUp, Target, Handshake, Sparkles,
+      Instagram, Search, ClipboardList, Zap, TrendingUp, Settings,
+      FileText, Users, BarChart3, Headphones, Quote, Wallet,
+      Linkedin, Twitter, Cookie, X, Check
+    } from 'https://esm.run/lucide';
+
+    // Make createIcons available globally
+    window.lucide = { createIcons };
+
+    // Create icons on DOM ready
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', () => createIcons());
+    } else {
+      createIcons();
+    }
+  </script>
+
+  <!-- Schema.org Structured Data for Rich Snippets -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "https://optimati.com.br/#organization",
+    "name": "Ã“ptima Digital",
+    "alternateName": "Ã“ptima IA - AgÃªncia de Marketing Digital",
+    "description": "AgÃªncia de marketing digital especializada em gestÃ£o de trÃ¡fego pago, automaÃ§Ã£o com IA, desenvolvimento de sites e estratÃ©gias personalizadas para aumentar suas vendas.",
+    "url": "https://optimati.com.br",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://optimati.com.br/assets/logo.png",
+      "width": "512",
+      "height": "512"
+    },
+    "image": "https://optimati.com.br/assets/og-image.png",
+    "telephone": "+55 61 99687-2864",
+    "email": "contato@optimati.com.br",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "BrasÃ­lia",
+      "addressRegion": "DF",
+      "addressCountry": "BR"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "-15.7942",
+      "longitude": "-47.8825"
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "Brasil"
+    },
+    "priceRange": "$$",
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "09:00",
+        "closes": "18:00"
+      }
+    ],
+    "sameAs": [
+      "https://www.instagram.com/optimadigital",
+      "https://www.linkedin.com/company/optimadigital",
+      "https://twitter.com/optimadigital"
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "ServiÃ§os de Marketing Digital",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "GestÃ£o de TrÃ¡fego Pago",
+            "description": "Google Ads, Meta Ads (Facebook/Instagram) e LinkedIn Ads com ROI otimizado."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "AutomaÃ§Ã£o com InteligÃªncia Artificial",
+            "description": "Chatbots, automaÃ§Ã£o de marketing e processos com IA."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Desenvolvimento Web",
+            "description": "Sites institucionais, landing pages e e-commerce de alta conversÃ£o."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "GestÃ£o de Redes Sociais",
+            "description": "EstratÃ©gia, criaÃ§Ã£o de conteÃºdo e gerenciamento de perfis."
+          }
+        }
+      ]
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5",
+      "reviewCount": "47",
+      "bestRating": "5",
+      "worstRating": "1"
+    }
+  }
+  </script>
+
+  <!-- FAQ Schema for Rich Snippets -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Meu negÃ³cio Ã© pequeno. Marketing digital funciona para mim?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Com certeza! O marketing digital Ã© altamente escalÃ¡vel e acessÃ­vel. ComeÃ§amos com estratÃ©gias adequadas ao seu orÃ§amento e vamos crescendo juntos conforme os resultados aparecem."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Quanto tempo leva para ver resultados?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Resultados de trÃ¡fego pago podem ser vistos em dias. JÃ¡ estratÃ©gias de conteÃºdo e SEO levam de 3 a 6 meses para maturar. Trabalhamos com metas claras em cada etapa."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "VocÃªs trabalham com contratos de longo prazo?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Oferecemos flexibilidade. Temos planos mensais e tambÃ©m opÃ§Ãµes com desconto para contratos trimestrais ou semestrais. VocÃª escolhe o que for melhor para seu negÃ³cio."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Qual Ã© o investimento mÃ­nimo para comeÃ§ar?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Temos planos que se adaptam a diferentes orÃ§amentos. O investimento inicial depende dos serviÃ§os escolhidos, mas trabalhamos para garantir o melhor custo-benefÃ­cio para cada cliente."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "VocÃªs oferecem contrato de fidelidade?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "NÃ£o trabalhamos com fidelidade obrigatÃ³ria. Acreditamos que nossos resultados falam por si. VocÃª continua conosco porque estÃ¡ satisfeito, nÃ£o por obrigaÃ§Ã£o contratual."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body class="bg-themed text-themed">
   <header class="bg-blur-themed backdrop-blur-md fixed top-0 left-0 right-0 z-50 border-b border-themed-strong">
     <div class="container mx-auto px-6 py-4 flex justify-between items-center">
       <a href="#" class="text-2xl font-bold flex items-center text-themed">
-        <img src="assets/favicon.png" alt="Logo da Óptima Digital" class="w-6 h-6 mr-2 logo-animated" />
-        <span class="text-brand">Óptima</span><span class="ml-2">Digital</span>
+        <img src="assets/logo.png" alt="Logo da Ã“ptima Digital" class="w-10 h-10 mr-2 logo-animated" />
+        <span class="text-brand">Ã“ptima</span><span class="ml-2">Digital</span>
       </a>
 
-      <nav class="hidden lg:flex items-center space-x-6">
-        <a href="#about" class="text-themed-secondary hover:text-brand-hover transition-colors duration-300">Quem
+      <nav class="hidden lg:flex items-center space-x-5">
+        <a href="#about"
+          class="text-xs font-medium tracking-wide text-themed-secondary hover:text-brand-hover transition-colors duration-300">Quem
           Somos</a>
         <a href="#services"
-          class="text-themed-secondary hover:text-brand-hover transition-colors duration-300">Serviços</a>
+          class="text-xs font-medium tracking-wide text-themed-secondary hover:text-brand-hover transition-colors duration-300">ServiÃ§os</a>
         <a href="#solutions"
-          class="text-themed-secondary hover:text-brand-hover transition-colors duration-300">Soluções</a>
+          class="text-xs font-medium tracking-wide text-themed-secondary hover:text-brand-hover transition-colors duration-300">SoluÃ§Ãµes</a>
         <a href="#automations"
-          class="text-themed-secondary hover:text-brand-hover transition-colors duration-300">Automações</a>
+          class="text-xs font-medium tracking-wide text-themed-secondary hover:text-brand-hover transition-colors duration-300">AutomaÃ§Ãµes</a>
         <a href="#methodology"
-          class="text-themed-secondary hover:text-brand-hover transition-colors duration-300">Metodologia</a>
+          class="text-xs font-medium tracking-wide text-themed-secondary hover:text-brand-hover transition-colors duration-300">Metodologia</a>
         <a href="#testimonials"
-          class="text-themed-secondary hover:text-brand-hover transition-colors duration-300">Depoimentos</a>
-        <a href="#faq" class="text-themed-secondary hover:text-brand-hover transition-colors duration-300">FAQ</a>
+          class="text-xs font-medium tracking-wide text-themed-secondary hover:text-brand-hover transition-colors duration-300">Depoimentos</a>
+        <a href="#faq"
+          class="text-xs font-medium tracking-wide text-themed-secondary hover:text-brand-hover transition-colors duration-300">FAQ</a>
+
+        <!-- Theme Toggle no Header -->
+        <button id="theme-toggle-header"
+          class="p-2 rounded-lg text-themed-secondary hover:text-brand-hover hover:bg-gray-100/10 transition-all duration-300"
+          aria-label="Alternar tema">
+          <i data-lucide="sun" class="w-4 h-4"></i>
+        </button>
+
         <a href="#contact"
-          class="bg-orange-600 text-white px-4 py-2 rounded-lg hover:bg-orange-500 transition-colors duration-300 shadow-lg hover:shadow-orange-500/30 transform hover:-translate-y-0.5">Fale
+          class="bg-orange-600 text-white px-4 py-2 rounded-lg text-xs font-semibold tracking-wide hover:bg-orange-500 transition-colors duration-300 shadow-lg hover:shadow-orange-500/30 transform hover:-translate-y-0.5">Fale
           Conosco</a>
       </nav>
       <button class="lg:hidden text-themed-secondary" id="mobile-menu-button" aria-label="Abrir menu">
@@ -208,9 +433,9 @@
     <!-- Menu Mobile Dropdown -->
     <div id="mobile-menu" class="mobile-dropdown lg:hidden">
       <a href="#about" class="mobile-dropdown-link">Quem Somos</a>
-      <a href="#services" class="mobile-dropdown-link">Serviços</a>
-      <a href="#solutions" class="mobile-dropdown-link">Soluções</a>
-      <a href="#automations" class="mobile-dropdown-link">Automações</a>
+      <a href="#services" class="mobile-dropdown-link">ServiÃ§os</a>
+      <a href="#solutions" class="mobile-dropdown-link">SoluÃ§Ãµes</a>
+      <a href="#automations" class="mobile-dropdown-link">AutomaÃ§Ãµes</a>
       <a href="#methodology" class="mobile-dropdown-link">Metodologia</a>
       <a href="#testimonials" class="mobile-dropdown-link">Depoimentos</a>
       <a href="#faq" class="mobile-dropdown-link">FAQ</a>
@@ -236,7 +461,7 @@
         </h1>
         <p class="text-lg md:text-xl text-themed-secondary max-w-3xl mx-auto mb-8 h-14 animate-on-scroll"
           style="transition-delay: 150ms">
-          <span id="typed-subtitle"></span>
+          <span id="typewriter" class="typewriter-text"></span><span class="typewriter-cursor">|</span>
         </p>
         <a href="#contact"
           class="bg-orange-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-orange-500 transition-all duration-300 inline-block shadow-lg hover:shadow-orange-500/40 transform hover:-translate-y-1 animate-on-scroll"
@@ -246,7 +471,7 @@
       </div>
     </section>
 
-    <!-- Seção de Estatísticas -->
+    <!-- SeÃ§Ã£o de EstatÃ­sticas -->
     <section class="py-16 section-background">
       <div class="container mx-auto px-6 relative z-10">
         <div class="stats-container">
@@ -260,42 +485,43 @@
           </div>
           <div class="stat-item animate-on-scroll" style="transition-delay: 200ms">
             <div class="stat-number"><span class="counter" data-target="95">0</span>%</div>
-            <div class="stat-label">Satisfação dos Clientes</div>
+            <div class="stat-label">SatisfaÃ§Ã£o dos Clientes</div>
           </div>
           <div class="stat-item animate-on-scroll" style="transition-delay: 300ms">
             <div class="stat-number"><span class="counter" data-target="3">0</span>x</div>
-            <div class="stat-label">ROI Médio</div>
+            <div class="stat-label">ROI MÃ©dio</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Seção Quem Somos -->
+    <!-- SeÃ§Ã£o Quem Somos -->
     <section id="about" class="py-20 section-background">
       <div class="container mx-auto px-6 relative z-10">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
           <!-- Lado Esquerdo - Texto -->
           <div class="animate-on-scroll fade-left">
-            <span class="text-orange-400 font-semibold text-sm uppercase tracking-wider mb-2 block">Sobre Nós</span>
+            <span class="text-orange-400 font-semibold text-sm uppercase tracking-wider mb-2 block">Sobre NÃ³s</span>
             <h2 class="text-3xl md:text-4xl font-bold text-themed mb-6">
-              Somos a <span class="text-gradient">Óptima Digital</span>
+              Somos a <span class="text-gradient">Ã“ptima Digital</span>
             </h2>
             <p class="text-themed-secondary text-lg mb-6 leading-relaxed">
-              Nascemos com um propósito claro: <strong class="text-themed">acelerar o crescimento de empresas</strong>
-              através do marketing digital e automação inteligente. Combinamos estratégia, criatividade e tecnologia
+              Nascemos com um propÃ³sito claro: <strong class="text-themed">acelerar o crescimento de empresas</strong>
+              atravÃ©s do marketing digital e automaÃ§Ã£o inteligente. Combinamos estratÃ©gia, criatividade e tecnologia
               para entregar resultados que realmente importam.
             </p>
             <p class="text-themed-secondary mb-8 leading-relaxed">
-              Nossa equipe é formada por especialistas apaixonados por dados, design e performance. Acreditamos que cada
-              negócio é único e merece uma abordagem personalizada para alcançar seu máximo potencial no digital.
+              Nossa equipe Ã© formada por especialistas apaixonados por dados, design e performance. Acreditamos que
+              cada
+              negÃ³cio Ã© Ãºnico e merece uma abordagem personalizada para alcanÃ§ar seu mÃ¡ximo potencial no digital.
             </p>
 
             <!-- Mini Stats inline -->
             <div class="flex flex-wrap gap-8 mb-8">
               <div>
                 <div class="text-3xl font-bold text-brand">2+</div>
-                <div class="text-sm text-themed-secondary">Anos de Experiência</div>
+                <div class="text-sm text-themed-secondary">Anos de ExperiÃªncia</div>
               </div>
               <div>
                 <div class="text-3xl font-bold text-brand">100%</div>
@@ -316,48 +542,53 @@
 
           <!-- Lado Direito - Valores -->
           <div class="animate-on-scroll fade-right" style="transition-delay: 200ms">
-            <div class="bg-card-themed backdrop-blur-sm rounded-2xl border border-themed-strong p-8">
+            <div
+              class="bg-card-themed backdrop-blur-sm rounded-2xl border border-themed-strong p-8 shadow-lg hover:shadow-orange-500/10 transition-all duration-300 card-glow card-shine card-light-effect">
               <h3 class="text-xl font-bold text-themed mb-6 text-center">Nossos Valores</h3>
 
               <div class="space-y-6">
                 <!-- Valor 1 -->
                 <div
-                  class="flex items-start gap-4 p-4 rounded-xl bg-gray-800/30 hover:bg-gray-800/50 transition-all duration-300 group">
+                  class="flex items-start gap-4 p-4 rounded-xl bg-card-value hover:bg-card-value-hover transition-all duration-300 group icon-float">
                   <div
-                    class="w-12 h-12 bg-orange-500/15 text-orange-400 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
-                    <i data-lucide="target" class="w-6 h-6"></i>
+                    class="value-icon-container bg-orange-900/50 text-orange-400 rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform card-icon-pulse">
+                    <div class="value-icon-glow value-glow-orange"></div>
+                    <i data-lucide="target" class="w-6 h-6 relative z-10"></i>
                   </div>
                   <div>
                     <h4 class="font-semibold text-themed mb-1">Foco em Resultados</h4>
-                    <p class="text-sm text-themed-secondary">Cada ação que tomamos é orientada por dados e métricas
-                      reais. Seu sucesso é nossa prioridade.</p>
+                    <p class="text-sm text-themed-secondary">Cada aÃ§Ã£o que tomamos Ã© orientada por dados e mÃ©tricas
+                      reais. Seu sucesso Ã© nossa prioridade.</p>
                   </div>
                 </div>
 
                 <!-- Valor 2 -->
                 <div
-                  class="flex items-start gap-4 p-4 rounded-xl bg-gray-800/30 hover:bg-gray-800/50 transition-all duration-300 group">
+                  class="flex items-start gap-4 p-4 rounded-xl bg-card-value hover:bg-card-value-hover transition-all duration-300 group icon-float">
                   <div
-                    class="w-12 h-12 bg-blue-500/15 text-blue-400 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
-                    <i data-lucide="handshake" class="w-6 h-6"></i>
+                    class="value-icon-container bg-blue-900/50 text-blue-400 rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform card-icon-pulse">
+                    <div class="value-icon-glow value-glow-blue"></div>
+                    <i data-lucide="handshake" class="w-6 h-6 relative z-10"></i>
                   </div>
                   <div>
-                    <h4 class="font-semibold text-themed mb-1">Transparência Total</h4>
-                    <p class="text-sm text-themed-secondary">Relatórios claros, comunicação aberta e honestidade em cada
+                    <h4 class="font-semibold text-themed mb-1">TransparÃªncia Total</h4>
+                    <p class="text-sm text-themed-secondary">RelatÃ³rios claros, comunicaÃ§Ã£o aberta e honestidade em
+                      cada
                       etapa do processo.</p>
                   </div>
                 </div>
 
                 <!-- Valor 3 -->
                 <div
-                  class="flex items-start gap-4 p-4 rounded-xl bg-gray-800/30 hover:bg-gray-800/50 transition-all duration-300 group">
+                  class="flex items-start gap-4 p-4 rounded-xl bg-card-value hover:bg-card-value-hover transition-all duration-300 group icon-float">
                   <div
-                    class="w-12 h-12 bg-purple-500/15 text-purple-400 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
-                    <i data-lucide="sparkles" class="w-6 h-6"></i>
+                    class="value-icon-container bg-purple-900/50 text-purple-400 rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform card-icon-pulse">
+                    <div class="value-icon-glow value-glow-purple"></div>
+                    <i data-lucide="sparkles" class="w-6 h-6 relative z-10"></i>
                   </div>
                   <div>
-                    <h4 class="font-semibold text-themed mb-1">Inovação Constante</h4>
-                    <p class="text-sm text-themed-secondary">Estamos sempre atualizados com as últimas tendências e
+                    <h4 class="font-semibold text-themed mb-1">InovaÃ§Ã£o Constante</h4>
+                    <p class="text-sm text-themed-secondary">Estamos sempre atualizados com as Ãºltimas tendÃªncias e
                       tecnologias do mercado.</p>
                   </div>
                 </div>
@@ -372,10 +603,11 @@
     <section id="services" class="py-20 section-background">
       <div class="container mx-auto px-6 relative z-10">
         <div class="text-center mb-12 animate-on-scroll">
-          <h2 class="text-3xl md:text-4xl font-bold text-themed">Nossos Serviços de <span
+          <h2 class="text-3xl md:text-4xl font-bold text-themed">Nossos ServiÃ§os de <span
               class="text-gradient">Marketing</span></h2>
-          <p class="text-lg text-themed-secondary mt-2 max-w-2xl mx-auto">Soluções completas para acelerar o crescimento
-            digital do seu negócio.</p>
+          <p class="text-lg text-themed-secondary mt-2 max-w-2xl mx-auto">SoluÃ§Ãµes completas para acelerar o
+            crescimento
+            digital do seu negÃ³cio.</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div
@@ -384,8 +616,9 @@
               class="bg-orange-900/50 text-orange-400 rounded-full w-12 h-12 flex items-center justify-center mb-4 card-icon-pulse">
               <i data-lucide="instagram"></i>
             </div>
-            <h3 class="text-xl font-bold text-themed mb-2">Gestão de Redes Sociais</h3>
-            <p class="text-themed-secondary">Criação de conteúdo estratégico, calendário editorial e gestão completa das
+            <h3 class="text-xl font-bold text-themed mb-2">GestÃ£o de Redes Sociais</h3>
+            <p class="text-themed-secondary">CriaÃ§Ã£o de conteÃºdo estratÃ©gico, calendÃ¡rio editorial e gestÃ£o
+              completa das
               suas redes para aumentar engajamento e vendas.</p>
           </div>
           <div
@@ -395,9 +628,9 @@
               class="bg-orange-900/50 text-orange-400 rounded-full w-12 h-12 flex items-center justify-center mb-4 card-icon-pulse">
               <i data-lucide="target"></i>
             </div>
-            <h3 class="text-xl font-bold text-themed mb-2">Tráfego Pago</h3>
+            <h3 class="text-xl font-bold text-themed mb-2">TrÃ¡fego Pago</h3>
             <p class="text-themed-secondary">Campanhas otimizadas em Google Ads, Meta Ads e TikTok Ads com foco em ROI e
-              conversões reais para seu negócio.</p>
+              conversÃµes reais para seu negÃ³cio.</p>
           </div>
           <div
             class="bg-card-themed backdrop-blur-sm p-8 rounded-xl border border-themed-strong shadow-lg hover:shadow-orange-500/10 transition-shadow duration-300 transform hover:-translate-y-1 animate-on-scroll card-glow card-shine card-light-effect icon-float"
@@ -406,9 +639,9 @@
               class="bg-orange-900/50 text-orange-400 rounded-full w-12 h-12 flex items-center justify-center mb-4 card-icon-pulse">
               <i data-lucide="search"></i>
             </div>
-            <h3 class="text-xl font-bold text-themed mb-2">SEO e Conteúdo</h3>
-            <p class="text-themed-secondary">Otimização para buscadores e marketing de conteúdo para atrair tráfego
-              orgânico qualificado e posicionar sua marca.</p>
+            <h3 class="text-xl font-bold text-themed mb-2">SEO e ConteÃºdo</h3>
+            <p class="text-themed-secondary">OtimizaÃ§Ã£o para buscadores e marketing de conteÃºdo para atrair trÃ¡fego
+              orgÃ¢nico qualificado e posicionar sua marca.</p>
           </div>
         </div>
       </div>
@@ -417,50 +650,63 @@
     <section id="solutions" class="py-20 section-background">
       <div class="container mx-auto px-6 relative z-10">
         <div class="text-center mb-12 animate-on-scroll">
-          <h2 class="text-3xl md:text-4xl font-bold text-themed">Soluções <span class="text-gradient">Completas</span>
+          <h2 class="text-3xl md:text-4xl font-bold text-themed">SoluÃ§Ãµes <span class="text-gradient">Completas</span>
           </h2>
-          <p class="text-lg text-themed-secondary mt-2 max-w-2xl mx-auto">Tudo que você precisa para dominar o digital
-            em um só lugar.</p>
+          <p class="text-lg text-themed-secondary mt-2 max-w-2xl mx-auto">Tudo que vocÃª precisa para dominar o digital
+            em um sÃ³ lugar.</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div
             class="bg-card-themed backdrop-blur-sm rounded-xl border border-themed-strong shadow-lg hover:shadow-orange-500/10 transition-all duration-300 transform hover:-translate-y-1 animate-on-scroll overflow-hidden card-glow card-shine img-zoom">
-            <img src="assets/card_branding.png" alt="Branding e Identidade Visual" class="w-full h-48 object-cover"
-              loading="lazy">
+            <picture>
+              <source srcset="assets/card_branding.webp" type="image/webp">
+              <img src="assets/card_branding.webp" alt="Branding e Identidade Visual" class="w-full h-48 object-cover"
+                loading="lazy">
+            </picture>
             <div class="p-6">
               <h3 class="text-xl font-bold text-themed mb-2">Branding e Identidade</h3>
-              <p class="text-themed-secondary">Criação de marca, logotipos, identidade visual e manual de aplicação para
-                destacar seu negócio.</p>
+              <p class="text-themed-secondary">CriaÃ§Ã£o de marca, logotipos, identidade visual e manual de aplicaÃ§Ã£o
+                para
+                destacar seu negÃ³cio.</p>
             </div>
           </div>
           <div
             class="bg-card-themed backdrop-blur-sm rounded-xl border border-themed-strong shadow-lg hover:shadow-orange-500/10 transition-all duration-300 transform hover:-translate-y-1 animate-on-scroll overflow-hidden card-glow card-shine img-zoom"
             style="transition-delay: 150ms">
-            <img src="assets/card_sites.png" alt="Sites e Landing Pages" class="w-full h-48 object-cover"
-              loading="lazy">
+            <picture>
+              <source srcset="assets/card_sites.webp" type="image/webp">
+              <img src="assets/card_sites.webp" alt="Sites e Landing Pages" class="w-full h-48 object-cover"
+                loading="lazy">
+            </picture>
             <div class="p-6">
               <h3 class="text-xl font-bold text-themed mb-2">Sites e Landing Pages</h3>
               <p class="text-themed-secondary">Desenvolvimento de sites profissionais e landing pages focadas em
-                conversão.</p>
+                conversÃ£o.</p>
             </div>
           </div>
           <div
-            class="bg-card-themed backdrop-blur-sm rounded-xl border border-themed-strong shadow-lg hover:shadow-orange-500/10 transition-all duration-300 transform hover:-translate-y-1 animate-on-scroll overflow-hidden card-glow card-shine icon-float"
+            class="bg-card-themed backdrop-blur-sm rounded-xl border border-themed-strong shadow-lg hover:shadow-orange-500/10 transition-all duration-300 transform hover:-translate-y-1 animate-on-scroll overflow-hidden card-glow card-shine card-light-effect img-zoom"
             style="transition-delay: 300ms">
-            <img src="assets/card_email.png" alt="E-mail Marketing" class="w-full h-48 object-cover" loading="lazy">
+            <picture>
+              <source srcset="assets/card_email.webp" type="image/webp">
+              <img src="assets/card_email.webp" alt="E-mail Marketing" class="w-full h-48 object-cover" loading="lazy">
+            </picture>
             <div class="p-6">
               <h3 class="text-xl font-bold text-themed mb-2">E-mail Marketing</h3>
-              <p class="text-themed-secondary">Campanhas automatizadas de nutrição e vendas para converter leads em
+              <p class="text-themed-secondary">Campanhas automatizadas de nutriÃ§Ã£o e vendas para converter leads em
                 clientes.</p>
             </div>
           </div>
           <div
-            class="bg-card-themed backdrop-blur-sm rounded-xl border border-themed-strong shadow-lg hover:shadow-orange-500/10 transition-all duration-300 transform hover:-translate-y-1 animate-on-scroll overflow-hidden card-glow card-shine icon-float"
+            class="bg-card-themed backdrop-blur-sm rounded-xl border border-themed-strong shadow-lg hover:shadow-orange-500/10 transition-all duration-300 transform hover:-translate-y-1 animate-on-scroll overflow-hidden card-glow card-shine card-light-effect img-zoom"
             style="transition-delay: 450ms">
-            <img src="assets/card_data.png" alt="Análise de Dados" class="w-full h-48 object-cover" loading="lazy">
+            <picture>
+              <source srcset="assets/card_data.webp" type="image/webp">
+              <img src="assets/card_data.webp" alt="AnÃ¡lise de Dados" class="w-full h-48 object-cover" loading="lazy">
+            </picture>
             <div class="p-6">
-              <h3 class="text-xl font-bold text-themed mb-2">Análise de Dados</h3>
-              <p class="text-themed-secondary">Dashboards e relatórios de performance para tomar decisões baseadas em
+              <h3 class="text-xl font-bold text-themed mb-2">AnÃ¡lise de Dados</h3>
+              <p class="text-themed-secondary">Dashboards e relatÃ³rios de performance para tomar decisÃµes baseadas em
                 dados.</p>
             </div>
           </div>
@@ -471,27 +717,33 @@
     <section id="automations" class="py-20 section-background">
       <div class="container mx-auto px-6 relative z-10">
         <div class="text-center mb-12 animate-on-scroll">
-          <h2 class="text-3xl md:text-4xl font-bold text-themed">Automação com <span class="text-gradient">IA</span>
+          <h2 class="text-3xl md:text-4xl font-bold text-themed">AutomaÃ§Ã£o com <span class="text-gradient">IA</span>
           </h2>
           <p class="text-lg text-themed-secondary mt-2 max-w-2xl mx-auto">Tecnologia de ponta para escalar suas
-            operações de marketing.</p>
+            operaÃ§Ãµes de marketing.</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div
             class="bg-card-themed backdrop-blur-sm rounded-xl border border-themed-strong shadow-lg hover:shadow-orange-500/10 transition-all duration-300 transform hover:-translate-y-1 animate-on-scroll overflow-hidden card-glow card-shine img-zoom">
-            <img src="assets/card_automation.png" alt="Campanhas Automatizadas" class="w-full h-48 object-cover"
-              loading="lazy">
+            <picture>
+              <source srcset="assets/card_automation.webp" type="image/webp">
+              <img src="assets/card_automation.webp" alt="Campanhas Automatizadas" class="w-full h-48 object-cover"
+                loading="lazy">
+            </picture>
             <div class="p-6">
               <h3 class="text-xl font-bold text-themed mb-2">Campanhas Automatizadas</h3>
-              <p class="text-themed-secondary">Disparos automáticos de e-mails, remarketing inteligente e nurturing de
+              <p class="text-themed-secondary">Disparos automÃ¡ticos de e-mails, remarketing inteligente e nurturing de
                 leads 24h.</p>
             </div>
           </div>
           <div
             class="bg-card-themed backdrop-blur-sm rounded-xl border border-themed-strong shadow-lg hover:shadow-orange-500/10 transition-all duration-300 transform hover:-translate-y-1 animate-on-scroll overflow-hidden card-glow card-shine img-zoom"
             style="transition-delay: 150ms">
-            <img src="assets/card_chatbot.png" alt="Atendimento Automatizado" class="w-full h-48 object-cover"
-              loading="lazy">
+            <picture>
+              <source srcset="assets/card_chatbot.webp" type="image/webp">
+              <img src="assets/card_chatbot.webp" alt="Atendimento Automatizado" class="w-full h-48 object-cover"
+                loading="lazy">
+            </picture>
             <div class="p-6">
               <h3 class="text-xl font-bold text-themed mb-2">Atendimento Automatizado</h3>
               <p class="text-themed-secondary">Chatbots inteligentes para WhatsApp, Instagram e Facebook 24/7.</p>
@@ -500,19 +752,26 @@
           <div
             class="bg-card-themed backdrop-blur-sm rounded-xl border border-themed-strong shadow-lg hover:shadow-orange-500/10 transition-all duration-300 transform hover:-translate-y-1 animate-on-scroll overflow-hidden card-glow card-shine img-zoom"
             style="transition-delay: 300ms">
-            <img src="assets/card_agents.png" alt="Agentes de IA" class="w-full h-48 object-cover" loading="lazy">
+            <picture>
+              <source srcset="assets/card_agents.webp" type="image/webp">
+              <img src="assets/card_agents.webp" alt="Agentes de IA" class="w-full h-48 object-cover" loading="lazy">
+            </picture>
             <div class="p-6">
               <h3 class="text-xl font-bold text-themed mb-2">Agentes de IA</h3>
-              <p class="text-themed-secondary">Assistentes virtuais autônomos para tarefas complexas sem supervisão.</p>
+              <p class="text-themed-secondary">Assistentes virtuais autÃ´nomos para tarefas complexas sem supervisÃ£o.
+              </p>
             </div>
           </div>
           <div
             class="bg-card-themed backdrop-blur-sm rounded-xl border border-themed-strong shadow-lg hover:shadow-orange-500/10 transition-all duration-300 transform hover:-translate-y-1 animate-on-scroll overflow-hidden card-glow card-shine img-zoom"
             style="transition-delay: 450ms">
-            <img src="assets/card_integrations.png" alt="Integrações Inteligentes" class="w-full h-48 object-cover"
-              loading="lazy">
+            <picture>
+              <source srcset="assets/card_integrations.webp" type="image/webp">
+              <img src="assets/card_integrations.webp" alt="IntegraÃ§Ãµes Inteligentes" class="w-full h-48 object-cover"
+                loading="lazy">
+            </picture>
             <div class="p-6">
-              <h3 class="text-xl font-bold text-themed mb-2">Integrações Inteligentes</h3>
+              <h3 class="text-xl font-bold text-themed mb-2">IntegraÃ§Ãµes Inteligentes</h3>
               <p class="text-themed-secondary">Conecte +500 ferramentas em fluxos automatizados que trabalham 24h.</p>
             </div>
           </div>
@@ -527,7 +786,7 @@
             Trabalho</h2>
           <p class="text-lg text-themed-secondary mt-2 max-w-2xl mx-auto">Um processo estruturado em 5 etapas para
             garantir
-            resultados reais e mensuráveis para o seu negócio.</p>
+            resultados reais e mensurÃ¡veis para o seu negÃ³cio.</p>
         </div>
 
         <!-- Timeline visual -->
@@ -538,51 +797,51 @@
           </div>
 
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 text-center">
-            <!-- Etapa 1: Diagnóstico -->
+            <!-- Etapa 1: DiagnÃ³stico -->
             <div class="relative animate-on-scroll methodology-step group">
               <div
                 class="mx-auto w-20 h-20 bg-card-themed backdrop-blur-sm border-2 border-orange-500 text-orange-400 rounded-full flex items-center justify-center mb-4 group-hover:bg-orange-500 group-hover:text-white transition-all duration-300 shadow-lg group-hover:shadow-orange-500/40 relative z-10">
                 <i data-lucide="clipboard-list" class="w-8 h-8"></i>
               </div>
               <div
-                class="bg-card-themed backdrop-blur-sm p-6 rounded-xl border border-themed-strong group-hover:border-orange-500/50 transition-all duration-300 min-h-[200px]">
+                class="bg-card-themed backdrop-blur-sm p-6 rounded-xl border border-themed-strong group-hover:border-orange-500/50 transition-all duration-300 min-h-[200px] shadow-lg hover:shadow-orange-500/10 transform group-hover:-translate-y-1 card-glow card-shine">
                 <span class="text-orange-400 text-sm font-semibold">Etapa 1</span>
-                <h3 class="text-xl font-bold text-themed mb-2 mt-1">Diagnóstico</h3>
-                <p class="text-themed-secondary text-sm mb-3">Análise profunda do seu negócio, concorrência e
+                <h3 class="text-xl font-bold text-themed mb-2 mt-1">DiagnÃ³stico</h3>
+                <p class="text-themed-secondary text-sm mb-3">AnÃ¡lise profunda do seu negÃ³cio, concorrÃªncia e
                   posicionamento atual no mercado digital.</p>
-                <span class="text-xs text-orange-400/70 font-medium">⏱️ ~1 semana</span>
+                <span class="text-xs text-orange-400/70 font-medium">â±ï¸ ~1 semana</span>
               </div>
             </div>
 
-            <!-- Etapa 2: Estratégia -->
+            <!-- Etapa 2: EstratÃ©gia -->
             <div class="relative animate-on-scroll methodology-step group" style="transition-delay: 100ms">
               <div
                 class="mx-auto w-20 h-20 bg-card-themed backdrop-blur-sm border-2 border-orange-500 text-orange-400 rounded-full flex items-center justify-center mb-4 group-hover:bg-orange-500 group-hover:text-white transition-all duration-300 shadow-lg group-hover:shadow-orange-500/40 relative z-10">
                 <i data-lucide="target" class="w-8 h-8"></i>
               </div>
               <div
-                class="bg-card-themed backdrop-blur-sm p-6 rounded-xl border border-themed-strong group-hover:border-orange-500/50 transition-all duration-300 min-h-[200px]">
+                class="bg-card-themed backdrop-blur-sm p-6 rounded-xl border border-themed-strong group-hover:border-orange-500/50 transition-all duration-300 min-h-[200px] shadow-lg hover:shadow-orange-500/10 transform group-hover:-translate-y-1 card-glow card-shine">
                 <span class="text-orange-400 text-sm font-semibold">Etapa 2</span>
-                <h3 class="text-xl font-bold text-themed mb-2 mt-1">Estratégia</h3>
-                <p class="text-themed-secondary text-sm mb-3">Definição de metas SMART, público-alvo ideal e canais
-                  prioritários para o seu crescimento.</p>
-                <span class="text-xs text-orange-400/70 font-medium">⏱️ 1-2 semanas</span>
+                <h3 class="text-xl font-bold text-themed mb-2 mt-1">EstratÃ©gia</h3>
+                <p class="text-themed-secondary text-sm mb-3">DefiniÃ§Ã£o de metas SMART, pÃºblico-alvo ideal e canais
+                  prioritÃ¡rios para o seu crescimento.</p>
+                <span class="text-xs text-orange-400/70 font-medium">â±ï¸ 1-2 semanas</span>
               </div>
             </div>
 
-            <!-- Etapa 3: Execução -->
+            <!-- Etapa 3: ExecuÃ§Ã£o -->
             <div class="relative animate-on-scroll methodology-step group" style="transition-delay: 200ms">
               <div
                 class="mx-auto w-20 h-20 bg-card-themed backdrop-blur-sm border-2 border-orange-500 text-orange-400 rounded-full flex items-center justify-center mb-4 group-hover:bg-orange-500 group-hover:text-white transition-all duration-300 shadow-lg group-hover:shadow-orange-500/40 relative z-10">
                 <i data-lucide="zap" class="w-8 h-8"></i>
               </div>
               <div
-                class="bg-card-themed backdrop-blur-sm p-6 rounded-xl border border-themed-strong group-hover:border-orange-500/50 transition-all duration-300 min-h-[200px]">
+                class="bg-card-themed backdrop-blur-sm p-6 rounded-xl border border-themed-strong group-hover:border-orange-500/50 transition-all duration-300 min-h-[200px] shadow-lg hover:shadow-orange-500/10 transform group-hover:-translate-y-1 card-glow card-shine">
                 <span class="text-orange-400 text-sm font-semibold">Etapa 3</span>
-                <h3 class="text-xl font-bold text-themed mb-2 mt-1">Execução</h3>
-                <p class="text-themed-secondary text-sm mb-3">Implementação das campanhas, automações, conteúdos e
-                  integrações planejadas.</p>
-                <span class="text-xs text-orange-400/70 font-medium">⏱️ Contínuo</span>
+                <h3 class="text-xl font-bold text-themed mb-2 mt-1">ExecuÃ§Ã£o</h3>
+                <p class="text-themed-secondary text-sm mb-3">ImplementaÃ§Ã£o das campanhas, automaÃ§Ãµes, conteÃºdos e
+                  integraÃ§Ãµes planejadas.</p>
+                <span class="text-xs text-orange-400/70 font-medium">â±ï¸ ContÃ­nuo</span>
               </div>
             </div>
 
@@ -593,28 +852,29 @@
                 <i data-lucide="trending-up" class="w-8 h-8"></i>
               </div>
               <div
-                class="bg-card-themed backdrop-blur-sm p-6 rounded-xl border border-themed-strong group-hover:border-orange-500/50 transition-all duration-300 min-h-[200px]">
+                class="bg-card-themed backdrop-blur-sm p-6 rounded-xl border border-themed-strong group-hover:border-orange-500/50 transition-all duration-300 min-h-[200px] shadow-lg hover:shadow-orange-500/10 transform group-hover:-translate-y-1 card-glow card-shine">
                 <span class="text-orange-400 text-sm font-semibold">Etapa 4</span>
                 <h3 class="text-xl font-bold text-themed mb-2 mt-1">Monitoramento</h3>
                 <p class="text-themed-secondary text-sm mb-3">Acompanhamento em tempo real com dashboards e KPIs
-                  personalizados para seu negócio.</p>
-                <span class="text-xs text-orange-400/70 font-medium">⏱️ Tempo real</span>
+                  personalizados para seu negÃ³cio.</p>
+                <span class="text-xs text-orange-400/70 font-medium">â±ï¸ Tempo real</span>
               </div>
             </div>
 
-            <!-- Etapa 5: Otimização -->
+            <!-- Etapa 5: OtimizaÃ§Ã£o -->
             <div class="relative animate-on-scroll methodology-step group" style="transition-delay: 400ms">
               <div
                 class="mx-auto w-20 h-20 bg-card-themed backdrop-blur-sm border-2 border-orange-500 text-orange-400 rounded-full flex items-center justify-center mb-4 group-hover:bg-orange-500 group-hover:text-white transition-all duration-300 shadow-lg group-hover:shadow-orange-500/40 relative z-10">
                 <i data-lucide="settings" class="w-8 h-8"></i>
               </div>
               <div
-                class="bg-card-themed backdrop-blur-sm p-6 rounded-xl border border-themed-strong group-hover:border-orange-500/50 transition-all duration-300 min-h-[200px]">
+                class="bg-card-themed backdrop-blur-sm p-6 rounded-xl border border-themed-strong group-hover:border-orange-500/50 transition-all duration-300 min-h-[200px] shadow-lg hover:shadow-orange-500/10 transform group-hover:-translate-y-1 card-glow card-shine">
                 <span class="text-orange-400 text-sm font-semibold">Etapa 5</span>
-                <h3 class="text-xl font-bold text-themed mb-2 mt-1">Otimização</h3>
-                <p class="text-themed-secondary text-sm mb-3">Testes A/B, ajustes contínuos e relatórios de performance
+                <h3 class="text-xl font-bold text-themed mb-2 mt-1">OtimizaÃ§Ã£o</h3>
+                <p class="text-themed-secondary text-sm mb-3">Testes A/B, ajustes contÃ­nuos e relatÃ³rios de
+                  performance
                   para maximizar seu ROI.</p>
-                <span class="text-xs text-orange-400/70 font-medium">⏱️ 30-90 dias</span>
+                <span class="text-xs text-orange-400/70 font-medium">â±ï¸ 30-90 dias</span>
               </div>
             </div>
           </div>
@@ -622,32 +882,33 @@
 
         <!-- Diferenciais da metodologia -->
         <div class="animate-on-scroll" style="transition-delay: 500ms">
-          <div class="bg-card-themed backdrop-blur-sm rounded-2xl border border-themed-strong p-8 md:p-10">
+          <div
+            class="bg-card-themed backdrop-blur-sm rounded-2xl border border-themed-strong p-8 md:p-10 shadow-lg hover:shadow-orange-500/10 transition-all duration-300 card-glow card-shine card-light-effect transform hover:-translate-y-1">
             <h3 class="text-2xl font-bold text-themed text-center mb-8">Nossos <span
                 class="text-gradient">Diferenciais</span></h3>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
 
-              <!-- Card 1: Relatórios Semanais -->
+              <!-- Card 1: RelatÃ³rios Semanais -->
               <div class="diff-card diff-card-green group">
                 <div class="diff-card-icon">
                   <div class="diff-icon-glow"></div>
                   <i data-lucide="file-text" class="w-5 h-5 relative z-10"></i>
                 </div>
                 <div>
-                  <h4 class="font-semibold text-themed mb-1">Relatórios Semanais</h4>
-                  <p class="text-sm text-themed-secondary">Transparência total com relatórios detalhados toda semana.
+                  <h4 class="font-semibold text-themed mb-1">RelatÃ³rios Semanais</h4>
+                  <p class="text-sm text-themed-secondary">TransparÃªncia total com relatÃ³rios detalhados toda semana.
                   </p>
                 </div>
               </div>
 
-              <!-- Card 2: Reuniões Quinzenais -->
+              <!-- Card 2: ReuniÃµes Quinzenais -->
               <div class="diff-card diff-card-blue group">
                 <div class="diff-card-icon">
                   <div class="diff-icon-glow"></div>
                   <i data-lucide="users" class="w-5 h-5 relative z-10"></i>
                 </div>
                 <div>
-                  <h4 class="font-semibold text-themed mb-1">Reuniões Quinzenais</h4>
+                  <h4 class="font-semibold text-themed mb-1">ReuniÃµes Quinzenais</h4>
                   <p class="text-sm text-themed-secondary">Alinhamento constante para garantir que estamos no caminho
                     certo.</p>
                 </div>
@@ -685,7 +946,7 @@
         <div class="text-center mt-12 animate-on-scroll" style="transition-delay: 600ms">
           <a href="#contact"
             class="bg-orange-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-orange-500 transition-all duration-300 inline-block shadow-lg hover:shadow-orange-500/40 transform hover:-translate-y-1">
-            Quero conhecer a metodologia na prática
+            Quero conhecer a metodologia na prÃ¡tica
           </a>
         </div>
       </div>
@@ -695,14 +956,15 @@
       <div class="container mx-auto px-6 relative z-10">
         <div class="text-center mb-12 animate-on-scroll">
           <h2 class="text-3xl md:text-4xl font-bold text-themed">Resultados que <span class="text-gradient">Falam</span>
-            por Nós</h2>
+            por NÃ³s</h2>
           <p class="text-lg text-themed-secondary mt-2 max-w-2xl mx-auto">Veja o que nossos clientes conquistaram com
-            nossas estratégias.</p>
+            nossas estratÃ©gias.</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
           <!-- Depoimento 1 -->
-          <div class="testimonial-card animate-on-scroll fade-scale group card-glow card-shine card-light-effect">
+          <div
+            class="testimonial-card animate-on-scroll fade-scale group card-glow card-shine card-light-effect transform hover:-translate-y-1 transition-transform duration-300">
             <!-- Badge de Resultado -->
             <div class="testimonial-badge bg-green-500/20 text-green-400 border-green-500/30">
               <i data-lucide="trending-up" class="w-4 h-4"></i>
@@ -714,10 +976,11 @@
               <i data-lucide="quote" class="w-8 h-8"></i>
             </div>
 
-            <!-- Citação -->
+            <!-- CitaÃ§Ã£o -->
             <p class="text-themed-secondary mb-6 leading-relaxed">
-              "A Óptima Digital triplicou nossos leads em apenas <strong class="text-themed">3 meses</strong>. A gestão
-              de tráfego pago deles é incrível!"
+              "A Ã“ptima Digital triplicou nossos leads em apenas <strong class="text-themed">3 meses</strong>. A
+              gestÃ£o
+              de trÃ¡fego pago deles Ã© incrÃ­vel!"
             </p>
 
             <!-- Autor -->
@@ -733,7 +996,8 @@
           </div>
 
           <!-- Depoimento 2 -->
-          <div class="testimonial-card animate-on-scroll fade-scale group card-glow card-shine card-light-effect"
+          <div
+            class="testimonial-card animate-on-scroll fade-scale group card-glow card-shine card-light-effect transform hover:-translate-y-1 transition-transform duration-300"
             style="transition-delay: 150ms;">
             <!-- Badge de Resultado -->
             <div class="testimonial-badge bg-blue-500/20 text-blue-400 border-blue-500/30">
@@ -746,9 +1010,9 @@
               <i data-lucide="quote" class="w-8 h-8"></i>
             </div>
 
-            <!-- Citação -->
+            <!-- CitaÃ§Ã£o -->
             <p class="text-themed-secondary mb-6 leading-relaxed">
-              "Nossa presença nas redes sociais explodiu. Engajamento subiu <strong class="text-themed">400%</strong> e
+              "Nossa presenÃ§a nas redes sociais explodiu. Engajamento subiu <strong class="text-themed">400%</strong> e
               as vendas acompanharam o crescimento."
             </p>
 
@@ -765,7 +1029,8 @@
           </div>
 
           <!-- Depoimento 3 -->
-          <div class="testimonial-card animate-on-scroll fade-scale group card-glow card-shine card-light-effect"
+          <div
+            class="testimonial-card animate-on-scroll fade-scale group card-glow card-shine card-light-effect transform hover:-translate-y-1 transition-transform duration-300"
             style="transition-delay: 300ms;">
             <!-- Badge de Resultado -->
             <div class="testimonial-badge bg-orange-500/20 text-orange-400 border-orange-500/30">
@@ -778,9 +1043,9 @@
               <i data-lucide="quote" class="w-8 h-8"></i>
             </div>
 
-            <!-- Citação -->
+            <!-- CitaÃ§Ã£o -->
             <p class="text-themed-secondary mb-6 leading-relaxed">
-              "O ROI das campanhas é impressionante. Cada real investido retorna <strong
+              "O ROI das campanhas Ã© impressionante. Cada real investido retorna <strong
                 class="text-themed">multiplicado por 3.5x</strong>. Equipe muito competente!"
             </p>
 
@@ -791,7 +1056,7 @@
                 alt="Foto da cliente Carla Souza" loading="lazy">
               <div>
                 <p class="font-bold text-themed">Carla Souza</p>
-                <p class="text-sm text-themed-secondary">Gerente de Operações, LogFácil</p>
+                <p class="text-sm text-themed-secondary">Gerente de OperaÃ§Ãµes, LogFÃ¡cil</p>
               </div>
             </div>
           </div>
@@ -803,16 +1068,16 @@
     <section id="faq" class="py-20 section-background">
       <div class="container mx-auto px-6 max-w-3xl relative z-10">
         <div
-          class="bg-card-themed backdrop-blur-sm border border-themed-strong rounded-2xl p-8 md:p-12 animate-on-scroll">
+          class="bg-card-themed backdrop-blur-sm border border-themed-strong rounded-2xl p-8 md:p-12 animate-on-scroll shadow-lg hover:shadow-orange-500/10 transition-all duration-300 card-glow card-shine card-light-effect transform hover:-translate-y-1">
           <div class="text-center mb-8">
             <h2 class="text-3xl md:text-4xl font-bold text-themed">Perguntas <span
                 class="text-gradient">Frequentes</span></h2>
-            <p class="text-lg text-themed-secondary mt-2">Tudo o que você precisa saber.</p>
+            <p class="text-lg text-themed-secondary mt-2">Tudo o que vocÃª precisa saber.</p>
           </div>
           <div class="space-y-4">
             <div class="faq-item"><button
                 class="faq-question w-full flex justify-between items-center text-left p-4 bg-gray-800/50 rounded-lg border border-themed-strong hover:border-orange-500 transition-colors"><span
-                  class="text-lg font-semibold text-themed">Meu negócio é pequeno. Marketing digital funciona para
+                  class="text-lg font-semibold text-themed">Meu negÃ³cio Ã© pequeno. Marketing digital funciona para
                   mim?</span>
                 <div class="faq-icon-container relative w-6 h-6 flex items-center justify-center"><svg
                     class="icon-plus w-6 h-6 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -823,8 +1088,8 @@
                   </svg></div>
               </button>
               <div class="faq-answer px-4 pb-4 text-themed-secondary">
-                <p>Com certeza! O marketing digital é altamente escalável e acessível. Começamos com estratégias
-                  adequadas ao seu orçamento e vamos crescendo juntos conforme os resultados aparecem.</p>
+                <p>Com certeza! O marketing digital Ã© altamente escalÃ¡vel e acessÃ­vel. ComeÃ§amos com estratÃ©gias
+                  adequadas ao seu orÃ§amento e vamos crescendo juntos conforme os resultados aparecem.</p>
               </div>
             </div>
             <div class="faq-item"><button
@@ -839,14 +1104,16 @@
                   </svg></div>
               </button>
               <div class="faq-answer px-4 pb-4 text-themed-secondary">
-                <p>Com tráfego pago, os primeiros leads podem surgir em dias. Já estratégias orgânicas como SEO e redes
-                  sociais mostram resultados consistentes a partir do terceiro mês. Trabalhamos com metas claras e
-                  relatórios mensais.</p>
+                <p>Com trÃ¡fego pago, os primeiros leads podem surgir em dias. JÃ¡ estratÃ©gias orgÃ¢nicas como SEO e
+                  redes
+                  sociais mostram resultados consistentes a partir do terceiro mÃªs. Trabalhamos com metas claras e
+                  relatÃ³rios mensais.</p>
               </div>
             </div>
             <div class="faq-item"><button
                 class="faq-question w-full flex justify-between items-center text-left p-4 bg-gray-800/50 rounded-lg border border-themed-strong hover:border-orange-500 transition-colors"><span
-                  class="text-lg font-semibold text-themed">Vocês fazem apenas tráfego pago ou também orgânico?</span>
+                  class="text-lg font-semibold text-themed">VocÃªs fazem apenas trÃ¡fego pago ou tambÃ©m
+                  orgÃ¢nico?</span>
                 <div class="faq-icon-container relative w-6 h-6 flex items-center justify-center"><svg
                     class="icon-plus w-6 h-6 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
@@ -856,8 +1123,46 @@
                   </svg></div>
               </button>
               <div class="faq-answer px-4 pb-4 text-themed-secondary">
-                <p>Trabalhamos com ambas as estratégias! O ideal é combinar tráfego pago para resultados rápidos com SEO
-                  e conteúdo para construção de autoridade a longo prazo. Montamos o mix perfeito para seu negócio.</p>
+                <p>Trabalhamos com ambas as estratÃ©gias! O ideal Ã© combinar trÃ¡fego pago para resultados rÃ¡pidos com
+                  SEO
+                  e conteÃºdo para construÃ§Ã£o de autoridade a longo prazo. Montamos o mix perfeito para seu negÃ³cio.
+                </p>
+              </div>
+            </div>
+            <div class="faq-item"><button
+                class="faq-question w-full flex justify-between items-center text-left p-4 bg-gray-800/50 rounded-lg border border-themed-strong hover:border-orange-500 transition-colors"><span
+                  class="text-lg font-semibold text-themed">Qual Ã© o investimento mÃ­nimo para comeÃ§ar?</span>
+                <div class="faq-icon-container relative w-6 h-6 flex items-center justify-center"><svg
+                    class="icon-plus w-6 h-6 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+                  </svg><svg class="icon-minus w-6 h-6 text-orange-400" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4"></path>
+                  </svg></div>
+              </button>
+              <div class="faq-answer px-4 pb-4 text-themed-secondary">
+                <p>Temos planos a partir de R$ 1.500/mÃªs que incluem gestÃ£o de redes sociais ou trÃ¡fego pago. O valor
+                  do
+                  investimento em mÃ­dia Ã© separado e definido de acordo com seus objetivos. Fazemos uma anÃ¡lise
+                  gratuita
+                  para indicar o melhor caminho para vocÃª.</p>
+              </div>
+            </div>
+            <div class="faq-item"><button
+                class="faq-question w-full flex justify-between items-center text-left p-4 bg-gray-800/50 rounded-lg border border-themed-strong hover:border-orange-500 transition-colors"><span
+                  class="text-lg font-semibold text-themed">VocÃªs oferecem contrato de fidelidade?</span>
+                <div class="faq-icon-container relative w-6 h-6 flex items-center justify-center"><svg
+                    class="icon-plus w-6 h-6 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+                  </svg><svg class="icon-minus w-6 h-6 text-orange-400" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4"></path>
+                  </svg></div>
+              </button>
+              <div class="faq-answer px-4 pb-4 text-themed-secondary">
+                <p>NÃ£o trabalhamos com fidelidade! Preferimos conquistar vocÃª pelos resultados, nÃ£o por contrato.
+                  Nossos
+                  clientes ficam porque veem retorno real em vendas e leads qualificados.</p>
               </div>
             </div>
           </div>
@@ -872,28 +1177,53 @@
           <div class="text-center mb-8">
             <h2 class="text-3xl md:text-4xl font-bold text-themed">Vamos <span class="text-gradient">conversar?</span>
             </h2>
-            <p class="text-lg text-themed-secondary mt-2">Preencha o formulário e vamos descobrir como a IA pode
-              transformar seu negócio.</p>
+            <p class="text-lg text-themed-secondary mt-2">Preencha o formulÃ¡rio e vamos descobrir como a IA pode
+              transformar seu negÃ³cio.</p>
           </div>
-          <form id="contact-form" class="max-w-xl mx-auto">
+          <form id="contact-form" class="max-w-xl mx-auto" action="https://api.web3forms.com/submit" method="POST">
+            <!-- Web3Forms Access Key - User should replace with their own key -->
+            <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+            <input type="hidden" name="subject" value="Novo contato via site - Ã“ptima Digital">
+            <input type="hidden" name="from_name" value="Ã“ptima Digital Website">
+            <!-- Honeypot anti-spam -->
+            <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-              <div><label for="contact-name" class="sr-only">Seu nome</label><input id="contact-name" type="text"
-                  placeholder="Seu nome"
+              <div><label for="contact-name" class="sr-only">Seu nome</label><input id="contact-name" name="name"
+                  type="text" placeholder="Seu nome" required minlength="2"
                   class="w-full p-3 rounded-lg bg-gray-800 border border-themed-strong text-themed focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all">
               </div>
-              <div><label for="contact-email" class="sr-only">Seu e-mail</label><input id="contact-email" type="email"
-                  placeholder="Seu e-mail"
+              <div><label for="contact-email" class="sr-only">Seu e-mail</label><input id="contact-email" name="email"
+                  type="email" placeholder="Seu e-mail" required
                   class="w-full p-3 rounded-lg bg-gray-800 border border-themed-strong text-themed focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all">
               </div>
             </div>
             <div><label for="contact-message" class="sr-only">Sua mensagem</label><textarea id="contact-message"
-                placeholder="Sua mensagem" rows="5"
+                name="message" placeholder="Sua mensagem" rows="5" required minlength="10"
                 class="w-full p-3 rounded-lg bg-gray-800 border border-themed-strong text-themed focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all mb-6"></textarea>
             </div>
-            <div class="text-center"><button type="submit"
-                class="bg-orange-600 text-white px-8 py-3 rounded-lg font-semibold text-lg hover:bg-orange-500 transition-all duration-300 shadow-lg hover:shadow-orange-500/40 transform hover:-translate-y-1">Enviar
-                Mensagem</button></div>
+            <div class="text-center">
+              <button type="submit" id="submit-btn"
+                class="bg-orange-600 text-white px-8 py-3 rounded-lg font-semibold text-lg hover:bg-orange-500 transition-all duration-300 shadow-lg hover:shadow-orange-500/40 transform hover:-translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none">
+                <span id="btn-text">Enviar Mensagem</span>
+                <span id="btn-loading" class="hidden">
+                  <svg class="animate-spin h-5 w-5 inline mr-2" xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor"
+                      d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+                    </path>
+                  </svg>
+                  Enviando...
+                </span>
+              </button>
+            </div>
           </form>
+          <!-- Toast notification -->
+          <div id="form-toast"
+            class="fixed bottom-24 left-1/2 transform -translate-x-1/2 px-6 py-3 rounded-lg shadow-lg z-50 transition-all duration-300 opacity-0 translate-y-4 pointer-events-none">
+            <p id="toast-message" class="font-medium"></p>
+          </div>
         </div>
       </div>
     </section>
@@ -904,10 +1234,10 @@
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-center items-center justify-center">
         <div class="flex flex-col items-center">
           <div class="flex items-center mb-2">
-            <img src="assets/favicon.png" alt="Ícone da Óptima Digital" class="w-10 h-10 mr-2">
-            <h3 class="text-xl font-bold"><span class="text-brand">Óptima</span> Digital</h3>
+            <img src="assets/logo.png" alt="Ãcone da Ã“ptima Digital" class="w-10 h-10 mr-2 logo-animated">
+            <h3 class="text-xl font-bold"><span class="text-brand">Ã“ptima</span> Digital</h3>
           </div>
-          <p class="text-themed-secondary">Acelerando o crescimento do seu negócio.</p>
+          <p class="text-themed-secondary">Acelerando o crescimento do seu negÃ³cio.</p>
         </div>
         <div class="flex flex-col items-center">
           <h4 class="font-semibold mb-3 text-themed">Contato</h4>
@@ -926,14 +1256,17 @@
         </div>
       </div>
       <div class="border-t border-themed-strong mt-8 pt-6 text-center text-gray-500">
-        <p>&copy; 2025 Óptima Digital. Todos os direitos reservados.</p>
+        <p class="mb-2">&copy; 2025 Ã“ptima Digital. Todos os direitos reservados.</p>
+        <div class="flex justify-center gap-6 text-sm">
+          <a href="politica-de-privacidade.html" class="hover:text-orange-400 transition-colors">PolÃ­tica de
+            Privacidade</a>
+          <a href="termos-de-servico.html" class="hover:text-orange-400 transition-colors">Termos de ServiÃ§o</a>
+        </div>
       </div>
     </div>
   </footer>
 
-  <button id="theme-toggle" class="floating-btn" aria-label="Alternar para modo claro">
-    <i data-lucide="sun"></i>
-  </button>
+  <!-- Theme toggle movido para o header -->
   <button id="back-to-top-btn" class="floating-btn bg-orange-600 text-white hover:bg-orange-500">
     <i data-lucide="arrow-up"></i>
   </button>
@@ -943,20 +1276,116 @@
     <div class="cookie-content">
       <div class="cookie-text">
         <i data-lucide="cookie" class="cookie-icon"></i>
-        <p>Utilizamos cookies para melhorar sua experiência em nosso site. Ao continuar navegando, você concorda com
-          nossa <a href="politica-de-privacidade.html" class="cookie-link">Política de Privacidade</a>.</p>
+        <p>Utilizamos cookies para melhorar sua experiÃªncia em nosso site. VocÃª pode personalizar suas preferÃªncias
+          ou
+          aceitar todos.
+          <a href="politica-de-privacidade.html" class="cookie-link">PolÃ­tica de Privacidade</a>.
+        </p>
       </div>
       <div class="cookie-buttons">
-        <button id="cookie-reject" class="cookie-btn cookie-btn-reject">Recusar</button>
-        <button id="cookie-accept" class="cookie-btn cookie-btn-accept">Aceitar</button>
+        <button id="cookie-customize" class="cookie-btn cookie-btn-customize">Personalizar</button>
+        <button id="cookie-reject" class="cookie-btn cookie-btn-reject">Recusar Todos</button>
+        <button id="cookie-accept" class="cookie-btn cookie-btn-accept">Aceitar Todos</button>
       </div>
     </div>
   </div>
 
-  <!-- Botões Flutuantes -->
-  <button id="theme-toggle" class="floating-btn" aria-label="Alternar para modo claro">
-    <i data-lucide="sun"></i>
-  </button>
+  <!-- Modal de PreferÃªncias de Cookies -->
+  <div id="cookie-modal" class="cookie-modal">
+    <div class="cookie-modal-content">
+      <div class="cookie-modal-header">
+        <h3 class="cookie-modal-title">
+          <i data-lucide="settings" class="w-6 h-6 text-orange-400"></i>
+          PreferÃªncias de Cookies
+        </h3>
+        <button id="cookie-modal-close" class="cookie-modal-close">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <div class="cookie-modal-body">
+        <p class="cookie-modal-description">
+          Escolha quais tipos de cookies vocÃª deseja permitir. Cookies essenciais sÃ£o necessÃ¡rios para o
+          funcionamento
+          do site e nÃ£o podem ser desativados.
+        </p>
+
+        <!-- Cookie: Essenciais -->
+        <div class="cookie-option">
+          <div class="cookie-option-header">
+            <div class="cookie-option-info">
+              <span class="cookie-option-title">Cookies Essenciais</span>
+              <span class="cookie-option-badge cookie-badge-required">ObrigatÃ³rio</span>
+            </div>
+            <label class="cookie-toggle cookie-toggle-disabled">
+              <input type="checkbox" id="cookie-essential" checked disabled>
+              <span class="cookie-toggle-slider"></span>
+            </label>
+          </div>
+          <p class="cookie-option-description">
+            NecessÃ¡rios para o funcionamento bÃ¡sico do site, como navegaÃ§Ã£o, preferÃªncias de tema e seguranÃ§a.
+          </p>
+        </div>
+
+        <!-- Cookie: Analytics -->
+        <div class="cookie-option">
+          <div class="cookie-option-header">
+            <div class="cookie-option-info">
+              <span class="cookie-option-title">Cookies de Analytics</span>
+            </div>
+            <label class="cookie-toggle">
+              <input type="checkbox" id="cookie-analytics">
+              <span class="cookie-toggle-slider"></span>
+            </label>
+          </div>
+          <p class="cookie-option-description">
+            Permitem analisar como os visitantes usam o site (Google Analytics), ajudando a melhorar a experiÃªncia.
+          </p>
+        </div>
+
+        <!-- Cookie: Marketing -->
+        <div class="cookie-option">
+          <div class="cookie-option-header">
+            <div class="cookie-option-info">
+              <span class="cookie-option-title">Cookies de Marketing</span>
+            </div>
+            <label class="cookie-toggle">
+              <input type="checkbox" id="cookie-marketing">
+              <span class="cookie-toggle-slider"></span>
+            </label>
+          </div>
+          <p class="cookie-option-description">
+            Utilizados para exibir anÃºncios relevantes (Meta Pixel, Google Ads) com base em seus interesses.
+          </p>
+        </div>
+
+        <!-- Cookie: Funcionais -->
+        <div class="cookie-option">
+          <div class="cookie-option-header">
+            <div class="cookie-option-info">
+              <span class="cookie-option-title">Cookies Funcionais</span>
+            </div>
+            <label class="cookie-toggle">
+              <input type="checkbox" id="cookie-functional">
+              <span class="cookie-toggle-slider"></span>
+            </label>
+          </div>
+          <p class="cookie-option-description">
+            Melhoram a funcionalidade do site, como chat ao vivo, vÃ­deos incorporados e mapas.
+          </p>
+        </div>
+      </div>
+
+      <div class="cookie-modal-footer">
+        <button id="cookie-save-preferences" class="cookie-btn cookie-btn-accept">
+          <i data-lucide="check" class="w-4 h-4"></i>
+          Salvar PreferÃªncias
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- BotÃµes Flutuantes (theme toggle agora estÃ¡ no header) -->
   <button id="back-to-top-btn" class="floating-btn bg-orange-600 text-white hover:bg-orange-500">
     <i data-lucide="arrow-up"></i>
   </button>

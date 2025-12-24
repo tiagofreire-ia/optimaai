@@ -1,4 +1,4 @@
-User-agent: *
+﻿User-agent: *
 Allow: /
 
 # Disallow admin and private areas
@@ -12,7 +12,7 @@ Allow: /*.css$
 Allow: /*.js$
 
 # Sitemap location
-Sitemap: https://optimadigital.com.br/sitemap.xml
+Sitemap: https://optimati.com.br/sitemap.xml
 
 # Crawl-delay for specific bots
 User-agent: Googlebot

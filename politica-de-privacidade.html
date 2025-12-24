@@ -4,6 +4,25 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Theme pre-initialization -->
+    <script>
+        (function () {
+            var theme = localStorage.getItem('theme');
+            if (theme === 'light-mode') {
+                document.documentElement.classList.add('light-mode');
+            }
+        })();
+    </script>
+    <style>
+        html {
+            background-color: #0a0a0a;
+        }
+
+        html.light-mode {
+            background-color: #f8fafc;
+        }
+    </style>
     <meta name="description"
         content="Política de Privacidade da Óptima Digital. Saiba como coletamos, usamos e protegemos seus dados pessoais de acordo com a LGPD." />
     <meta name="keywords" content="Política de Privacidade, LGPD, Proteção de Dados, Óptima Digital" />
@@ -16,40 +35,73 @@
         content="Saiba como a Óptima Digital coleta, usa e protege seus dados pessoais de acordo com a LGPD." />
     <meta property="og:image" content="assets/logo.png" />
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="styles-tailwind.css" />
 
+    <!-- Preload critical font weights -->
+    <link rel="preload" href="https://fonts.gstatic.com/s/inter/v18/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2"
+        as="font" type="font/woff2" crossorigin>
+
+    <!-- Non-blocking font loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet" />
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"
+        media="print" onload="this.media='all'" />
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+            rel="stylesheet" />
+    </noscript>
+
     <link rel="icon" href="assets/favicon.png" type="image/png" />
     <link rel="stylesheet" href="styles.css" />
+
+    <!-- Lucide Icons - Selective import -->
+    <script type="module">
+        import { createIcons, Sun, Moon, Menu, ArrowLeft, ArrowUp, Shield, Database, Target, Cookie, BarChart2, Megaphone, Share2, Lock, UserCheck, Eye, Edit, Trash2, Download, XCircle, Clock, RefreshCw, Mail, Building, Phone, Linkedin, Instagram, Twitter } from 'https://esm.run/lucide';
+        window.lucide = { createIcons };
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => createIcons());
+        } else {
+            createIcons();
+        }
+    </script>
 </head>
 
 <body class="bg-themed text-themed">
     <header class="bg-blur-themed backdrop-blur-md fixed top-0 left-0 right-0 z-50 border-b border-themed-strong">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="index.html" class="text-2xl font-bold flex items-center text-themed">
-                <img src="assets/favicon.png" alt="Logo da Óptima Digital" class="w-6 h-6 mr-2 logo-animated" />
+                <img src="assets/logo.png" alt="Logo da Óptima Digital" class="w-10 h-10 mr-2 logo-animated" />
                 <span class="text-brand">Óptima</span><span class="ml-2">Digital</span>
             </a>
 
-            <nav class="hidden lg:flex items-center space-x-6">
+            <nav class="hidden lg:flex items-center space-x-5">
+                <a href="index.html#about"
+                    class="text-xs font-medium tracking-wide text-themed-secondary hover:text-brand-hover transition-colors duration-300">Quem
+                    Somos</a>
                 <a href="index.html#services"
-                    class="text-themed-secondary hover:text-brand-hover transition-colors duration-300">Serviços</a>
+                    class="text-xs font-medium tracking-wide text-themed-secondary hover:text-brand-hover transition-colors duration-300">Serviços</a>
                 <a href="index.html#solutions"
-                    class="text-themed-secondary hover:text-brand-hover transition-colors duration-300">Soluções</a>
+                    class="text-xs font-medium tracking-wide text-themed-secondary hover:text-brand-hover transition-colors duration-300">Soluções</a>
                 <a href="index.html#automations"
-                    class="text-themed-secondary hover:text-brand-hover transition-colors duration-300">Automações</a>
+                    class="text-xs font-medium tracking-wide text-themed-secondary hover:text-brand-hover transition-colors duration-300">Automações</a>
                 <a href="index.html#methodology"
-                    class="text-themed-secondary hover:text-brand-hover transition-colors duration-300">Metodologia</a>
+                    class="text-xs font-medium tracking-wide text-themed-secondary hover:text-brand-hover transition-colors duration-300">Metodologia</a>
                 <a href="index.html#testimonials"
-                    class="text-themed-secondary hover:text-brand-hover transition-colors duration-300">Depoimentos</a>
+                    class="text-xs font-medium tracking-wide text-themed-secondary hover:text-brand-hover transition-colors duration-300">Depoimentos</a>
                 <a href="index.html#faq"
-                    class="text-themed-secondary hover:text-brand-hover transition-colors duration-300">FAQ</a>
+                    class="text-xs font-medium tracking-wide text-themed-secondary hover:text-brand-hover transition-colors duration-300">FAQ</a>
+
+                <!-- Theme Toggle no Header -->
+                <button id="theme-toggle-header"
+                    class="p-2 rounded-lg text-themed-secondary hover:text-brand-hover hover:bg-gray-100/10 transition-all duration-300"
+                    aria-label="Alternar tema">
+                    <i data-lucide="sun" class="w-4 h-4"></i>
+                </button>
+
                 <a href="index.html#contact"
-                    class="bg-orange-600 text-white px-4 py-2 rounded-lg hover:bg-orange-500 transition-colors duration-300 shadow-lg hover:shadow-orange-500/30 transform hover:-translate-y-0.5">Fale
+                    class="bg-orange-600 text-white px-4 py-2 rounded-lg text-xs font-semibold tracking-wide hover:bg-orange-500 transition-colors duration-300 shadow-lg hover:shadow-orange-500/30 transform hover:-translate-y-0.5">Fale
                     Conosco</a>
             </nav>
             <button class="lg:hidden text-themed-secondary" id="mobile-menu-button" aria-label="Abrir menu">
@@ -58,6 +110,7 @@
         </div>
         <!-- Menu Mobile Dropdown -->
         <div id="mobile-menu" class="mobile-dropdown lg:hidden">
+            <a href="index.html#about" class="mobile-dropdown-link">Quem Somos</a>
             <a href="index.html#services" class="mobile-dropdown-link">Serviços</a>
             <a href="index.html#solutions" class="mobile-dropdown-link">Soluções</a>
             <a href="index.html#automations" class="mobile-dropdown-link">Automações</a>
@@ -374,7 +427,7 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-center items-center justify-center">
                 <div class="flex flex-col items-center">
                     <div class="flex items-center mb-2">
-                        <img src="assets/favicon.png" alt="Ícone da Óptima Digital" class="w-10 h-10 mr-2">
+                        <img src="assets/logo.png" alt="Ícone da Óptima Digital" class="w-10 h-10 mr-2 logo-animated">
                         <h3 class="text-xl font-bold"><span class="text-brand">Óptima</span> Digital</h3>
                     </div>
                     <p class="text-themed-secondary">Acelerando o crescimento do seu negócio.</p>
@@ -402,9 +455,7 @@
         </div>
     </footer>
 
-    <button id="theme-toggle" class="floating-btn" aria-label="Alternar para modo claro">
-        <i data-lucide="sun"></i>
-    </button>
+    <!-- Theme toggle movido para o header -->
     <button id="back-to-top-btn" class="floating-btn bg-orange-600 text-white hover:bg-orange-500">
         <i data-lucide="arrow-up"></i>
     </button>

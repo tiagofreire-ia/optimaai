@@ -153,6 +153,82 @@ body.light-mode .bg-card-themed {
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
+/* Value Cards (Nossos Valores) */
+.bg-card-value {
+  background-color: rgba(31, 41, 55, 0.3);
+  /* gray-800/30 */
+}
+
+.bg-card-value-hover:hover,
+.bg-card-value:hover {
+  background-color: rgba(31, 41, 55, 0.5);
+  /* gray-800/50 */
+}
+
+/* Value Cards no Light Mode - Fundo branco com borda sutil */
+body.light-mode .bg-card-value {
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+body.light-mode .bg-card-value:hover {
+  background-color: rgba(255, 255, 255, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* ==========================================================================
+   Value Icons Glow Effect (Nossos Valores)
+   ========================================================================== */
+
+/* Container do ícone - posição relativa para o glow */
+.value-icon-container {
+  position: relative;
+}
+
+/* Elemento de glow - brilho que aparece no hover */
+.value-icon-glow {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  opacity: 0;
+  filter: blur(12px);
+  transition: opacity 0.3s ease;
+}
+
+/* Ativar glow no hover do grupo (card) */
+.group:hover .value-icon-glow {
+  opacity: 0.6;
+  animation: value-glow-pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes value-glow-pulse {
+
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.8;
+    transform: scale(1.15);
+  }
+}
+
+/* Cores do glow por tipo */
+.value-glow-orange {
+  background: #f97316;
+}
+
+.value-glow-blue {
+  background: #3b82f6;
+}
+
+.value-glow-purple {
+  background: #a855f7;
+}
+
 /* FAQ items no light mode */
 body.light-mode .faq-item {
   background-color: #ffffff;
@@ -210,6 +286,16 @@ body.light-mode .bg-orange-900\/50 {
   background-color: rgba(255, 237, 213, 0.9) !important;
 }
 
+/* Ícones azuis nos cards (Transparência Total) no light mode */
+body.light-mode .bg-blue-900\/50 {
+  background-color: rgba(219, 234, 254, 0.9) !important;
+}
+
+/* Ícones roxos nos cards (Inovação Constante) no light mode */
+body.light-mode .bg-purple-900\/50 {
+  background-color: rgba(243, 232, 255, 0.9) !important;
+}
+
 .section-background {
   position: relative;
   overflow: hidden;
@@ -226,7 +312,6 @@ body.light-mode .bg-orange-900\/50 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  text-fill-color: transparent;
   animation: gradient-pan 6s ease-in-out infinite;
 }
 
@@ -372,9 +457,31 @@ body.light-mode .particle {
   }
 }
 
-.typed-cursor {
+/* Typewriter Effect - Efeito máquina de escrever */
+.typewriter-text {
+  display: inline;
+  color: inherit;
+}
+
+.typewriter-cursor {
+  display: inline-block;
   color: var(--brand-color);
   font-weight: 300;
+  margin-left: 2px;
+  animation: cursorBlink 0.7s ease-in-out infinite;
+}
+
+@keyframes cursorBlink {
+
+  0%,
+  50% {
+    opacity: 1;
+  }
+
+  51%,
+  100% {
+    opacity: 0;
+  }
 }
 
 .faq-answer {
@@ -438,6 +545,26 @@ body.light-mode .particle {
   animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
 }
 
+/* Counter Animation Complete Effect */
+.counter-complete {
+  animation: counterPulse 0.3s ease-out;
+}
+
+@keyframes counterPulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.15);
+    text-shadow: 0 0 20px rgba(249, 115, 22, 0.5);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
 .floating-btn {
   position: fixed;
   width: 48px;
@@ -478,7 +605,7 @@ body.light-mode .particle {
 
 #back-to-top-btn {
   right: 2rem;
-  bottom: 6.5rem;
+  bottom: 2rem;
 }
 
 /* ==========================================================================
@@ -1063,6 +1190,223 @@ body.light-mode .particle {
 .cookie-btn-accept:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(249, 115, 22, 0.4);
+}
+
+.cookie-btn-customize {
+  background: transparent;
+  color: var(--brand-color);
+  border: 1px solid var(--brand-color);
+}
+
+.cookie-btn-customize:hover {
+  background: rgba(249, 115, 22, 0.1);
+}
+
+/* Cookie Modal */
+.cookie-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+  z-index: 10001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.cookie-modal.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.cookie-modal-content {
+  background: var(--bg-card);
+  border: 1px solid var(--border-strong);
+  border-radius: 1rem;
+  max-width: 500px;
+  width: 100%;
+  max-height: 85vh;
+  overflow-y: auto;
+  transform: translateY(20px) scale(0.95);
+  transition: transform 0.3s ease;
+}
+
+.cookie-modal.show .cookie-modal-content {
+  transform: translateY(0) scale(1);
+}
+
+.cookie-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.cookie-modal-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.cookie-modal-close {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.cookie-modal-close:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-primary);
+}
+
+.cookie-modal-body {
+  padding: 1.5rem;
+}
+
+.cookie-modal-description {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.cookie-option {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-color);
+  border-radius: 0.75rem;
+  padding: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.cookie-option:last-of-type {
+  margin-bottom: 0;
+}
+
+.cookie-option-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.cookie-option-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.cookie-option-title {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.cookie-option-badge {
+  font-size: 0.65rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.cookie-badge-required {
+  background: rgba(34, 197, 94, 0.15);
+  color: #22c55e;
+}
+
+.cookie-option-description {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Toggle Switch */
+.cookie-toggle {
+  position: relative;
+  display: inline-block;
+  width: 48px;
+  height: 26px;
+  flex-shrink: 0;
+}
+
+.cookie-toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.cookie-toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--border-color);
+  transition: 0.3s;
+  border-radius: 26px;
+}
+
+.cookie-toggle-slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 2px;
+  bottom: 2px;
+  background-color: var(--text-secondary);
+  transition: 0.3s;
+  border-radius: 50%;
+}
+
+.cookie-toggle input:checked+.cookie-toggle-slider {
+  background: linear-gradient(135deg, #f97316, #ea580c);
+  border-color: #f97316;
+}
+
+.cookie-toggle input:checked+.cookie-toggle-slider:before {
+  transform: translateX(22px);
+  background-color: white;
+}
+
+.cookie-toggle-disabled .cookie-toggle-slider {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.cookie-toggle-disabled input:checked+.cookie-toggle-slider {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  border-color: #22c55e;
+}
+
+.cookie-modal-footer {
+  padding: 1rem 1.5rem;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: flex-end;
+}
+
+.cookie-modal-footer .cookie-btn-accept {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 /* ==========================================================================
