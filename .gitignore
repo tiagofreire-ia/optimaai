@@ -1,7 +1,7 @@
 
-
 #Ignore vscode AI rules
 .github\instructions\codacy.instructions.md
 
-# Pasta de código comentado (para estudo)
+# Pasta de código comentado (apenas para estudo local)
 copy/
+
