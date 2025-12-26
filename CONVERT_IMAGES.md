@@ -95,5 +95,3 @@ Após converter as imagens:
 4. Filtre por "Img"
 5. Verifique que as imagens aparecem como `.webp` (não `.png`)
 6. Confirme redução de tamanho (~70% menor)
-
-**✅ Fase 1 estará completa!**
