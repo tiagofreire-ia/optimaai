@@ -1,0 +1,25 @@
+﻿User-agent: *
+Allow: /
+
+# Disallow admin and private areas
+Disallow: /admin/
+Disallow: /private/
+# Allow manifest.json for PWA and SEO
+Allow: /manifest.json
+Disallow: /*.json$
+
+
+# Allow all resources except sensitive ones
+Allow: /assets/
+Allow: /*.css$
+Allow: /*.js$
+
+# Sitemap location
+Sitemap: https://optimati.com.br/sitemap.xml
+
+# Crawl-delay for specific bots
+User-agent: Googlebot
+Crawl-delay: 0
+
+User-agent: Bingbot
+Crawl-delay: 1
