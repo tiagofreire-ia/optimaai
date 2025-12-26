@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Theme pre-initialization -->
+    <script>
+        (function () {
+            var theme = localStorage.getItem('theme');
+            if (theme === 'light-mode') {
+                document.documentElement.classList.add('light-mode');
+            }
+        })();
+    </script>
+    <style>
+        html {
+            background-color: #0a0a0a;
+        }
+
+        html.light-mode {
+            background-color: #f8fafc;
+        }
+    </style>
+
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "urk9h8g1ui");
+    </script>
+
+    <meta name="description"
+        content="Política de Privacidade da Óptima Digital. Saiba como coletamos, usamos e protegemos seus dados pessoais de acordo com a LGPD." />
+    <meta name="keywords" content="Política de Privacidade, LGPD, Proteção de Dados, Óptima Digital" />
+    <title>Política de Privacidade | Óptima Digital</title>
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Política de Privacidade | Óptima Digital" />
+    <meta property="og:description"
+        content="Saiba como a Óptima Digital coleta, usa e protege seus dados pessoais de acordo com a LGPD." />
+    <meta property="og:image" content="assets/logo.png" />
+
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.json" />
+    <link rel="apple-touch-icon" href="assets/logo.png" />
+    <meta name="theme-color" content="#f97316" />
+
+    <link rel="stylesheet" href="styles-tailwind.css" />
+
+    <!-- Preload critical font weights -->
+    <link rel="preload" href="https://fonts.gstatic.com/s/inter/v18/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2"
+        as="font" type="font/woff2" crossorigin>
+
+    <!-- Non-blocking font loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"
+        media="print" onload="this.media='all'" />
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+            rel="stylesheet" />
+    </noscript>
+
+    <link rel="icon" href="assets/favicon.png" type="image/png" />
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- Lucide Icons - Selective import -->
+    <script type="module">
+        import { createIcons, Sun, Moon, Menu, ArrowLeft, ArrowUp, Shield, Database, Target, Cookie, BarChart2, Megaphone, Share2, Lock, UserCheck, Eye, Edit, Trash2, Download, XCircle, Clock, RefreshCw, Mail, Building, Phone, Linkedin, Instagram, Twitter } from 'https://esm.run/lucide';
+        window.lucide = { createIcons };
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => createIcons());
+        } else {
+            createIcons();
+        }
+    </script>
+</head>
+
+<body class="bg-themed text-themed">
+    <header class="bg-blur-themed backdrop-blur-md fixed top-0 left-0 right-0 z-50 border-b border-themed-strong">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold flex items-center text-themed">
+                <img src="assets/logo.png" alt="Logo da Óptima Digital" class="w-10 h-10 mr-2 logo-animated" />
+                <span class="text-brand">Óptima</span><span class="ml-2">Digital</span>
+            </a>
+
+            <nav class="hidden lg:flex items-center space-x-5">
+                <a href="index.html#about"
+                    class="text-xs font-medium tracking-wide text-themed-secondary hover:text-brand-hover transition-colors duration-300">Quem
+                    Somos</a>
+                <a href="index.html#services"
+                    class="text-xs font-medium tracking-wide text-themed-secondary hover:text-brand-hover transition-colors duration-300">Serviços</a>
+                <a href="index.html#solutions"
+                    class="text-xs font-medium tracking-wide text-themed-secondary hover:text-brand-hover transition-colors duration-300">Soluções</a>
+                <a href="index.html#automations"
+                    class="text-xs font-medium tracking-wide text-themed-secondary hover:text-brand-hover transition-colors duration-300">Automações</a>
+                <a href="index.html#methodology"
+                    class="text-xs font-medium tracking-wide text-themed-secondary hover:text-brand-hover transition-colors duration-300">Metodologia</a>
+                <a href="index.html#testimonials"
+                    class="text-xs font-medium tracking-wide text-themed-secondary hover:text-brand-hover transition-colors duration-300">Depoimentos</a>
+                <a href="index.html#faq"
+                    class="text-xs font-medium tracking-wide text-themed-secondary hover:text-brand-hover transition-colors duration-300">FAQ</a>
+
+                <!-- Theme Toggle no Header -->
+                <button id="theme-toggle-header"
+                    class="p-2 rounded-lg text-themed-secondary hover:text-brand-hover hover:bg-gray-100/10 transition-all duration-300"
+                    aria-label="Alternar tema">
+                    <i data-lucide="sun" class="w-4 h-4"></i>
+                </button>
+
+                <a href="index.html#contact"
+                    class="bg-orange-600 text-white px-4 py-2 rounded-lg text-xs font-semibold tracking-wide hover:bg-orange-500 transition-colors duration-300 shadow-lg hover:shadow-orange-500/30 transform hover:-translate-y-0.5">Fale
+                    Conosco</a>
+            </nav>
+            <button class="lg:hidden text-themed-secondary" id="mobile-menu-button" aria-label="Abrir menu">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+        <!-- Menu Mobile Dropdown -->
+        <div id="mobile-menu" class="mobile-dropdown lg:hidden">
+            <a href="index.html#about" class="mobile-dropdown-link">Quem Somos</a>
+            <a href="index.html#services" class="mobile-dropdown-link">Serviços</a>
+            <a href="index.html#solutions" class="mobile-dropdown-link">Soluções</a>
+            <a href="index.html#automations" class="mobile-dropdown-link">Automações</a>
+            <a href="index.html#methodology" class="mobile-dropdown-link">Metodologia</a>
+            <a href="index.html#testimonials" class="mobile-dropdown-link">Depoimentos</a>
+            <a href="index.html#faq" class="mobile-dropdown-link">FAQ</a>
+            <a href="index.html#contact" class="mobile-dropdown-cta">Fale Conosco</a>
+        </div>
+    </header>
+
+
+    <main>
+        <section class="pt-36 pb-12 section-background">
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="text-center mb-12 animate-on-scroll">
+                    <h1 class="text-4xl md:text-5xl font-extrabold text-white leading-tight mb-4">
+                        Política de <span class="text-gradient">Privacidade</span>
+                    </h1>
+                    <p class="text-lg text-themed-secondary max-w-2xl mx-auto">
+                        Última atualização: Dezembro de 2025
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-12 section-background">
+            <div class="container mx-auto px-6 max-w-4xl relative z-10">
+                <div
+                    class="bg-card-themed backdrop-blur-sm border border-themed-strong rounded-2xl p-8 md:p-12 animate-on-scroll">
+
+                    <div class="prose prose-invert max-w-none space-y-8">
+
+                        <!-- Introdução -->
+                        <div>
+                            <h2 class="text-2xl font-bold text-themed mb-4 flex items-center">
+                                <i data-lucide="shield" class="w-6 h-6 text-orange-400 mr-3"></i>
+                                1. Introdução
+                            </h2>
+                            <p class="text-themed-secondary leading-relaxed">
+                                A <strong class="text-themed">Óptima Digital</strong> está comprometida com a proteção
+                                da sua privacidade.
+                                Esta Política de Privacidade descreve como coletamos, usamos, armazenamos e protegemos
+                                suas informações
+                                pessoais quando você utiliza nosso site e serviços, em conformidade com a
+                                <strong class="text-orange-400">Lei Geral de Proteção de Dados (LGPD - Lei nº
+                                    13.709/2018)</strong>.
+                            </p>
+                        </div>
+
+                        <!-- Dados Coletados -->
+                        <div>
+                            <h2 class="text-2xl font-bold text-themed mb-4 flex items-center">
+                                <i data-lucide="database" class="w-6 h-6 text-orange-400 mr-3"></i>
+                                2. Dados que Coletamos
+                            </h2>
+                            <p class="text-themed-secondary leading-relaxed mb-4">
+                                Podemos coletar os seguintes tipos de informações:
+                            </p>
+                            <ul class="space-y-3 text-themed-secondary">
+                                <li class="flex items-start">
+                                    <i data-lucide="check-circle"
+                                        class="w-5 h-5 text-orange-400 mr-3 mt-0.5 flex-shrink-0"></i>
+                                    <span><strong class="text-themed">Dados de identificação:</strong> nome, e-mail,
+                                        telefone e empresa.</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-lucide="check-circle"
+                                        class="w-5 h-5 text-orange-400 mr-3 mt-0.5 flex-shrink-0"></i>
+                                    <span><strong class="text-themed">Dados de navegação:</strong> endereço IP, tipo de
+                                        navegador, páginas visitadas e tempo de permanência.</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-lucide="check-circle"
+                                        class="w-5 h-5 text-orange-400 mr-3 mt-0.5 flex-shrink-0"></i>
+                                    <span><strong class="text-themed">Cookies:</strong> utilizamos cookies para melhorar
+                                        sua experiência de navegação.</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-lucide="check-circle"
+                                        class="w-5 h-5 text-orange-400 mr-3 mt-0.5 flex-shrink-0"></i>
+                                    <span><strong class="text-themed">Dados de comunicação:</strong> mensagens enviadas
+                                        através do formulário de contato.</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Finalidade -->
+                        <div>
+                            <h2 class="text-2xl font-bold text-themed mb-4 flex items-center">
+                                <i data-lucide="target" class="w-6 h-6 text-orange-400 mr-3"></i>
+                                3. Finalidade do Tratamento
+                            </h2>
+                            <p class="text-themed-secondary leading-relaxed mb-4">
+                                Utilizamos seus dados para:
+                            </p>
+                            <ul class="space-y-3 text-themed-secondary">
+                                <li class="flex items-start">
+                                    <i data-lucide="arrow-right"
+                                        class="w-5 h-5 text-orange-400 mr-3 mt-0.5 flex-shrink-0"></i>
+                                    <span>Responder suas solicitações e dúvidas;</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-lucide="arrow-right"
+                                        class="w-5 h-5 text-orange-400 mr-3 mt-0.5 flex-shrink-0"></i>
+                                    <span>Enviar propostas comerciais e informações sobre nossos serviços;</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-lucide="arrow-right"
+                                        class="w-5 h-5 text-orange-400 mr-3 mt-0.5 flex-shrink-0"></i>
+                                    <span>Melhorar a experiência de navegação em nosso site;</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-lucide="arrow-right"
+                                        class="w-5 h-5 text-orange-400 mr-3 mt-0.5 flex-shrink-0"></i>
+                                    <span>Analisar métricas de uso para aprimorar nossos serviços;</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-lucide="arrow-right"
+                                        class="w-5 h-5 text-orange-400 mr-3 mt-0.5 flex-shrink-0"></i>
+                                    <span>Cumprir obrigações legais e regulatórias.</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Cookies -->
+                        <div>
+                            <h2 class="text-2xl font-bold text-themed mb-4 flex items-center">
+                                <i data-lucide="cookie" class="w-6 h-6 text-orange-400 mr-3"></i>
+                                4. Cookies e Tecnologias Similares
+                            </h2>
+                            <p class="text-themed-secondary leading-relaxed mb-4">
+                                Nosso site utiliza cookies para:
+                            </p>
+                            <ul class="space-y-3 text-themed-secondary mb-4">
+                                <li class="flex items-start">
+                                    <i data-lucide="settings"
+                                        class="w-5 h-5 text-orange-400 mr-3 mt-0.5 flex-shrink-0"></i>
+                                    <span><strong class="text-themed">Cookies essenciais:</strong> necessários para o
+                                        funcionamento básico do site.</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-lucide="bar-chart-2"
+                                        class="w-5 h-5 text-orange-400 mr-3 mt-0.5 flex-shrink-0"></i>
+                                    <span><strong class="text-themed">Cookies analíticos:</strong> ajudam a entender
+                                        como os visitantes interagem com o site.</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-lucide="megaphone"
+                                        class="w-5 h-5 text-orange-400 mr-3 mt-0.5 flex-shrink-0"></i>
+                                    <span><strong class="text-themed">Cookies de marketing:</strong> utilizados para
+                                        exibir anúncios relevantes.</span>
+                                </li>
+                            </ul>
+                            <p class="text-themed-secondary leading-relaxed">
+                                Você pode gerenciar suas preferências de cookies através das configurações do seu
+                                navegador.
+                            </p>
+                        </div>
+
+                        <!-- Compartilhamento -->
+                        <div>
+                            <h2 class="text-2xl font-bold text-themed mb-4 flex items-center">
+                                <i data-lucide="share-2" class="w-6 h-6 text-orange-400 mr-3"></i>
+                                5. Compartilhamento de Dados
+                            </h2>
+                            <p class="text-themed-secondary leading-relaxed">
+                                Não vendemos seus dados pessoais. Podemos compartilhar informações apenas com:
+                            </p>
+                            <ul class="space-y-3 text-themed-secondary mt-4">
+                                <li class="flex items-start">
+                                    <i data-lucide="briefcase"
+                                        class="w-5 h-5 text-orange-400 mr-3 mt-0.5 flex-shrink-0"></i>
+                                    <span><strong class="text-themed">Parceiros de serviço:</strong> empresas que nos
+                                        auxiliam na operação do site e serviços (ex: Google Analytics, Meta Ads).</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-lucide="scale"
+                                        class="w-5 h-5 text-orange-400 mr-3 mt-0.5 flex-shrink-0"></i>
+                                    <span><strong class="text-themed">Obrigações legais:</strong> quando exigido por lei
+                                        ou ordem judicial.</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Segurança -->
+                        <div>
+                            <h2 class="text-2xl font-bold text-themed mb-4 flex items-center">
+                                <i data-lucide="lock" class="w-6 h-6 text-orange-400 mr-3"></i>
+                                6. Segurança dos Dados
+                            </h2>
+                            <p class="text-themed-secondary leading-relaxed">
+                                Implementamos medidas técnicas e organizacionais apropriadas para proteger seus dados
+                                pessoais contra
+                                acesso não autorizado, alteração, divulgação ou destruição. Isso inclui criptografia,
+                                controles de
+                                acesso e monitoramento contínuo de segurança.
+                            </p>
+                        </div>
+
+                        <!-- Direitos do Titular -->
+                        <div>
+                            <h2 class="text-2xl font-bold text-themed mb-4 flex items-center">
+                                <i data-lucide="user-check" class="w-6 h-6 text-orange-400 mr-3"></i>
+                                7. Seus Direitos (LGPD)
+                            </h2>
+                            <p class="text-themed-secondary leading-relaxed mb-4">
+                                De acordo com a LGPD, você tem direito a:
+                            </p>
+                            <ul class="space-y-3 text-themed-secondary">
+                                <li class="flex items-start">
+                                    <i data-lucide="eye" class="w-5 h-5 text-orange-400 mr-3 mt-0.5 flex-shrink-0"></i>
+                                    <span><strong class="text-themed">Acesso:</strong> solicitar quais dados pessoais
+                                        temos sobre você.</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-lucide="edit" class="w-5 h-5 text-orange-400 mr-3 mt-0.5 flex-shrink-0"></i>
+                                    <span><strong class="text-themed">Correção:</strong> corrigir dados incompletos,
+                                        inexatos ou desatualizados.</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-lucide="trash-2"
+                                        class="w-5 h-5 text-orange-400 mr-3 mt-0.5 flex-shrink-0"></i>
+                                    <span><strong class="text-themed">Exclusão:</strong> solicitar a eliminação dos seus
+                                        dados pessoais.</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-lucide="download"
+                                        class="w-5 h-5 text-orange-400 mr-3 mt-0.5 flex-shrink-0"></i>
+                                    <span><strong class="text-themed">Portabilidade:</strong> receber seus dados em
+                                        formato estruturado.</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-lucide="x-circle"
+                                        class="w-5 h-5 text-orange-400 mr-3 mt-0.5 flex-shrink-0"></i>
+                                    <span><strong class="text-themed">Revogação:</strong> retirar seu consentimento a
+                                        qualquer momento.</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Retenção -->
+                        <div>
+                            <h2 class="text-2xl font-bold text-themed mb-4 flex items-center">
+                                <i data-lucide="clock" class="w-6 h-6 text-orange-400 mr-3"></i>
+                                8. Retenção de Dados
+                            </h2>
+                            <p class="text-themed-secondary leading-relaxed">
+                                Mantemos seus dados pessoais apenas pelo tempo necessário para cumprir as finalidades
+                                descritas nesta
+                                política, ou conforme exigido por obrigações legais, contratuais ou regulatórias.
+                            </p>
+                        </div>
+
+                        <!-- Alterações -->
+                        <div>
+                            <h2 class="text-2xl font-bold text-themed mb-4 flex items-center">
+                                <i data-lucide="refresh-cw" class="w-6 h-6 text-orange-400 mr-3"></i>
+                                9. Alterações nesta Política
+                            </h2>
+                            <p class="text-themed-secondary leading-relaxed">
+                                Podemos atualizar esta Política de Privacidade periodicamente. Recomendamos que você
+                                revise esta página
+                                regularmente para estar ciente de quaisquer alterações. A data da última atualização
+                                será sempre
+                                indicada no topo desta página.
+                            </p>
+                        </div>
+
+                        <!-- Contato -->
+                        <div>
+                            <h2 class="text-2xl font-bold text-themed mb-4 flex items-center">
+                                <i data-lucide="mail" class="w-6 h-6 text-orange-400 mr-3"></i>
+                                10. Contato
+                            </h2>
+                            <p class="text-themed-secondary leading-relaxed mb-4">
+                                Se você tiver dúvidas sobre esta Política de Privacidade ou sobre o tratamento dos seus
+                                dados pessoais,
+                                entre em contato conosco:
+                            </p>
+                            <div class="bg-gray-800/50 rounded-lg p-6 border border-themed-strong">
+                                <p class="text-themed flex items-center mb-2">
+                                    <i data-lucide="building" class="w-5 h-5 text-orange-400 mr-3"></i>
+                                    <strong>Óptima Digital</strong>
+                                </p>
+                                <p class="text-themed-secondary flex items-center mb-2">
+                                    <i data-lucide="mail" class="w-5 h-5 text-orange-400 mr-3"></i>
+                                    contato@optimati.com.br
+                                </p>
+                                <p class="text-themed-secondary flex items-center">
+                                    <i data-lucide="phone" class="w-5 h-5 text-orange-400 mr-3"></i>
+                                    (61) 99687-2864
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Botão Voltar -->
+                    <div class="text-center mt-12">
+                        <a href="index.html"
+                            class="bg-orange-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-orange-500 transition-all duration-300 inline-flex items-center shadow-lg hover:shadow-orange-500/40 transform hover:-translate-y-1">
+                            <i data-lucide="arrow-left" class="w-5 h-5 mr-2"></i>
+                            Voltar para a Página Inicial
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-black text-white border-t border-themed-strong">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-center items-center justify-center">
+                <div class="flex flex-col items-center">
+                    <div class="flex items-center mb-2">
+                        <img src="assets/logo.png" alt="Ícone da Óptima Digital" class="w-10 h-10 mr-2 logo-animated">
+                        <h3 class="text-xl font-bold"><span class="text-brand">Óptima</span> Digital</h3>
+                    </div>
+                    <p class="text-themed-secondary">Acelerando o crescimento do seu negócio.</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <h4 class="font-semibold mb-3 text-themed">Contato</h4>
+                    <p class="text-themed-secondary">contato@optimati.com.br</p>
+                    <p class="text-themed-secondary">(61) 99687-2864</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <h4 class="font-semibold mb-3 text-themed">Siga-nos</h4>
+                    <div class="flex space-x-4 justify-center">
+                        <a href="https://www.instagram.com/optimati_oficial/" target="_blank" rel="noopener noreferrer"
+                            class="text-themed-secondary hover:text-brand-hover transition-colors"><i
+                                data-lucide="instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/%C3%B3ptima-ti-906969334/" target="_blank"
+                            rel="noopener noreferrer"
+                            class="text-themed-secondary hover:text-brand-hover transition-colors"><i
+                                data-lucide="linkedin"></i></a>
+                        <a href="https://x.com/Optima_t_i" target="_blank" rel="noopener noreferrer"
+                            class="text-themed-secondary hover:text-brand-hover transition-colors"><i
+                                data-lucide="twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-themed-strong mt-8 pt-6 text-center text-gray-500">
+                <p>&copy; 2025 Óptima Digital. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Theme toggle movido para o header -->
+    <button id="back-to-top-btn" class="floating-btn bg-orange-600 text-white hover:bg-orange-500">
+        <i data-lucide="arrow-up"></i>
+    </button>
+
+    <script src="scripts.js" defer></script>
+
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js')
+                    .then((r) => console.log('[PWA] SW registered'))
+                    .catch((e) => console.log('[PWA] SW failed:', e));
+            });
+        }
+    </script>
+</body>
+
+</html>
