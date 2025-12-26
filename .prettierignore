@@ -1,0 +1,5 @@
+node_modules/
+copy/
+scripts.min.js
+styles-tailwind.css
+dist/

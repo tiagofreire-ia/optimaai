@@ -10,7 +10,8 @@
  * @param {Element} context - Optional context element
  * @returns {Element|null}
  */
-export const $ = (selector, context = document) => context.querySelector(selector);
+export const $ = (selector, context = document) =>
+  context.querySelector(selector);
 
 /**
  * Select multiple elements by CSS selector
@@ -18,7 +19,8 @@ export const $ = (selector, context = document) => context.querySelector(selecto
  * @param {Element} context - Optional context element
  * @returns {NodeList}
  */
-export const $$ = (selector, context = document) => context.querySelectorAll(selector);
+export const $$ = (selector, context = document) =>
+  context.querySelectorAll(selector);
 
 /**
  * Get element by ID
@@ -35,20 +37,21 @@ export const byId = (id) => document.getElementById(id);
  * @returns {Element}
  */
 export const create = (tag, attrs = {}, children = []) => {
-    const el = document.createElement(tag);
-    Object.entries(attrs).forEach(([key, value]) => {
-        if (key === 'className') el.className = value;
-        else if (key === 'dataset') Object.assign(el.dataset, value);
-        else el.setAttribute(key, value);
-    });
+  const el = document.createElement(tag);
+  Object.entries(attrs).forEach(([key, value]) => {
+    if (key === 'className') el.className = value;
+    else if (key === 'dataset') Object.assign(el.dataset, value);
+    else el.setAttribute(key, value);
+  });
 
-    const childArray = Array.isArray(children) ? children : [children];
-    childArray.forEach(child => {
-        if (typeof child === 'string') el.appendChild(document.createTextNode(child));
-        else if (child instanceof Element) el.appendChild(child);
-    });
+  const childArray = Array.isArray(children) ? children : [children];
+  childArray.forEach((child) => {
+    if (typeof child === 'string')
+      el.appendChild(document.createTextNode(child));
+    else if (child instanceof Element) el.appendChild(child);
+  });
 
-    return el;
+  return el;
 };
 
 /**
@@ -58,8 +61,8 @@ export const create = (tag, attrs = {}, children = []) => {
  * @param {boolean} force - Force add/remove
  */
 export const toggleClass = (el, className, force) => {
-    if (!el) return;
-    el.classList.toggle(className, force);
+  if (!el) return;
+  el.classList.toggle(className, force);
 };
 
 /**
@@ -68,8 +71,8 @@ export const toggleClass = (el, className, force) => {
  * @param {...string} classNames - Class names to add
  */
 export const addClass = (el, ...classNames) => {
-    if (!el) return;
-    el.classList.add(...classNames);
+  if (!el) return;
+  el.classList.add(...classNames);
 };
 
 /**
@@ -78,8 +81,8 @@ export const addClass = (el, ...classNames) => {
  * @param {...string} classNames - Class names to remove
  */
 export const removeClass = (el, ...classNames) => {
-    if (!el) return;
-    el.classList.remove(...classNames);
+  if (!el) return;
+  el.classList.remove(...classNames);
 };
 
 /**
@@ -88,4 +91,5 @@ export const removeClass = (el, ...classNames) => {
  * @param {string} className - Class name to check
  * @returns {boolean}
  */
-export const hasClass = (el, className) => el?.classList.contains(className) ?? false;
+export const hasClass = (el, className) =>
+  el?.classList.contains(className) ?? false;

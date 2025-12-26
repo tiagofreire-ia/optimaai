@@ -10,18 +10,18 @@
  * @returns {string} Formatted phone number
  */
 export const formatPhone = (value) => {
-    const digits = value.replace(/\D/g, '').slice(0, 11);
+  const digits = value.replace(/\D/g, '').slice(0, 11);
 
-    if (digits.length > 6) {
-        return `(${digits.slice(0, 2)}) ${digits.slice(2, 7)}-${digits.slice(7)}`;
-    }
-    if (digits.length > 2) {
-        return `(${digits.slice(0, 2)}) ${digits.slice(2)}`;
-    }
-    if (digits.length > 0) {
-        return `(${digits}`;
-    }
-    return '';
+  if (digits.length > 6) {
+    return `(${digits.slice(0, 2)}) ${digits.slice(2, 7)}-${digits.slice(7)}`;
+  }
+  if (digits.length > 2) {
+    return `(${digits.slice(0, 2)}) ${digits.slice(2)}`;
+  }
+  if (digits.length > 0) {
+    return `(${digits}`;
+  }
+  return '';
 };
 
 /**
@@ -31,7 +31,7 @@ export const formatPhone = (value) => {
  * @returns {string} Formatted number
  */
 export const formatNumber = (value, locale = 'pt-BR') => {
-    return value.toLocaleString(locale);
+  return value.toLocaleString(locale);
 };
 
 /**
@@ -42,10 +42,10 @@ export const formatNumber = (value, locale = 'pt-BR') => {
  * @returns {string} Formatted currency
  */
 export const formatCurrency = (value, currency = 'BRL', locale = 'pt-BR') => {
-    return new Intl.NumberFormat(locale, {
-        style: 'currency',
-        currency
-    }).format(value);
+  return new Intl.NumberFormat(locale, {
+    style: 'currency',
+    currency
+  }).format(value);
 };
 
 /**
@@ -54,7 +54,7 @@ export const formatCurrency = (value, currency = 'BRL', locale = 'pt-BR') => {
  * @returns {string} Sanitized string
  */
 export const sanitizeHTML = (html) => {
-    const temp = document.createElement('div');
-    temp.textContent = html;
-    return temp.innerHTML;
+  const temp = document.createElement('div');
+  temp.textContent = html;
+  return temp.innerHTML;
 };

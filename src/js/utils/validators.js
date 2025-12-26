@@ -10,8 +10,8 @@
  * @returns {boolean}
  */
 export const isValidEmail = (email) => {
-    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return regex.test(email);
+  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return regex.test(email);
 };
 
 /**
@@ -20,8 +20,8 @@ export const isValidEmail = (email) => {
  * @returns {boolean}
  */
 export const isValidPhone = (phone) => {
-    const digits = phone.replace(/\D/g, '');
-    return digits.length >= 10 && digits.length <= 11;
+  const digits = phone.replace(/\D/g, '');
+  return digits.length >= 10 && digits.length <= 11;
 };
 
 /**
@@ -30,7 +30,7 @@ export const isValidPhone = (phone) => {
  * @returns {boolean}
  */
 export const isRequired = (value) => {
-    return value?.trim().length > 0;
+  return value?.trim().length > 0;
 };
 
 /**
@@ -40,7 +40,7 @@ export const isRequired = (value) => {
  * @returns {boolean}
  */
 export const minLength = (value, min) => {
-    return value?.length >= min;
+  return value?.length >= min;
 };
 
 /**
@@ -50,5 +50,5 @@ export const minLength = (value, min) => {
  * @returns {boolean}
  */
 export const maxLength = (value, max) => {
-    return value?.length <= max;
+  return value?.length <= max;
 };

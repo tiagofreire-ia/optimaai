@@ -5,53 +5,53 @@
 
 /* Backgrounds */
 .bg-themed {
-    background-color: var(--bg-main);
+  background-color: var(--bg-main);
 }
 
 .bg-card-themed {
-    background-color: var(--bg-card);
+  background-color: var(--bg-card);
 }
 
 .bg-blur-themed {
-    background-color: var(--bg-blur);
+  background-color: var(--bg-blur);
 }
 
 /* Text Colors */
 .text-themed {
-    color: var(--text-main);
+  color: var(--text-main);
 }
 
 .text-themed-secondary {
-    color: var(--text-secondary);
+  color: var(--text-secondary);
 }
 
 .text-brand {
-    color: var(--brand-color);
+  color: var(--brand-color);
 }
 
 /* Borders */
 .border-themed-strong {
-    border-color: var(--border-strong);
+  border-color: var(--border-strong);
 }
 
 /* Hover States */
 .hover\:text-brand-hover:hover {
-    color: var(--brand-hover);
+  color: var(--brand-hover);
 }
 
 /* Dark/Light Mode Overrides */
 body.light-mode .text-white {
-    color: var(--text-main) !important;
+  color: var(--text-main) !important;
 }
 
 body.light-mode .text-gray-200 {
-    color: var(--text-main);
+  color: var(--text-main);
 }
 
 body.light-mode .text-gray-300 {
-    color: var(--text-secondary);
+  color: var(--text-secondary);
 }
 
 body.light-mode .text-gray-400 {
-    color: var(--text-secondary);
+  color: var(--text-secondary);
 }
