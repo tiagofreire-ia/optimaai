@@ -2,8 +2,8 @@
 
 Bem-vindo ao repositório oficial da **Óptima Digital**, agência especializada em Marketing Digital e Automação com Inteligência Artificial.
 
-> **Status:** ✅ Em Produção (Versão Modular Sênior)
-
+> **Status:** ✅ Em Produção
+> 
 ## 📌 Sobre o Projeto
 
 Este projeto é a vitrine digital da Óptima IA. Desenvolvido com foco em **performance**, **escalabilidade** e **arquitetura limpa**, o site apresenta nossas soluções de automação e serviços de marketing.
