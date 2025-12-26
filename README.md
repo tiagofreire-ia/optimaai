@@ -87,8 +87,6 @@ src/
 
 O projeto gera arquivos estáticos puros na raiz (`index.html`, `scripts.min.js`, `styles-tailwind.css`). Pode ser hospedado em qualquer servidor estático:
 
-- **Vercel / Netlify:** Basta conectar o repositório (Certifique-se de rodar `npm run build` no build command).
-- **GitHub Pages:** Ative nas configurações do repositório.
 
 ---
 
