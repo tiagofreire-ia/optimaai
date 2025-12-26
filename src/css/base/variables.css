@@ -1,0 +1,58 @@
+/* 
+ * CSS Variables & Theme System
+ * Defines color palette and theme variables
+ */
+
+:root {
+    /* Dark Theme (Default) */
+    --bg-main: #0a0a0a;
+    --bg-card: rgba(17, 24, 39, 0.5);
+    --bg-blur: rgba(0, 0, 0, 0.7);
+    --text-main: #e5e7eb;
+    --text-secondary: #9ca3af;
+    --text-on-brand: #ffffff;
+
+    --border-color: #374151;
+    --border-strong: #4b5563;
+
+    --brand-color: #f97316;
+    --brand-hover: #fb923c;
+
+    --gradient-color-1: #ffa500;
+    --gradient-color-2: #ff8c00;
+    --gradient-color-3: var(--bg-main);
+    --gradient-color-4: #ff4500;
+
+    /* Spacing */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+
+    /* Z-Index */
+    --z-header: 50;
+    --z-modal: 1000;
+    --z-banner: 1001;
+}
+
+/* Light Theme */
+body.light-mode {
+    --bg-main: #f9fafb;
+    --bg-card: rgba(255, 255, 255, 0.9);
+    --bg-blur: rgba(249, 250, 251, 0.95);
+    --text-main: #1f2937;
+    --text-secondary: #374151;
+    --text-on-brand: #ffffff;
+
+    --border-color: #d1d5db;
+    --border-strong: #9ca3af;
+
+    --brand-color: #ea580c;
+    --brand-hover: #c2410c;
+
+    --gradient-color-1: #ea580c;
+    --gradient-color-2: #dc2626;
+    --gradient-color-3: #7c3aed;
+    --gradient-color-4: #c026d3;
+}

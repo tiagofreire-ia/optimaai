@@ -1,7 +1,28 @@
+# System & IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+.gemini/
 
-#Ignore vscode AI rules
-.github\instructions\codacy.instructions.md
+# Dependencies
+node_modules/
+package-lock.json # Opcional: Alguns preferem versionar (recomendado versionar), outros ignorar. Vamos manter versionado.
 
-# Pasta de código comentado (apenas para estudo local)
+# Environment
+.env
+.env.local
+
+# Backups & Legacy Code
 copy/
+*.log
+*.comentado.*
+styles.css
+scripts.js
+# Manter apenas se quiser usar como referência histórica no repo, caso contrário ignorar.
+# User concordou com "Clean Repo" e backups já estão em copy/, então vamos ignorar os legados na raiz.
 
+# Build output (Opcional - Manter para deploy simples sem build step no server)
+# dist/
+# scripts.min.js (Mantendo versionado)
+# styles-tailwind.css (Mantendo versionado)
